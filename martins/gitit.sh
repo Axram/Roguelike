@@ -18,5 +18,5 @@ cp gitpull.sh martins/gitpull.sh
 cp gitit.sh martins/gitit.sh
 git add martins
 rm -r martins
-git commit -m  "Martins commit"
+git commit -m  "Martins Commit"
 git push origin master
