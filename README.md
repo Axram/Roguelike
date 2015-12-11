@@ -1,6 +1,6 @@
 # Roguelike
 
-This is a game project by me and ... The idea is a roguelike game with text commands and ascii graphics. The game is in develpement.
+This is a game project by me and ... The idea is a roguelike game with text commands and ascii graphics. 
 
 ### Features
 * no features, only bugs.  
