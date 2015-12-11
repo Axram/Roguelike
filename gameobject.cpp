@@ -13,7 +13,7 @@ Gameobject::Gameobject(int px, int py, char img, bool solid, bool movable, std::
   _solid = solid;
   _movable = movable;
   _name = name;
-  _description = desc;
+  _desc = desc;
 }
 
 

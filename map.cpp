@@ -1,6 +1,10 @@
-class Map{
-  /*
-    2D vector av gameobjects
-   */
 
-};
+
+
+#include "map.hpp"
+Map::Map(int sizex, int sizey){
+  //generate map
+  _sizex = sizex;
+  _sizey = sizey;
+  
+}
