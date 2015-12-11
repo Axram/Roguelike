@@ -4,7 +4,7 @@
 struct Pos{
   int x;
   int y;
-}
+};
 
   /*
     Position (posx, posy)
