@@ -1,5 +1,6 @@
 #!/bin/bash
 git add README.md
+git add gameobject.hpp
 git add gameobject.cpp
 git add actor.cpp
 git add player.cpp
