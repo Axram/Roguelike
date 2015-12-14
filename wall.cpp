@@ -3,7 +3,7 @@
 #include <string>
 
 Wall::Wall(int px, int py, char img){
-  _pos.x = px;
-  _pos.y = py;
+  _px = px;
+  _py = py;
   _img = img;
 }

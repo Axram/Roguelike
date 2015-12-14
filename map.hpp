@@ -7,10 +7,14 @@
 class Map{
 public:
   Map(int sizex, int sizey);
+  add_gameobjects(std::vector<Gameobject> & g);
+  print();
+  
 private:
+  std::vector<std::vector<char>> _grid;
   int _sizex;
   int _sizey;
-  std::vector<std::vector<Gameobject>> _map;
+  int _centre;
 };
 
 #endif

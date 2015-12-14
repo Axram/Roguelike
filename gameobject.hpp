@@ -1,11 +1,6 @@
 #ifndef GAMEOBJECT_HPP
 #define GAMEOBJECT_HPP
 #include <string>
-struct Pos{
-  int x;
-  int y;
-};
-
   /*
     Position (posx, posy)
     Visuell Representation ("@")
@@ -22,10 +17,12 @@ public:
   //Constructors
   Gameobject();
   Gameobject(int px, int py);
-  Gameobject(int px, int py, char img, bool solid, bool movable, std::string name, std::string desc);
-
+  Gameobject(int px, int py, int depth, char img, bool solid, bool movable, std::string name, std::string desc);
+  bool operator<(const Gameobject & b);
   //Member variables 
-  Pos _pos;
+  int _px;
+  int _py;
+  int _depth;
   bool _solid = true;
   bool _movable = true;
   std::string _name = "Nobody";

@@ -3,12 +3,13 @@
 
 Gameobject::Gameobject(){}
 Gameobject::Gameobject(int px, int py){
-  _pos.x = px;
-  _pos.y = py;
+  _px = px;
+  _py = py;
 }
-Gameobject::Gameobject(int px, int py, char img, bool solid, bool movable, std::string name, std::string desc){
-  _pos.x = px;
-  _pos.y = py;
+Gameobject::Gameobject(int px, int py, int depth, char img, bool solid, bool movable, std::string name, std::string desc){
+  _px = px;
+  _py = py;
+  _depth = depth;
   _img = img;
   _solid = solid;
   _movable = movable;
@@ -16,7 +17,10 @@ Gameobject::Gameobject(int px, int py, char img, bool solid, bool movable, std::
   _desc = desc;
 }
 
+bool Gameobject::operator<(const Gameobject & b){
+  return _depth < b._depth;
 
+}
 
 
 

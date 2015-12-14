@@ -3,7 +3,7 @@
 
 #include "gameobject.hpp"
 
-class Wall:public Gameobject{
+class Wall:public Gameobject(){
 public:
   Wall(int px, int py, char img = '#');
 private:
