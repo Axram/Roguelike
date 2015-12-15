@@ -6,41 +6,45 @@
 #include "map.hpp"
 #include <vector>
 #include <iostream>
+
+
+
 int main(){
-  /*
-    std::vector<Gameobject*> go;
-    for(int y = -100; y < 100; ++y){
-    for(int x = -100; x < 100; ++x ){
-    if(x == 10 || x == 30 || y == 5 || y == 20){
-    Wall * w =  new Wall(x,y);
-    go.push_back(w);
-    }
-    }
-    }
-  */
-  Map themap("maps/map1.txt");
-  //Gameobject g;
-  //Wall w(5, 5);
-  //go.push_back(g);
-  //go.push_back(w);
-  Camera m(50, 50, 0, 0);
-  //m.centralize(p);
-  //nope
-  m.centralize(themap.get_player());
+
+  //Load necessities
+  Map themap("maps/map1.txt"); //Load map
+  Camera m(50, 50, 0, 0); //Create camera
+  
+  //Prepare first print
+  m.centralize(themap.get_player()); 
   m.add_gameobjects(themap.get_map());
-  //m.print();
+  m.print();
+  
+  
   while(1){
+    
+    //get input
     std::string s;
     getline(std::cin,s);
-    //std::cout << p->_py << std::endl;
-    if(s == "up" || s =="\33[A" || s == "w") themap.get_player()._py -=1;
-    if(s == "down" || s == "\33[B" || s == "s") themap.get_player()._py +=1;
-    if(s == "right" || s == "\33[C" || s == "d") themap.get_player()._px +=1;
-    if(s == "left" || s == "\33[D" || s == "a") themap.get_player()._px -=1;
+    
+    //Move
+    int dx = 0;
+    int dy = 0;
+    
+    if(s == "up" || s =="\33[A" || s == "w") dy = -1;
+    if(s == "down" || s == "\33[B" || s == "s") dy = 1;
+    if(s == "right" || s == "\33[C" || s == "d") dx = 1;
+    if(s == "left" || s == "\33[D" || s == "a") dx = -1;
+    int newx = themap.get_player()._px + dx;
+    int newy = themap.get_player()._py + dy;
+    if(themap.is_free(newx, newy)){
+      themap.get_player()._px = newx;
+      themap.get_player()._py = newy;
+    }
+    //Update camera and print
     m.centralize(themap.get_player());
-    //std::cout << (themap.get_map()[1]->_px) << std::endl
     m.add_gameobjects(themap.get_map());
-    //m.print();
+    m.print();
   }
 }
 	

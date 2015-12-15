@@ -58,10 +58,10 @@ std::vector<Gameobject*> & Map::get_map(){
 }
 
 //Called by actors to see if the grid they want to move to is occupied.
-bool Map::is_occupied(int x, int y){
+bool Map::is_free(int x, int y){
   std::vector<Gameobject> g;
   for(auto i = _go.begin(); i != _go.end(); ++i){
-    if((**i)._px == x && (**i)._py){
+    if((**i)._px == x && (**i)._py == y){
       g.push_back( **i);
     }
   }

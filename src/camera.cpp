@@ -48,16 +48,23 @@ void Camera::add_gameobjects(std::vector<Gameobject> & g){ //Segfault central
 void Camera::add_gameobjects(std::vector<Gameobject*> & g){ //Segfault central
   
   calculate_boundaries();
+
+  //  std::cout << "borders: " << std::endl;
+  // std::cout << "_min_x: " << _min_x << std::endl;
+  //std::cout << "_max_x: " << _max_x << std::endl;
+  //std::cout << "_min_y: " << _min_y << std::endl;
+  //std::cout << "_max_y: " << _max_y << std::endl;
   for(auto i = g.begin(); i != g.end(); ++i){
     Gameobject* j = *i;
     //std::cout << typeid(j).name() << '\n';
     //Gameobject j = *i;
-    std::cout << "I tried. " << " x " << j->_px << " y " << j->_py << std::endl;
+    //std::cout << "I tried. " << " x " << j->_px << " y " << j->_py << std::endl;
     if(j->_px < _min_x || j-> _px >= _max_x) continue; // If it's not relevant skip it
     if(j->_py < _min_y || j-> _py >= _max_y) continue;
-    std::cout << "I made it through. " << " x " << j->_px << " y " << j->_py << std::endl;
+    //std::cout << "I made it through. " << " x " << j->_px << " y " << j->_py << std::endl;
     int x = j->_px - _pos_x; // calculate the correct position on the grid
     int y = j->_py - _pos_y;
+
     _grid[y][x] = j->_img;
     //std::cout <<"helo" << std::endl;
     //  //If px and py on Camera. Add onto grid at correct position

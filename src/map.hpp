@@ -20,7 +20,7 @@ public:
   void generate_map(std::string filename);
   std::vector<Gameobject*> _go;
   std::vector<Wall*> _walls;
-  bool is_occupied(int x, int y);
+  bool is_free(int x, int y);
   Player * _player = nullptr;
   //std::vector<Enemy> _enemies;
 };
