@@ -1,11 +1,2 @@
-class Actor:Gameobject{
-  /*
-    hp
-    attack
-    defence
-    ranged/melee
-    can move
-    
-
-   */
-};
+#include "actor.hpp"
+Actor::Actor(){};
