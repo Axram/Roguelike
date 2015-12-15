@@ -1,6 +1,6 @@
 #!/bin/bash
-git add *.cpp
-git add *.hpp
+git add src
+git add maps
 git add makefile
 git add gitit.sh
 git add LICENSE
