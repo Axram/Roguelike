@@ -28,7 +28,7 @@ int main(){
   //nope
   m.centralize(themap.get_player());
   m.add_gameobjects(themap.get_map());
-  m.print();
+  //m.print();
   while(1){
     std::string s;
     getline(std::cin,s);
@@ -40,7 +40,7 @@ int main(){
     m.centralize(themap.get_player());
     //std::cout << (themap.get_map()[1]->_px) << std::endl
     m.add_gameobjects(themap.get_map());
-    m.print();
+    //m.print();
   }
 }
 	
