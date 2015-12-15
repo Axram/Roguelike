@@ -1,4 +1,5 @@
 #!/bin/bash
+find . -type f -name "#"\* -exec rm {} \;
 git add src
 git add maps
 git add obj
