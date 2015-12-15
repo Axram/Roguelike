@@ -18,7 +18,7 @@ int main(){
     }
     }
   */
-  Map themap("maps/map1.txt");
+  Map Themap("maps/map1.txt");
   //Gameobject g;
   //Wall w(5, 5);
   //go.push_back(g);

@@ -1,6 +1,6 @@
-
-#ifndef CAMERA_HPP
-#define CAMERA_HPP
+#pragma once
+//#ifndef CAMERA_HPP
+//#define CAMERA_HPP
 #include <vector>
 #include "gameobject.hpp"
 
@@ -28,4 +28,4 @@ public:
   int _max_y;
 };
 
-#endif
+//#endif

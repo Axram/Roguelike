@@ -1,6 +1,7 @@
 #!/bin/bash
 git add src
 git add maps
+git add obj
 git add makefile
 git add gitit.sh
 git add LICENSE

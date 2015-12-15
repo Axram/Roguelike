@@ -71,23 +71,23 @@ void Camera::set_cursor(int px, int py)const{ //set cursor on terminal
   std::cout << "\33[" << px << ";" << py << "H"; 
 }
 void Camera::clear_screen()const{ //clear the screen through magic
-	std::cout << "\33[2J";
+  std::cout << "\33[2J";
 }
 void Camera::clear_grid(){
-	for(int y = 0; y < _grid.size(); ++y){
-		for(int x = 0; x < _grid[y].size(); ++x){
-			_grid[y][x] = ' ';
+  for(int y = 0; y < _grid.size(); ++y){
+      for(int x = 0; x < _grid[y].size(); ++x){
+          _grid[y][x] = ' ';
 		}
 	}
 }
 void Camera::print(){   //Print out the grid on to the terminal
-
+  
 	clear_screen();
 	set_cursor(0,0);
 	std::string s;
 	for(int y = 0; y < _grid.size(); ++y){
-		for(int x = 0; x < _grid[y].size(); ++x){
-			s+= _grid[y][x];
+      for(int x = 0; x < _grid[y].size(); ++x){
+          s+= _grid[y][x];
 		}
 	s += '\n';
 	}

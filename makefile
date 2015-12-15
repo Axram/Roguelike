@@ -8,4 +8,4 @@ main.out: $(OBJ_FILES)
 obj/%.o: src/%.cpp
 	$(CC) $(FLAGS) -c -o $@ $<
 clean:
-	rm -f *.o *.out
+	rm -f obj/*.o *.out
