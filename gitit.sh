@@ -7,5 +7,5 @@ git add makefile
 git add gitit.sh
 git add LICENSE
 git add README.md
-git commit -m  "We got map to almost work"
+git commit -m  "Map working, textbox added, basic enemies begun"
 git push origin master
