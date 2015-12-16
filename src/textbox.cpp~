@@ -1,0 +1,4 @@
+#include "textbox.hpp"
+
+Textbox::Textbox(int px, int py, int sizex, int sizey):_px(px), _py(py), _size_x(sizex), _size_y(sizey){
+}

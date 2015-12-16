@@ -16,3 +16,21 @@ void Actor::move(int dx, int dy){
   //Needs to ask Map 
 }
 
+bool Actor::damage(int amount){
+  int resulting_damage = amount - _defense;
+  if(resulting_damage < 0) resulting_damage = 0;
+  _hp -= resulting_damage;
+  if(_hp <= 0) return true;
+  return false;
+}
+
+void Actor::heal(int amount){
+
+}
+
+bool Actor::attack(Actor & target){
+  return target.damage(_attack);
+}
+void Actor::die(){
+  _img = ' '; //TODO temp lol
+}

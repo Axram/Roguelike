@@ -1,0 +1,11 @@
+#pragma once
+#include "actor.hpp"
+
+
+class Npc: public Actor{
+public:
+  Npc();
+  
+  private;
+
+};

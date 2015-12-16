@@ -1,0 +1,11 @@
+#pragma once
+
+//Shows text in an orderly fashion
+class Textbox{
+public:
+  Textbox(int px, int py, int sizex, int sizey);
+  void add_row(std::string);
+private:
+
+
+};

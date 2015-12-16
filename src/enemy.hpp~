@@ -1,0 +1,9 @@
+#pragma once
+
+#include "npc.hpp"
+
+//TODO behöver vi kombinera npc och enemy?
+class Enemy:public Npc{
+
+
+};

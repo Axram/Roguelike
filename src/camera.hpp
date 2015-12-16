@@ -12,7 +12,7 @@ public:
   void print();
   void calculate_boundaries();
   void centralize(const Gameobject & g);
-//private:
+private:
   
   void set_cursor(int px, int py)const;
   void clear_screen()const;
