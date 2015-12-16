@@ -21,7 +21,7 @@ public:
   std::vector<std::string> get_names(int x, int y); //TODO define (get the names of all the gameobjects in that position, used for commands like "look right"
   std::vector<std::string> get_descs(int x, int y); //TODO define (get descriptions of all gameobjects in that position
   std::vector<Gameobject*> & get_map();
-  Enemy & get_enemy(int x, int y);
+  Enemy * get_enemy(int x, int y);
   void cleanup_enemies(); //Removes dead enemies
   void generate_map(std::string filename);
   std::vector<Gameobject*> _go;

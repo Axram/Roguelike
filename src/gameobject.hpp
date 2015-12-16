@@ -26,6 +26,7 @@ public:
   int _depth;
   bool _solid = true;
   bool _movable = true;
+  bool _to_be_removed = false;
   std::string _name = "Nobody";
   std::string _desc = "Caped baldy";
   char _img = '@';

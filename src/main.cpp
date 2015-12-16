@@ -42,10 +42,10 @@ int main(){
       themap.get_player()._px = newx;
       themap.get_player()._py = newy;
       textbox.add_row("You move");
-    }
-    else if(themap.enemy_exists(newx, newy)){ //If an enemy exists on that position
+    }else if(themap.enemy_exists(newx, newy)){ //If an enemy exists on that position
+      Enemy * newenemy = themap.get_enemy(newx, newy);
       textbox.add_row("You attack something");
-      bool killed = themap.get_player().attack(themap.get_enemy(newx, newy)); //Tell player to attack it, attack defined in actor
+      bool killed = themap.get_player().attack(*newenemy); //Tell player to attack it, attack defined in actor
       if(killed){
 	textbox.add_row("You killed something");	
       }

@@ -20,7 +20,10 @@ bool Actor::damage(int amount){
   int resulting_damage = amount - _defense;
   if(resulting_damage < 0) resulting_damage = 0;
   _hp -= resulting_damage;
-  if(_hp <= 0) return true;
+  if(_hp <= 0){ 
+    _to_be_removed = true;
+    return true;
+  }
   return false;
 }
 

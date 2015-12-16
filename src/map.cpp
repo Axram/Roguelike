@@ -1,4 +1,5 @@
 #include "map.hpp"
+#include "assert.h"
 
 Map::Map(std::string filename){
 
@@ -28,27 +29,19 @@ void Map::generate_map(std::string filename){
         Wall * w =  new Wall(x,y);
         _go.push_back(w);
         _walls.push_back(w);
-      }
-      else if (s == "p"){
+      }else if (s == "p"){
         Player * p = new Player(x, y);
         _go.push_back(p);
         _player = p;
-      }
-      else if (s == "g"){
+      }else if (s == "g"){
 	Goblin * g = new Goblin(x, y);
 	_go.push_back(g);
 	_enemies.push_back(g);
-      }
-      else if (s == " "){
-            
-      }
-      else{
-            
-      } 
-          
+      }else if (s == " "){ 
+      }else{    
+      }      
       ++x;
-    }
-        
+    }        
     ++y;
   }
     
@@ -72,23 +65,45 @@ bool Map::enemy_exists(int x, int y){
   }
   return false;
 }
+
 //If there is no enemy on that position we have no way to show that
 //We could return a pointer insted, in which case we could return nullptr, but fuck it
-Enemy & Map::get_enemy(int x, int y){
+Enemy * Map::get_enemy(int x, int y){
   for(auto i = _enemies.begin(); i != _enemies.end(); ++i){
     if((**i)._px == x && (**i)._py == y)
     {
-      return **i;
+      return *i;
     }
   }
+  return nullptr;
 }
 
 void Map::cleanup_enemies(){
-  for(auto i = _enemies.begin(); i != _enemies.end(); ++i){
-    if((**i)._hp <= 0){
-      delete *i;
+  /*
+  for(auto g = _go.begin(); g != _go.end(); ++g){
+    if((**g)._to_be_removed){
+      for(auto e = _enemies.begin(); e != _enemies.begin(); ++e){
+	if(*e == *g){
+	  assert(false);
+	  std::cout << "hooray!" << std::endl;
+	}
+	delete(*g);
+	_go.erase(g);
+	_enemies.erase(e);
+	//if((**e.).to_be_removed){
+	//} //TODO ta bort _go. Ersätt kanske med std::vector<std::vector<Gamebject *>> som innehåller en lista av varje typ
+      }
     }
   }
+  for(auto i = _enemies.begin(); i != _enemies.end(); ++i){
+    if((**i).to_be_removed){
+      std::cout << "before" << std::endl;
+      
+      //delete(*i);
+      _enemies.erase(i);
+    }
+  }
+  */
 }
 
 //Called by actors to see if the grid they want to move to is occupied.
