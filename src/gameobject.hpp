@@ -24,7 +24,7 @@ public:
 
   int _px = 0;
   int _py = 0;
-  int _depth;
+  int _depth = 1;
   bool _solid = true;
   bool _movable = true;
   bool _to_be_removed = false;

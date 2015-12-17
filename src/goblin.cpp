@@ -9,4 +9,5 @@ Goblin::Goblin(int px, int py){
   _hp = 10;
   _attack = 1;
   _defense = 0;
+  _depth = 1;
 }

@@ -7,5 +7,5 @@ git add makefile
 git add gitit.sh
 git add LICENSE
 git add README.md
-git commit -m  "Basic enemies killable, memory leaks fixed"
+git commit -m  "Print depth sorted out, lol"
 git push origin master

@@ -1,6 +1,7 @@
 #include "enemy.hpp"
 
-Enemy::Enemy(){}
+Enemy::Enemy(){
+}
 //Had to create these as they where virtual
 void Enemy::patrol(){}//TODO define/remove patrol
 void Enemy::wait(){}//TODO define/remove wait

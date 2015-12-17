@@ -45,10 +45,14 @@ void Camera::add_gameobjects(std::vector<Gameobject> & g){ //Segfault central
   }
   
 }
+bool comp(const Gameobject* a, const Gameobject* b){
+  return a->_depth < b->_depth;
+}
 void Camera::add_gameobjects(std::vector<Gameobject*> & g){ //Segfault central
   
   calculate_boundaries();
 
+  std::sort(g.begin(), g.end(), comp);
   //  std::cout << "borders: " << std::endl;
   // std::cout << "_min_x: " << _min_x << std::endl;
   //std::cout << "_max_x: " << _max_x << std::endl;

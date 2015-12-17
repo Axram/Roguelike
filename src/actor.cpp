@@ -8,6 +8,7 @@ Actor::Actor(int px, int py, char icon, int hp, int attack, int defense){
   _hp = hp;
   _attack = attack;
   _defense = defense;
+  _depth = 1;
 }
 void Actor::move(int dx, int dy){
     _px += dx;

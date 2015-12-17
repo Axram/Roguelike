@@ -51,6 +51,7 @@ int main(){
       if(killed){
         textbox.add_row("You killed something");
         (*newenemy).die();
+        
         //Delete the eenmie from the map vectors
         //themap._go.erase(newenemy);
       }
