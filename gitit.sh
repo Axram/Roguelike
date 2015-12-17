@@ -7,5 +7,5 @@ git add makefile
 git add gitit.sh
 git add LICENSE
 git add README.md
-git commit -m  "Print depth sorted out, lol"
+git commit -m  "Small camera changes"
 git push origin master
