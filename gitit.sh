@@ -7,5 +7,5 @@ git add makefile
 git add gitit.sh
 git add LICENSE
 git add README.md
-git commit -m  "Map working, textbox added, basic enemies begun"
+git commit -m  "Basic enemies killable, memory leaks fixed"
 git push origin master

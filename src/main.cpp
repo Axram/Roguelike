@@ -9,7 +9,9 @@
 #include <vector>
 #include <iostream>
 
-
+std::string main_menu(void){
+  //Make a main menu where yoy choose new game or load game from file, maybe?
+}
 
 int main(){
 
@@ -27,7 +29,7 @@ int main(){
     //get input
     std::string s;
     getline(std::cin,s);
-    
+  
     //Move
     int dx = 0;
     int dy = 0;
@@ -47,11 +49,14 @@ int main(){
       textbox.add_row("You attack something");
       bool killed = themap.get_player().attack(*newenemy); //Tell player to attack it, attack defined in actor
       if(killed){
-	textbox.add_row("You killed something");	
+        textbox.add_row("You killed something");
+        (*newenemy).die();
+        //Delete the eenmie from the map vectors
+        //themap._go.erase(newenemy);
       }
     }
     //Update camera and print
-    themap.cleanup_enemies();
+    themap.cleanup();
     m.centralize(themap.get_player());
     m.add_gameobjects(themap.get_map());
     m.print();

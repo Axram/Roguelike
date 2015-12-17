@@ -18,6 +18,7 @@ public:
   Gameobject();
   Gameobject(int px, int py);
   Gameobject(int px, int py, int depth, char img, bool solid, bool movable, std::string name, std::string desc);
+  virtual ~Gameobject();
   bool operator<(const Gameobject & b);
   //Member variables
 

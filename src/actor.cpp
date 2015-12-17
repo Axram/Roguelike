@@ -35,5 +35,9 @@ bool Actor::attack(Actor & target){
   return target.damage(_attack);
 }
 void Actor::die(){
+  // Caller is responisble for destruction of the actor?
   _img = ' '; //TODO temp lol
+  _solid = false;
+
+  //Call drop item foo if we implement drops
 }

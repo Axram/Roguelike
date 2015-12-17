@@ -4,8 +4,15 @@
 Map::Map(std::string filename){
 
 	//std::vector<Gameobject*> go;
-
+  //_gameobjects["actors"]// = new std::vector<Gameobject*>;
 	generate_map(filename);
+}
+
+Map::~Map(){
+  for(auto i = _go.begin(); i != _go.end(); ++i){
+    (**i)._to_be_removed = true;
+  }
+  cleanup();
 }
 
 void Map::generate_map(std::string filename){
@@ -28,16 +35,27 @@ void Map::generate_map(std::string filename){
       if(s == "#"){
         Wall * w =  new Wall(x,y);
         _go.push_back(w);
-        _walls.push_back(w);
+        //_walls.push_back(w);
+
       }else if (s == "p"){
         Player * p = new Player(x, y);
+        Floor * f = new Floor(x, y);
+        //_gameobjects["player"].push_back(p);
         _go.push_back(p);
+        _go.push_back(f);
         _player = p;
+        
       }else if (s == "g"){
-	Goblin * g = new Goblin(x, y);
-	_go.push_back(g);
-	_enemies.push_back(g);
+        Goblin * g = new Goblin(x, y);
+        Floor * f = new Floor(x, y);
+        //_gameobjects["actors"].push_back(g);
+        _go.push_back(g);
+        _go.push_back(f);
+        _enemies.push_back(g);
+        
       }else if (s == " "){ 
+         Floor * f = new Floor(x, y);
+         _go.push_back(f);
       }else{    
       }      
       ++x;
@@ -48,8 +66,10 @@ void Map::generate_map(std::string filename){
   mapfile.close();
 }
 Player & Map::get_player(){
+  //if(_gameobjects["player"].size() == 0)  throw std::out_of_range("No player found.");
+	//return (dynamic_cast<Player>(*_gameobjects["player"][0]));
 	if(_player == nullptr) throw std::out_of_range("No player found.");
-	return *_player;
+  return *_player;
 }
 
 std::vector<Gameobject*> & Map::get_map(){
@@ -78,32 +98,35 @@ Enemy * Map::get_enemy(int x, int y){
   return nullptr;
 }
 
-void Map::cleanup_enemies(){
-  /*
+void Map::cleanup(){
+  std::vector<Gameobject*> gameobjects;
   for(auto g = _go.begin(); g != _go.end(); ++g){
     if((**g)._to_be_removed){
-      for(auto e = _enemies.begin(); e != _enemies.begin(); ++e){
-	if(*e == *g){
-	  assert(false);
-	  std::cout << "hooray!" << std::endl;
-	}
-	delete(*g);
-	_go.erase(g);
-	_enemies.erase(e);
-	//if((**e.).to_be_removed){
-	//} //TODO ta bort _go. Ersätt kanske med std::vector<std::vector<Gamebject *>> som innehåller en lista av varje typ
-      }
+      gameobjects.push_back(*g);
+      //std::remove(_go.begin(), _go.end(), to_be_removed);//gameobjects.push_back(*g);
     }
   }
-  for(auto i = _enemies.begin(); i != _enemies.end(); ++i){
-    if((**i).to_be_removed){
-      std::cout << "before" << std::endl;
-      
-      //delete(*i);
-      _enemies.erase(i);
+  std::vector<Enemy *> enmis;
+  for(auto e = _enemies.begin(); e != _enemies.end(); ++e){
+    if((**e)._to_be_removed){
+      enmis.push_back(*e);
     }
   }
-  */
+/*
+  for(every structure){
+    delete s
+    erase
+  }
+*/
+  for(auto e = enmis.begin(); e != enmis.end(); ++e){
+    
+    _enemies.erase(std::remove(_enemies.begin(), _enemies.end(), (*e)), _enemies.end());
+  }
+  for(auto g = gameobjects.begin(); g != gameobjects.end(); ++g){
+    delete(*g);
+    _go.erase(std::remove(_go.begin(), _go.end(), (*g)), _go.end());
+  }
+
 }
 
 //Called by actors to see if the grid they want to move to is occupied.

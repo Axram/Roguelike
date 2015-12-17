@@ -2,6 +2,8 @@
 //#ifndef CAMERA_HPP
 //#define CAMERA_HPP
 #include <vector>
+#include <map>
+#include <algorithm>
 #include "gameobject.hpp"
 
 class Camera{
@@ -12,6 +14,7 @@ public:
   void print();
   void calculate_boundaries();
   void centralize(const Gameobject & g);
+  void cmp_gameobjects(Gameobject * a, Gameobject * b);
 private:
   
   void set_cursor(int px, int py)const;

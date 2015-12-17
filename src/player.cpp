@@ -5,7 +5,7 @@ Player::Player(int x, int y):Actor(){
   //TODO snyggare konstruktor
   _px = x;
   _py = y;
-  _attack = 100;
+  _attack = 5;
   _depth = 1;
   _solid = true;
   _movable = false;

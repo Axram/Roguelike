@@ -17,7 +17,7 @@ Gameobject::Gameobject(int px, int py, int depth, char img, bool solid, bool mov
   _name = name;
   _desc = desc;
 }
-
+Gameobject::~Gameobject(){}
 bool Gameobject::operator<(const Gameobject & b){
   return _depth < b._depth;
 

@@ -6,7 +6,7 @@ Goblin::Goblin(int px, int py){
   _px = px;
   _py = py;
   _img = 'g';
-  _hp = 1;
+  _hp = 10;
   _attack = 1;
-  _defense = 1;
+  _defense = 0;
 }
