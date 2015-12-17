@@ -9,7 +9,7 @@ class Actor:public Gameobject{
 public:
   friend class Map;
   Actor();
-  Actor(int px, int py, char icon, int hp, int attack, int defense);
+  Actor(int px, int py, int depth ,char icon, int hp, int attack, int defense, std::string name, std::string desc);
   virtual bool damage(int amount); 
   virtual void heal(int amount); //TODO temp
   virtual void move(int dx, int dy); //TODO temp 

@@ -1,7 +1,8 @@
 
 #include "actor.hpp"
 Actor::Actor(){};
-Actor::Actor(int px, int py, char icon, int hp, int attack, int defense){
+Actor::Actor(int px, int py, int depth, char icon, int hp, int attack, int defense, std::string name, std::string desc):Gameobject(px, py, depth,icon, true, false, name, desc){
+  /*
   _px = px;
   _py = py;
   _img = icon;
@@ -9,6 +10,7 @@ Actor::Actor(int px, int py, char icon, int hp, int attack, int defense){
   _attack = attack;
   _defense = defense;
   _depth = 1;
+  */
 }
 void Actor::move(int dx, int dy){
     _px += dx;
