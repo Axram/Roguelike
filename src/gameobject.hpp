@@ -1,16 +1,5 @@
 #pragma once
-//#ifndef GAMEOBJECT_HPP
-
-//#define GAMEOBJECT_HPP
 #include <string>
-/*
-    Position (posx, posy)
-    Visuell Representation ("@")
-    Solid/Kan gås igenom (solid = true)
-    Namn (name = "Troll")
-    Beskrivning ("A smelly troll") 
-   */
-
 
 class Gameobject{
 public:
@@ -25,9 +14,9 @@ public:
   int _px = 0;
   int _py = 0;
   int _depth = 1;
-  bool _solid = true;
-  bool _movable = true;
-  bool _to_be_removed = false;
+  bool _solid = true; //Can the object be collided with?
+  bool _movable = true; //Can the object be moved?
+  bool _to_be_removed = false; 
   std::string _name = "Nobody";
   std::string _desc = "Caped baldy";
   char _img = '@';
@@ -35,4 +24,4 @@ private:
 
 
 };
-//#endif
+
