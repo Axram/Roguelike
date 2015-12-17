@@ -17,8 +17,8 @@ int main(){
 
   //Load necessities
   Map themap("maps/map1.txt"); //Load map
-  Camera m(50, 50, 0, 0); //Create camera
-  Textbox textbox(0, 40, 50, 10); //px, py, sizex, sizey
+  Camera m(50, 30, 5, 5); //Create camera
+  Textbox textbox(0, 40, 50, 9); //px, py, sizex, sizey
   //Prepare first print
   m.centralize(themap.get_player()); 
   m.add_gameobjects(themap.get_map());
