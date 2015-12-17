@@ -14,11 +14,11 @@ public:
   virtual void heal(int amount); //TODO temp
   virtual void move(int dx, int dy); //TODO temp 
   virtual bool attack(Actor & target); 
-  virtual void die(); //TODO temp death
+  //virtual void die(); //TODO temp death
   //vector<Item> inventory = [];
 protected:
-  int _hp = 1;
-  int _attack = 1;
-  int _defense = 1;
+  int _hp;
+  int _attack;
+  int _defense;
 };
 

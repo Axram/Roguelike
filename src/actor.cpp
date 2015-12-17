@@ -1,8 +1,8 @@
 
 #include "actor.hpp"
 Actor::Actor(){};
-Actor::Actor(int px, int py, int depth, char icon, int hp, int attack, int defense, std::string name, std::string desc):Gameobject(px, py, depth,icon, true, false, name, desc){
-  /*
+Actor::Actor(int px, int py, int depth, char icon, int hp, int attack, int defense, std::string name, std::string desc):Gameobject(px, py, depth,icon, true, false, name, desc),_hp(hp), _attack(attack), _defense(defense){
+  /* TODO remove this
   _px = px;
   _py = py;
   _img = icon;
@@ -12,6 +12,7 @@ Actor::Actor(int px, int py, int depth, char icon, int hp, int attack, int defen
   _depth = 1;
   */
 }
+
 void Actor::move(int dx, int dy){
     _px += dx;
     _py += dy;
@@ -36,11 +37,4 @@ void Actor::heal(int amount){
 
 bool Actor::attack(Actor & target){
   return target.damage(_attack);
-}
-void Actor::die(){
-  // Caller is responisble for destruction of the actor?
-  _img = ' '; //TODO temp lol
-  _solid = false;
-
-  //Call drop item foo if we implement drops
 }

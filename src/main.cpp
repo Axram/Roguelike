@@ -50,7 +50,7 @@ int main(){
       bool killed = themap.get_player().attack(*newenemy); //Tell player to attack it, attack defined in actor
       if(killed){
         textbox.add_row("You killed something");
-        (*newenemy).die();
+       
         
         //Delete the eenmie from the map vectors
         //themap._go.erase(newenemy);
