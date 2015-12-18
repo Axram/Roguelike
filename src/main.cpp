@@ -61,7 +61,15 @@ int main(){
     }else if(themap.structure_exists(newx, newy)){
       Structure * newst = themap.get_structure(newx, newy);
       textbox.add_row("You interact with the structure");
-      newst->interact();
+      bool didit = newst->interact((themap.get_player()).get_inventory());
+      
+      if(!didit){
+        textbox.add_row("Hmm, you need something to make this work");
+      }
+      else{
+        textbox.add_row("It worked");
+      }
+
     }
     //Update camera and print
     themap.cleanup();

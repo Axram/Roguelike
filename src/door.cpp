@@ -26,8 +26,14 @@ void Door::destroy(){
 
 }
 
-bool Door::interact(){
-	return open();
+bool Door::interact(std::vector<Item>* inventory){
+	for(auto i = inventory->begin(); i != inventory->end(); ++i){
+		if((*i)._name == "Doorkey"){
+			return open();
+			//TODO remove key from inventory (here or in clean up)
+		}	
+	}
+	return false;
 }
 
 bool Door::open(){

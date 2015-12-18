@@ -1,20 +1,20 @@
 #pragma once
 
-#include <string>
 #include <vector>
-#include <iostream>
+#include <string>
 
 #include "structure.hpp"
 #include "item.hpp"
 
-class Door:public Structure{
-public:
-	Door();
-	Door(int x, int y);
+#include "doorkey.hpp"
 
-	bool open();
-	bool move();
+class Chest:public Structure{
+public:
+	Chest(int x, int y);
 	bool interact(std::vector<Item>* inventory);
+protected:
+	bool move(); 
 	void destroy();
 
+	std::vector<Item> _inventory;
 };

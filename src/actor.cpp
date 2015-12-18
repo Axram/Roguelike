@@ -38,3 +38,7 @@ void Actor::heal(int amount){
 bool Actor::attack(Actor & target){
   return target.damage(_attack);
 }
+
+std::vector<Item>* Actor::get_inventory(){
+  return & inventory;
+}

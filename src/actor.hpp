@@ -19,6 +19,7 @@ public:
   virtual bool attack(Actor & target); 
   //virtual void die(); //TODO temp death
   std::vector<Item> inventory;
+  std::vector<Item>* get_inventory();
 protected:
   int _hp;
   int _attack;

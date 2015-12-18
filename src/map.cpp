@@ -58,6 +58,12 @@ void Map::generate_map(std::string filename){
         _go.push_back(d);
         _go.push_back(f);
         _st.push_back(d);
+      }else if (s == "c"){
+        Chest * d = new Chest(x,y);
+        Floor * f = new Floor(x, y);
+        _go.push_back(d);
+        _go.push_back(f);
+        _st.push_back(d);
       }else if (s == " "){ 
          Floor * f = new Floor(x, y);
          _go.push_back(f);

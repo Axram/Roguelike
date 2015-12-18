@@ -15,6 +15,7 @@
 #include "floor.hpp"
 #include "structure.hpp"
 #include "door.hpp"
+#include "chest.hpp"
 
 //#ifndef MAP_HPP
 //#define MAP_HPP
