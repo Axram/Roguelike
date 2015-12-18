@@ -33,6 +33,11 @@ int main(){
     //Move
     int dx = 0;
     int dy = 0;
+
+    //TODO, check if word is use
+    if(s.find("use") != std::string::npos){
+      textbox.add_row("Attempts to use");
+    }
     
     if(s == "up" || s =="\33[A" || s == "w") dy = -1;
     if(s == "down" || s == "\33[B" || s == "s") dy = 1;
@@ -40,6 +45,7 @@ int main(){
     if(s == "left" || s == "\33[D" || s == "a") dx = -1;
     int newx = themap.get_player()._px + dx;
     int newy = themap.get_player()._py + dy;
+    //Checks is wanted position is non-solid
     if(themap.is_free(newx, newy)){
       themap.get_player()._px = newx;
       themap.get_player()._py = newy;

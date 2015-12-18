@@ -1,11 +1,2 @@
-  /*
-class Item:Gameobject{
-    name
-    weight
-    description
-    uppplockningsfunktion
-    Resten ligger i arv
-
-
-};
-   */
+#include "item.hpp"
+//tom så länge ???

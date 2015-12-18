@@ -1,6 +1,9 @@
 #pragma once
-#include "gameobject.hpp"
 
+#include <vector>
+
+#include "gameobject.hpp"
+#include "item.hpp"
 
 //#include "map.hpp"
 //class Map;
@@ -15,7 +18,7 @@ public:
   virtual void move(int dx, int dy); //TODO temp 
   virtual bool attack(Actor & target); 
   //virtual void die(); //TODO temp death
-  //vector<Item> inventory = [];
+  std::vector<Item> inventory;
 protected:
   int _hp;
   int _attack;
