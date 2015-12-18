@@ -11,8 +11,9 @@
 class Structure:public Gameobject{
 public:
   Structure();
+  virtual bool interact();
 protected:
   virtual bool move();
-  virtual bool interact(Structure & target); 
-  virtual void die();	
+  //virtual bool interact(Structure & target); 
+  virtual void destroy();	
 };

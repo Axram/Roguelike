@@ -52,7 +52,12 @@ void Map::generate_map(std::string filename){
         _go.push_back(g);
         _go.push_back(f);
         _enemies.push_back(g);
-        
+      }else if (s == "D"){
+        Door * d = new Door(x,y);
+        Floor * f = new Floor(x, y);
+        _go.push_back(d);
+        _go.push_back(f);
+        _st.push_back(d);
       }else if (s == " "){ 
          Floor * f = new Floor(x, y);
          _go.push_back(f);
@@ -90,6 +95,25 @@ bool Map::enemy_exists(int x, int y){
 //We could return a pointer insted, in which case we could return nullptr, but fuck it
 Enemy * Map::get_enemy(int x, int y){
   for(auto i = _enemies.begin(); i != _enemies.end(); ++i){
+    if((**i)._px == x && (**i)._py == y)
+    {
+      return *i;
+    }
+  }
+  return nullptr;
+}
+
+bool Map::structure_exists(int x, int y){
+  for(auto i = _st.begin(); i != _st.end(); ++i){
+    if((**i)._px == x && (**i)._py == y){
+      return true;
+    }
+  }
+  return false;
+}
+
+Structure * Map::get_structure(int x, int y){
+  for(auto i = _st.begin(); i != _st.end(); ++i){
     if((**i)._px == x && (**i)._py == y)
     {
       return *i;

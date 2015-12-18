@@ -16,7 +16,7 @@ std::string main_menu(void){
 int main(){
 
   //Load necessities
-  Map themap("maps/map1.txt"); //Load map
+  Map themap("maps/map2.txt"); //Load map
   Camera m(50, 30, 5, 5); //Create camera
   Textbox textbox(0, 40, 50, 9); //px, py, sizex, sizey
   //Prepare first print
@@ -57,10 +57,11 @@ int main(){
       if(killed){
         textbox.add_row("You killed something");
        
-        
-        //Delete the eenmie from the map vectors
-        //themap._go.erase(newenemy);
       }
+    }else if(themap.structure_exists(newx, newy)){
+      Structure * newst = themap.get_structure(newx, newy);
+      textbox.add_row("You interact with the structure");
+      newst->interact();
     }
     //Update camera and print
     themap.cleanup();
