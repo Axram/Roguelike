@@ -134,6 +134,8 @@ void Map::cleanup(){
     if((**g)._to_be_removed){
       gameobjects.push_back(*g);
       //std::remove(_go.begin(), _go.end(), to_be_removed);//gameobjects.push_back(*g);
+      
+      //TODO remove the gameobjct Items in the inventory;
     }
   }
   std::vector<Enemy *> enmis;
@@ -142,12 +144,18 @@ void Map::cleanup(){
       enmis.push_back(*e);
     }
   }
-/*
-  for(every structure){
-    delete s
-    erase
+
+  std::vector<Structure*> srts;
+  for(auto s = _st.begin(); s != _st.end(); ++s){
+    if((**s)._to_be_removed){
+      srts.push_back(*s);
+    }
   }
-*/
+
+  for(auto s = srts.begin(); s != srts.end(); ++s){
+    _st.erase(std::remove(_st.begin(), _st.end(), (*s)), _st.end());
+  }
+
   for(auto e = enmis.begin(); e != enmis.end(); ++e){
     
     _enemies.erase(std::remove(_enemies.begin(), _enemies.end(), (*e)), _enemies.end());

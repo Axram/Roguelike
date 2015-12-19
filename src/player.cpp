@@ -1,6 +1,6 @@
 #include "player.hpp"
 //#include <string>
-Player::Player(int x, int y):Actor(x, y, 1,'@', 10, 1, 1, "Mario", "It's a me"){
+Player::Player(int x, int y):Actor(x, y, 2,'@', 10, 1, 1, "Mario", "It's a me"){
   /*
   _px = x;
   _py = y;

@@ -71,6 +71,9 @@ int main(){
       }
 
     }
+
+    //Enemies trun to move??
+
     //Update camera and print
     themap.cleanup();
     m.centralize(themap.get_player());
