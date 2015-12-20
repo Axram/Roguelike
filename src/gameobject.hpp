@@ -1,6 +1,10 @@
 #pragma once
 #include <string>
+
+#include <ncurses.h>
+
 #include "textbox.hpp"
+
 //class Map;
 class Gameobject{
   //friend class Map;
@@ -22,7 +26,7 @@ public:
   int _py = 0;
 
 protected:
-  Textbox * _textbox = nullptr;
+  WINDOW * _textbox = nullptr;
   int _depth = 1;
   bool _solid = true; //Can the object be collided with?
   bool _movable = true; //Can the object be moved?

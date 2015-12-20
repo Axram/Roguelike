@@ -6,6 +6,8 @@
 #include <fstream>
 #include <stdexcept>
 
+#include <ncurses.h>
+
 #include "gameobject.hpp"
 #include "item.hpp"
 

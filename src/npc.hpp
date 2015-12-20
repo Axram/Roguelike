@@ -1,6 +1,7 @@
 #pragma once
 #include "actor.hpp"
 #include <cmath>
+#include <ncurses.h>
 
 class Npc: public Actor{
 public:

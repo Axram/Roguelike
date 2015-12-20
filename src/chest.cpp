@@ -1,6 +1,6 @@
 #include "chest.hpp"
 #include <cassert>
-Chest::Chest(int x, int y, Textbox * text){
+Chest::Chest(int x, int y, WINDOW * text){
 	_px = x;
 	_py = y;
 	_textbox = text;
@@ -19,13 +19,13 @@ Chest::~Chest(){
 bool Chest::interact(std::vector<Item*>* inventory){
 	//Creates a new item and puts it in the actors inventory
 	if(_inventory.size() == 0){
-		_textbox->add_row("The " + _name + " is empty.");
+		//_textbox->add_row("The " + _name + " is empty.");
 		return false;
 	}
-	_textbox->add_row("This " + _name + " contained: ");
+	//_textbox->add_row("This " + _name + " contained: ");
 	for(auto i = _inventory.rbegin(); i != _inventory.rend(); ++i){
 		inventory->push_back(*i);
-		_textbox->add_row((**i)._name);
+		//_textbox->add_row((**i)._name);
 		_inventory.pop_back(); //dosn return item :(
 		return true;
 	}

@@ -1,7 +1,7 @@
 #include "map.hpp"
 #include "assert.h"
 
-Map::Map(std::string filename, Textbox *& text){
+Map::Map(std::string filename, WINDOW*& text){
 
   _textbox = text;
   generate_map(filename);
@@ -74,6 +74,7 @@ void Map::generate_map(std::string filename){
     
   mapfile.close();
 }
+
 Player * Map::get_player(){
 
 	if(_player == nullptr) throw std::out_of_range("No player found.");

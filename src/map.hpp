@@ -19,13 +19,15 @@
 #include "chest.hpp"
 #include "textbox.hpp"
 
+#include <ncurses.h>
+
 //#ifndef MAP_HPP
 //#define MAP_HPP
 //class Player;
 //class Gameobject;
 class Map{
 public:
-  Map(std::string filename, Textbox *& text);
+  Map(std::string filename, WINDOW*& text);
   ~Map();
   Player * get_player();
   std::vector<std::string> get_names(int x, int y); //TODO define (get the names of all the gameobjects in that position, used for commands like "look right"
@@ -40,6 +42,11 @@ public:
   bool structure_exists(int x, int y);
   Structure * get_structure(int x, int y);
   void find_path(Actor & hunter, Gameobject & target);
+
+  std::vector<Gameobject*>* get_gameobj(){
+    return &_go;
+  }
+  
 private:
   Player * _player = nullptr;
   //TODO alla vectorer skall vara private
@@ -48,7 +55,7 @@ private:
   std::vector<Wall*> _s;
 
   std::vector<Structure*> _st; //NOT CLEANED UP
-  Textbox * _textbox;
+  WINDOW * _textbox;
 };
 
 //#endif

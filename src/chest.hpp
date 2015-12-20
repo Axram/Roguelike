@@ -3,6 +3,8 @@
 #include <vector>
 #include <string>
 
+#include <ncurses.h>
+
 #include "structure.hpp"
 #include "item.hpp"
 
@@ -10,7 +12,7 @@
 
 class Chest:public Structure{
 public:
-	Chest(int x, int y, Textbox * text);
+	Chest(int x, int y, WINDOW * text);
 	~Chest();
 	bool interact(std::vector<Item*>* inventory);
 protected:

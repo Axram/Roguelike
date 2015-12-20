@@ -1,6 +1,7 @@
 #include "player.hpp"
 //#include <string>
-Player::Player(int x, int y, Textbox * text){
+
+Player::Player(int x, int y, WINDOW * text){
   _px = x;
   _py = y;
   _hp = 10;
@@ -17,6 +18,11 @@ Player::Player(int x, int y, Textbox * text){
 void Player::move(int dx, int dy){
 	_px += dx;
     _py += dy;
-    _textbox->add_row(_name + " moves to " + std::to_string(_px)+ ";"+ std::to_string(_py) + ".");
+    //_textbox->add_row(_name + " moves to " + std::to_string(_px)+ ";"+ std::to_string(_py) + ".");
+    std::string prn_str = _name + " moves to " + std::to_string(_px)+ ";"+ std::to_string(_py) + ".";
+    //prn_str = "Move";
+    scroll(_textbox);
+    mvwprintw(_textbox, 1,1, "%s", prn_str.c_str());
+    wrefresh(_textbox);
 }
 

@@ -1,6 +1,6 @@
 #include "goblin.hpp"
 
-Goblin::Goblin(int px, int py, Textbox * text){
+Goblin::Goblin(int px, int py, WINDOW * text){
   _textbox = text;
   _px = px;
   _py = py;
