@@ -40,7 +40,7 @@ bool Actor::attack(Actor & target){
   return target.damage(_attack);
 }
 
-std::vector<Item>* Actor::get_inventory(){
+std::vector<Item*>* Actor::get_inventory(){
   return & _inventory;
 }
 void Actor::interact(Structure * target){

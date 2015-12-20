@@ -3,6 +3,7 @@
 Player::Player(int x, int y, Textbox * text){
   _px = x;
   _py = y;
+  _hp = 10;
   _attack = 1;
   _depth = 1;
   _solid = true;

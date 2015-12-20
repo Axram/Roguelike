@@ -14,7 +14,7 @@ public:
 
 	bool open();
 	bool move();
-	bool interact(std::vector<Item>* inventory);
+	bool interact(std::vector<Item*>* inventory);
 	void destroy();
 
 };

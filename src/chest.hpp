@@ -11,10 +11,11 @@
 class Chest:public Structure{
 public:
 	Chest(int x, int y);
-	bool interact(std::vector<Item>* inventory);
+	~Chest();
+	bool interact(std::vector<Item*>* inventory);
 protected:
 	bool move(); 
 	void destroy();
 
-	std::vector<Item> _inventory;
+	std::vector<Item*> _inventory;
 };

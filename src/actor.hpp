@@ -18,8 +18,8 @@ public:
   virtual bool may_act();
   //virtual void die(); //TODO temp death
 protected:
-  std::vector<Item>* get_inventory();
-  std::vector<Item> _inventory;
+  std::vector<Item*>* get_inventory();
+  std::vector<Item*> _inventory;
   int _hp = 1;
   int _attack = 0;
   int _defense = 0;

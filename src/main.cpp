@@ -74,10 +74,11 @@ int main(){
         else{
 
         themap.find_path((**i), *themap.get_player());
-          
+
         }
         //2. If not, chase the player
       }
+      
     }
     //Enemies trun to move??
 
@@ -87,6 +88,7 @@ int main(){
     m.add_gameobjects(themap.get_map());
     m.print();
     textbox->print();
+    break;
   }
   delete textbox;
 }
