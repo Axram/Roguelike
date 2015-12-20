@@ -1,18 +1,28 @@
 #pragma once
 #include <string>
-
+#include "textbox.hpp"
+//class Map;
 class Gameobject{
+  //friend class Map;
 public:
   //Constructors
   Gameobject();
-  Gameobject(int px, int py);
-  Gameobject(int px, int py, int depth, char img, bool solid, bool movable, std::string name, std::string desc);
   virtual ~Gameobject();
   bool operator<(const Gameobject & b);
+  char get_img()const;
+  int get_depth()const;
+  bool get_solid()const;
+  std::string get_name()const;
+  std::string get_desc()const;
+  bool get_to_be_removed()const;
+  bool is_near_me(Gameobject & other);
+  void remove(); //Now it's only possible to set _to_be removed to true. You can't undo. Hopefully we'll never want to.
   //Member variables
-
-  int _px = 0;
+  int _px = 0; //These are public as we both want to get and set these without caring.
   int _py = 0;
+
+protected:
+  Textbox * _textbox = nullptr;
   int _depth = 1;
   bool _solid = true; //Can the object be collided with?
   bool _movable = true; //Can the object be moved?

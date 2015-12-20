@@ -1,16 +1,15 @@
 #include "map.hpp"
 #include "assert.h"
 
-Map::Map(std::string filename){
+Map::Map(std::string filename, Textbox *& text){
 
-	//std::vector<Gameobject*> go;
-  //_gameobjects["actors"]// = new std::vector<Gameobject*>;
-	generate_map(filename);
+  _textbox = text;
+  generate_map(filename);
 }
 
 Map::~Map(){
   for(auto i = _go.begin(); i != _go.end(); ++i){
-    (**i)._to_be_removed = true;
+    (**i).remove();
   }
   cleanup();
 }
@@ -23,32 +22,31 @@ void Map::generate_map(std::string filename){
   int y = 0;
   while(getline(mapfile, line)){
     int x = 0;
-    //std::cout << line << std::endl;
+
     while(line.length() > 0){
       std::string s;
       s += line[0];
-      //std::cout << "x " << x << " y " << y << " " << s <<std::endl;
-      //std::cout << line.length() << std::endl;
+
           
       line.erase(line.begin());
       //TODO destruktor i map
       if(s == "#"){
         Wall * w =  new Wall(x,y);
         _go.push_back(w);
-        //_walls.push_back(w);
+
 
       }else if (s == "p"){
-        Player * p = new Player(x, y);
+        Player * p = new Player(x, y, _textbox);
         Floor * f = new Floor(x, y);
-        //_gameobjects["player"].push_back(p);
+
         _go.push_back(p);
         _go.push_back(f);
         _player = p;
         
       }else if (s == "g"){
-        Goblin * g = new Goblin(x, y);
+        Goblin * g = new Goblin(x, y, _textbox);
         Floor * f = new Floor(x, y);
-        //_gameobjects["actors"].push_back(g);
+
         _go.push_back(g);
         _go.push_back(f);
         _enemies.push_back(g);
@@ -76,11 +74,10 @@ void Map::generate_map(std::string filename){
     
   mapfile.close();
 }
-Player & Map::get_player(){
-  //if(_gameobjects["player"].size() == 0)  throw std::out_of_range("No player found.");
-	//return (dynamic_cast<Player>(*_gameobjects["player"][0]));
+Player * Map::get_player(){
+
 	if(_player == nullptr) throw std::out_of_range("No player found.");
-  return *_player;
+  return _player;
 }
 
 std::vector<Gameobject*> & Map::get_map(){
@@ -108,7 +105,9 @@ Enemy * Map::get_enemy(int x, int y){
   }
   return nullptr;
 }
-
+std::vector<Enemy*> & Map::get_enemies(){
+  return _enemies;
+}
 bool Map::structure_exists(int x, int y){
   for(auto i = _st.begin(); i != _st.end(); ++i){
     if((**i)._px == x && (**i)._py == y){
@@ -131,23 +130,21 @@ Structure * Map::get_structure(int x, int y){
 void Map::cleanup(){
   std::vector<Gameobject*> gameobjects;
   for(auto g = _go.begin(); g != _go.end(); ++g){
-    if((**g)._to_be_removed){
+    if((**g).get_to_be_removed()){
       gameobjects.push_back(*g);
-      //std::remove(_go.begin(), _go.end(), to_be_removed);//gameobjects.push_back(*g);
-      
       //TODO remove the gameobjct Items in the inventory;
     }
   }
   std::vector<Enemy *> enmis;
   for(auto e = _enemies.begin(); e != _enemies.end(); ++e){
-    if((**e)._to_be_removed){
+    if((**e).get_to_be_removed()){
       enmis.push_back(*e);
     }
   }
 
   std::vector<Structure*> srts;
   for(auto s = _st.begin(); s != _st.end(); ++s){
-    if((**s)._to_be_removed){
+    if((**s).get_to_be_removed()){
       srts.push_back(*s);
     }
   }
@@ -177,10 +174,25 @@ bool Map::is_free(int x, int y){
   }
   bool is_free = true;
   for(auto i = g.begin(); i != g.end(); ++i){
-    if(i->_solid){
+    if(i->get_solid()){
       is_free = false;
       break;
     }
   }
   return is_free;
+}
+
+//Finds a good path from hunter to target and moves hunter one space
+void Map::find_path(Actor & hunter, Gameobject & target){
+  int diffx = target._px-hunter._px;
+  int diffy = target._py-hunter._py;
+  int distance = int (std::sqrt(diffx*diffx + diffy*diffy));
+  int diffx_normalized = diffx/distance;
+  int diffy_normalized = diffy/distance;
+  if(std::abs(diffx_normalized) > std::abs(diffy_normalized) && is_free(hunter._px + diffx_normalized, hunter._py)){
+    hunter.move(diffx_normalized, 0);
+  }
+  else if(is_free(hunter._px, hunter._py + diffy_normalized)){
+    hunter.move(0, diffy_normalized);
+  }
 }

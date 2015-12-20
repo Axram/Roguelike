@@ -32,45 +32,24 @@ void Camera::centralize(const Gameobject & g){
 	_pos_x = px-_size_x/2;
 	_pos_y = py-_size_y/2;
 }
-void Camera::add_gameobjects(std::vector<Gameobject> & g){ //Segfault central
-  calculate_boundaries();
-  for(auto i = g.begin(); i != g.end(); ++i){
-    if(i->_px < _min_x || i-> _px >= _max_x) continue; // If it's not relevant skip it
-    if(i->_py < _min_y || i-> _py >= _max_y) continue;
-    int x = i->_px - _pos_x; // calculate the correct position on the grid
-    int y = i->_py - _pos_y;
-    _grid[y][x] = i->_img;
-    //If px and py on Camera. Add onto grid at correct position
-    
-  }
-  
-}
 bool comp(const Gameobject* a, const Gameobject* b){
-  return a->_depth < b->_depth;
+  return (a->get_depth()) < (b->get_depth());
 }
 void Camera::add_gameobjects(std::vector<Gameobject*> & g){ //Segfault central
   
   calculate_boundaries();
 
   std::sort(g.begin(), g.end(), comp);
-  //  std::cout << "borders: " << std::endl;
-  // std::cout << "_min_x: " << _min_x << std::endl;
-  //std::cout << "_max_x: " << _max_x << std::endl;
-  //std::cout << "_min_y: " << _min_y << std::endl;
-  //std::cout << "_max_y: " << _max_y << std::endl;
+
   for(auto i = g.begin(); i != g.end(); ++i){
     Gameobject* j = *i;
-    //std::cout << typeid(j).name() << '\n';
-    //Gameobject j = *i;
-    //std::cout << "I tried. " << " x " << j->_px << " y " << j->_py << std::endl;
+
     if(j->_px < _min_x || j-> _px >= _max_x) continue; // If it's not relevant skip it
     if(j->_py < _min_y || j-> _py >= _max_y) continue;
-    //std::cout << "I made it through. " << " x " << j->_px << " y " << j->_py << std::endl;
     int x = j->_px - _pos_x; // calculate the correct position on the grid
     int y = j->_py - _pos_y;
 
-    _grid[y][x] = j->_img;
-    //std::cout <<"helo" << std::endl;
+    _grid[y][x] = j->get_img();
     //  //If px and py on Camera. Add onto grid at correct position
     
   }

@@ -17,9 +17,10 @@ bool Chest::interact(std::vector<Item>* inventory){
 	if(_inventory.size() == 0){
 		return false;
 	}
-
+	//_textbox->add_row("This " + _name + " contained: ");
 	for(auto i = _inventory.rbegin(); i != _inventory.rend(); ++i){
 		inventory->push_back(*i);
+		//_textbox->add_row((*i)._name);
 		_inventory.pop_back(); //dosn return item :(
 		return true;
 	}

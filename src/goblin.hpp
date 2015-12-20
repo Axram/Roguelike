@@ -3,7 +3,7 @@
 
 class Goblin:public Enemy{
 public:
-  Goblin(int px, int py);
+  Goblin(int px, int py, Textbox * text);
 
 
 private:

@@ -5,7 +5,15 @@
 #include "wall.hpp"
 #include <string>
 
-Wall::Wall(int px, int py):Gameobject(px, py, 1, '#', true, false, "Wall", "Wall-y"){
+Wall::Wall(int px, int py){
+	_px = px;
+	_py = py;
+	_depth = 1;
+	_img = '#';
+	_solid = true;
+	_movable = false;
+	_name = "Wall";
+	_desc = "Wall-y";
 
 }
 #endif

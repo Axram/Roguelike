@@ -6,6 +6,7 @@
 
 class Player:public Actor{
 public:
-	Player(int x, int y);
+	Player(int x, int y, Textbox * text);
+	virtual void  move(int x, int y) override;
 };
 //#endif

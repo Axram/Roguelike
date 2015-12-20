@@ -1,9 +1,11 @@
 #include "floor.hpp"
 
-Floor::Floor(int x, int y):Gameobject(x, y, 0, '.', false, false, "Floor", "Muddy"){
+Floor::Floor(int x, int y){
 	_px = x;
 	_py = y;
 	_img = '.';
 	_depth = 0;
 	_solid = false;
+	_name = "Floor";
+	_desc = "Muddy";
 }

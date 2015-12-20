@@ -10,10 +10,9 @@ void Textbox::set_cursor(int px, int py){
   ++py;
   std::cout << "\33["<<py<<";"<<px<<"H";
 }
+
 void Textbox::add_row(std::string new_row){
   _rows.push_back(new_row);
-  std::cout << _size_y << std::endl;
-  std::cout << _rows.size() << std::endl;
   if(_rows.size() > _size_y){
     _rows.erase(_rows.begin());
   }

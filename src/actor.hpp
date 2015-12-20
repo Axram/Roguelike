@@ -4,25 +4,26 @@
 
 #include "gameobject.hpp"
 #include "item.hpp"
-
-//#include "map.hpp"
-//class Map;
+#include "structure.hpp"
+//#include "map.hpp" //May create circular dependency
 
 class Actor:public Gameobject{
 public:
-  friend class Map;
   Actor();
-  Actor(int px, int py, int depth ,char icon, int hp, int attack, int defense, std::string name, std::string desc);
   virtual bool damage(int amount); 
   virtual void heal(int amount); //TODO temp
   virtual void move(int dx, int dy); //TODO temp 
   virtual bool attack(Actor & target); 
+  virtual void interact(Structure * target);
+  virtual bool may_act();
   //virtual void die(); //TODO temp death
-  std::vector<Item> inventory;
-  std::vector<Item>* get_inventory();
 protected:
-  int _hp;
-  int _attack;
-  int _defense;
+  std::vector<Item>* get_inventory();
+  std::vector<Item> _inventory;
+  int _hp = 1;
+  int _attack = 0;
+  int _defense = 0;
+  int _speed = 0; //a lower number is faster, it's basically "turns until next action"
+  int _speed_counter = 0; //How many turns have it been idle?
 };
 
