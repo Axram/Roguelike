@@ -7,12 +7,12 @@ Door::Door(){
 	_desc = "Closed door";
 }
 
-Door::Door(int x, int y){
+Door::Door(int x, int y, Textbox * text){
 	_img = 'D';
 	_movable = false;
 	_name = "Door";
 	_desc = "Closed door";
-
+	_textbox = text;
 	_px = x;
 	_py = y;
 }
@@ -29,10 +29,14 @@ void Door::destroy(){
 bool Door::interact(std::vector<Item*>* inventory){
 	for(auto i = inventory->begin(); i != inventory->end(); ++i){
 		if((**i)._name == "Doorkey"){
+			_textbox->add_row("The " + _name + " opens!");
+			_textbox->add_row("The " + (**i)._name + " is used up.");
+			delete(*i);
+			inventory->erase(i);
 			return open();
-			//TODO remove key from inventory (here or in clean up)
 		}	
 	}
+	_textbox->add_row("The " + _name + " requires a key.");
 	return false;
 }
 

@@ -51,13 +51,13 @@ void Map::generate_map(std::string filename){
         _go.push_back(f);
         _enemies.push_back(g);
       }else if (s == "D"){
-        Door * d = new Door(x,y);
+        Door * d = new Door(x,y, _textbox);
         Floor * f = new Floor(x, y);
         _go.push_back(d);
         _go.push_back(f);
         _st.push_back(d);
       }else if (s == "c"){
-        Chest * d = new Chest(x,y);
+        Chest * d = new Chest(x,y, _textbox);
         Floor * f = new Floor(x, y);
         _go.push_back(d);
         _go.push_back(f);
@@ -128,36 +128,43 @@ Structure * Map::get_structure(int x, int y){
 }
 
 void Map::cleanup(){
-  std::vector<Gameobject*> gameobjects;
+  //As we do have multiple pointers to the same objects this needs extra care
+  //Firstly all pointers that are to be removed are copied
+  std::vector<Gameobject*> gameobjects_to_remove;
   for(auto g = _go.begin(); g != _go.end(); ++g){
     if((**g).get_to_be_removed()){
-      gameobjects.push_back(*g);
-      //TODO remove the gameobjct Items in the inventory;
+
+      gameobjects_to_remove.push_back(*g);
     }
   }
-  std::vector<Enemy *> enmis;
+  std::vector<Enemy *> enemies_to_remove;
   for(auto e = _enemies.begin(); e != _enemies.end(); ++e){
     if((**e).get_to_be_removed()){
-      enmis.push_back(*e);
+      enemies_to_remove.push_back(*e);
+
     }
   }
 
-  std::vector<Structure*> srts;
+  std::vector<Structure*> structures_to_remove;
   for(auto s = _st.begin(); s != _st.end(); ++s){
     if((**s).get_to_be_removed()){
-      srts.push_back(*s);
+      structures_to_remove.push_back(*s);
+
     }
   }
+  //Secondly they are removed
 
-  for(auto s = srts.begin(); s != srts.end(); ++s){
+  for(auto s = structures_to_remove.begin(); s != structures_to_remove.end(); ++s){
     _st.erase(std::remove(_st.begin(), _st.end(), (*s)), _st.end());
   }
 
-  for(auto e = enmis.begin(); e != enmis.end(); ++e){
+  for(auto e = enemies_to_remove.begin(); e != enemies_to_remove.end(); ++e){
     
     _enemies.erase(std::remove(_enemies.begin(), _enemies.end(), (*e)), _enemies.end());
   }
-  for(auto g = gameobjects.begin(); g != gameobjects.end(); ++g){
+
+  //Thirdly the objects are deleted and the final pointer is removed.
+  for(auto g = gameobjects_to_remove.begin(); g != gameobjects_to_remove.end(); ++g){
     delete(*g);
     _go.erase(std::remove(_go.begin(), _go.end(), (*g)), _go.end());
   }
@@ -183,16 +190,20 @@ bool Map::is_free(int x, int y){
 }
 
 //Finds a good path from hunter to target and moves hunter one space
+//This will only try to move directly towards the player and will get stuck in walls
 void Map::find_path(Actor & hunter, Gameobject & target){
   int diffx = target._px-hunter._px;
   int diffy = target._py-hunter._py;
+
   int distance = int (std::sqrt(diffx*diffx + diffy*diffy));
-  int diffx_normalized = diffx/distance;
-  int diffy_normalized = diffy/distance;
-  if(std::abs(diffx_normalized) > std::abs(diffy_normalized) && is_free(hunter._px + diffx_normalized, hunter._py)){
-    hunter.move(diffx_normalized, 0);
-  }
-  else if(is_free(hunter._px, hunter._py + diffy_normalized)){
-    hunter.move(0, diffy_normalized);
+if(distance < 6){ //Arbitary number to avoid everyone chasing the player all the time
+    int diffx_normalized = diffx/distance;
+    int diffy_normalized = diffy/distance;
+    if(std::abs(diffx_normalized) > std::abs(diffy_normalized) && is_free(hunter._px + diffx_normalized, hunter._py)){
+      hunter.move(diffx_normalized, 0);
+    }
+    else if(is_free(hunter._px, hunter._py + diffy_normalized)){
+      hunter.move(0, diffy_normalized);
+    }
   }
 }

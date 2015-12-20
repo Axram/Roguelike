@@ -10,7 +10,7 @@
 class Door:public Structure{
 public:
 	Door();
-	Door(int x, int y);
+	Door(int x, int y, Textbox * text);
 
 	bool open();
 	bool move();

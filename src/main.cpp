@@ -48,21 +48,11 @@ int main(){
     //Checks is wanted position is non-solid
     if(themap.is_free(newx, newy)){
       themap.get_player()->move(dx, dy);//->_px = newx;
-      //themap.get_player()->_py = newy;
-      //textbox.add_row("You move");
     }else if(themap.enemy_exists(newx, newy)){ //If an enemy exists on that position
       Enemy * newenemy = themap.get_enemy(newx, newy);
-      //textbox.add_row("You attack something");
-      bool killed = themap.get_player()->attack(*newenemy); //Tell player to attack it, attack defined in actor
-      if(killed){
-        //textbox.add_row("You killed something");
-       
-      }
+      themap.get_player()->attack(*newenemy); //Tell player to attack it, attack defined in actor
     }else if(themap.structure_exists(newx, newy)){
-      //Structure * newst = themap.get_structure(newx, newy);
-      //textbox.add_row("You interact with the structure");
       themap.get_player()->interact(themap.get_structure(newx, newy));
-      //bool didit = newst->interact((themap.get_player())->get_inventory());
     }
     std::vector<Enemy *> enemies = themap.get_enemies();
     for(auto i = enemies.begin(); i != enemies.end(); ++i){
@@ -71,16 +61,14 @@ int main(){
         if((**i).is_near_me(*themap.get_player())){
           (**i).attack(*themap.get_player());
         }
+        //2. If not, chase the player
         else{
-
         themap.find_path((**i), *themap.get_player());
 
         }
-        //2. If not, chase the player
       }
       
     }
-    //Enemies trun to move??
 
     //Update camera and print
     themap.cleanup();
@@ -88,7 +76,7 @@ int main(){
     m.add_gameobjects(themap.get_map());
     m.print();
     textbox->print();
-    break;
+
   }
   delete textbox;
 }

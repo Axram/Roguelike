@@ -10,7 +10,7 @@
 
 class Chest:public Structure{
 public:
-	Chest(int x, int y);
+	Chest(int x, int y, Textbox * text);
 	~Chest();
 	bool interact(std::vector<Item*>* inventory);
 protected:

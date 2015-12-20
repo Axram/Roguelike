@@ -35,9 +35,10 @@ void Actor::heal(int amount){
 
 }
 
-bool Actor::attack(Actor & target){
+void Actor::attack(Actor & target){
   _textbox->add_row(_name + " attacks " + target.get_name() + "."); 
-  return target.damage(_attack);
+  target.damage(_attack);
+  //return target.damage(_attack);
 }
 
 std::vector<Item*>* Actor::get_inventory(){

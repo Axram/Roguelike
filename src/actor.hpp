@@ -13,7 +13,7 @@ public:
   virtual bool damage(int amount); 
   virtual void heal(int amount); //TODO temp
   virtual void move(int dx, int dy); //TODO temp 
-  virtual bool attack(Actor & target); 
+  virtual void attack(Actor & target); 
   virtual void interact(Structure * target);
   virtual bool may_act();
   //virtual void die(); //TODO temp death
@@ -23,6 +23,8 @@ protected:
   int _hp = 1;
   int _attack = 0;
   int _defense = 0;
+  int _experience = 0; //TODO define level up
+  int _experience_worth = 0; //How much is this actor worth in experience?
   int _speed = 0; //a lower number is faster, it's basically "turns until next action"
   int _speed_counter = 0; //How many turns have it been idle?
 };
