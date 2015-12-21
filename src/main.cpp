@@ -31,17 +31,23 @@ void destroy_win(WINDOW* local_win){
 	delwin(local_win);
 }
 
-void ui_print(Map whole_map, WINDOW* gamebox){
+bool ui_comp(const Gameobject* a, const Gameobject* b){
+  return (a->get_depth()) < (b->get_depth());
+}
+
+void ui_print(Map* whole_map, WINDOW* gamebox){
 	//TODO WHOLE MAP MUST BE CONST!!!
-	Player * p = whole_map.get_player();
+	werase(gamebox);
+	Player * p = whole_map->get_player();
 	//mvwprintw(gamebox,1,1,"Whats is going on");
 	//std::cout << "Did i do anything?" << std::endl;
 	//TODO make py, py private and call get pos routinte instead
 	int off_x = 30-p->_px; //(10,30) (y,x) is currently the middle
 	int off_y = 10-p->_py;
 
+	std::sort(whole_map->get_gameobj()->begin(), whole_map->get_gameobj()->end(), ui_comp);
 	//Fixa depth
-	for(auto i = whole_map.get_gameobj()->begin(); i != whole_map.get_gameobj()->end(); ++i){
+	for(auto i = whole_map->get_gameobj()->begin(); i != whole_map->get_gameobj()->end(); ++i){
 		int print_x = (*i)->_px + off_x;
 		int print_y = (*i)->_py + off_y;
 		//std::string icon = (*i)->get_img();
@@ -53,6 +59,7 @@ void ui_print(Map whole_map, WINDOW* gamebox){
 		
 		char icon = (*i)->get_img();
 	}
+	box(gamebox, 0, 0);
 	wrefresh(gamebox);
 	//std::cout << "... apparently :)" << std::endl;
 }
@@ -109,16 +116,8 @@ int main(){
 	//return 0;
 	scrollok(scroll_win, TRUE);
 	Map themap("maps/map2.txt", scroll_win);
-	ui_print(themap, game_win);
+	ui_print(&themap, game_win);
 	//std::cout << "Made it here" << std::endl;
-	std::string ranomstring = "Also made it here";
-    scroll(scroll_win);
-    mvwprintw(scroll_win, 1,0,"%s", ranomstring.c_str());
-    wrefresh(scroll_win);
-    //std::cout << "Made it here" << std::endl;
-    //get input
-    //std::string s;
-    //getline(std::cin,s);
   
     //Move
     while((ch=getch()) != KEY_F(2)){
@@ -152,49 +151,24 @@ int main(){
     if(s == "right" || s == "\33[C" || s == "d") dx = 1;
     if(s == "left" || s == "\33[D" || s == "a") dx = -1;
 */
-      	std::string ranomstring = "First ok";
-    	scroll(scroll_win);
-    	mvwprintw(scroll_win, 1,0,"%s", ranomstring.c_str());
-    	wrefresh(scroll_win);
+
 
     int newx = themap.get_player()->_px + dx;
-        std::string ranomstringa = "Plz ok";
-    	scroll(scroll_win);
-    	mvwprintw(scroll_win, 1,0,"%s", ranomstringa.c_str());
-    	wrefresh(scroll_win);
     int newy = themap.get_player()->_py + dy;
-        std::string ranomstringb = "But why ok";
-    	scroll(scroll_win);
-    	mvwprintw(scroll_win, 1,0,"%s", ranomstringb.c_str());
-    	wrefresh(scroll_win);
+
     //Segfault here...
-    bool men =themap.is_free(newx, newy);
-    	std::string rand_str = "Free";
-    	scroll(scroll_win);
-    	mvwprintw(scroll_win, 1,0,"%s", rand_str.c_str());
-    	wrefresh(scroll_win);
+    //bool men =themap.is_free(newx, newy);
     
     //Checks is wanted position is non-solid
     if(themap.is_free(newx, newy)){
-        scroll(scroll_win);
-    	mvwprintw(scroll_win, 1,0,"Free");
-    	wrefresh(scroll_win);
-
       themap.get_player()->move(dx, dy);//->_px = newx;
     }else if(themap.enemy_exists(newx, newy)){ //If an enemy exists on that position
-    	scroll(scroll_win);
-    	mvwprintw(scroll_win, 1,0,"Enemy");
-    	wrefresh(scroll_win);
-
       Enemy * newenemy = themap.get_enemy(newx, newy);
       themap.get_player()->attack(*newenemy); //Tell player to attack it, attack defined in actor
     }else if(themap.structure_exists(newx, newy)){
-    	scroll(scroll_win);
-    	mvwprintw(scroll_win, 1,0,"Structure");
-    	wrefresh(scroll_win);
       themap.get_player()->interact(themap.get_structure(newx, newy));
     }
-    /*
+    
     std::vector<Enemy *> enemies = themap.get_enemies();
     for(auto i = enemies.begin(); i != enemies.end(); ++i){
       if((**i).may_act()){
@@ -210,15 +184,11 @@ int main(){
       }
       
     }
-    */
 
     //Update camera and print
     //themap.cleanup();
-        std::string ranomstringc = "After if ok";
-    	scroll(scroll_win);
-    	mvwprintw(scroll_win, 1,0,"%s", ranomstringc.c_str());
-    	wrefresh(scroll_win);
-    ui_print(themap, game_win);
+
+    ui_print(&themap, game_win);
     /*
     m.centralize(*themap.get_player());
     m.add_gameobjects(themap.get_map());

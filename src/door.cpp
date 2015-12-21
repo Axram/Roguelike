@@ -33,10 +33,10 @@ bool Door::interact(std::vector<Item*>* inventory){
 			//_textbox->add_row("The " + (**i)._name + " is used up.");
 			
 			scroll(_textbox);
-			mvwprintw(_textbox,0,1, "I am DOOR");
+			mvwprintw(_textbox,1,1, "I am DOOR, i open");
 			wrefresh(_textbox);
 			scroll(_textbox);
-			mvwprintw(_textbox,0,1, "Out of key");
+			mvwprintw(_textbox,1,1, "Out of key");
 			wrefresh(_textbox);
 			
 			delete(*i);
@@ -45,6 +45,12 @@ bool Door::interact(std::vector<Item*>* inventory){
 		}	
 	}
 	//_textbox->add_row("The " + _name + " requires a key.");
+	
+	std::string out_str = "The " + _name + " requires a key.";
+	scroll(_textbox);
+	mvwprintw(_textbox,1,1, "%s", out_str.c_str());
+	wrefresh(_textbox);
+	
 	return false;
 }
 
