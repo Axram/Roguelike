@@ -6,8 +6,9 @@
 #include "item.hpp"
 #include "structure.hpp"
 //#include "map.hpp" //May create circular dependency
-
+class Map;
 class Actor:public Gameobject{
+friend class Map;
 public:
   Actor();
   virtual bool damage(int amount); 

@@ -15,6 +15,7 @@ public:
 	Chest(int x, int y, WINDOW * text);
 	~Chest();
 	bool interact(std::vector<Item*>* inventory);
+	std::vector<Item*> * get_inventory();
 protected:
 	bool move(); 
 	void destroy();

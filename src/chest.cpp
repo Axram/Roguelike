@@ -7,15 +7,19 @@ Chest::Chest(int x, int y, WINDOW * text){
 	_name = "Chest";
 	_desc = "This might contain some mighty loot";
 	_img = 'C';
-
-	Doorkey * mykey = new Doorkey;
-	_inventory.push_back(mykey);
+	//Doorkey * mykey = new Doorkey;
+	//_inventory.push_back(mykey);
 }
 Chest::~Chest(){
 	for(auto i = _inventory.begin(); i != _inventory.end(); ++i){
 		delete *i;
 	}
 }
+
+std::vector<Item*>* Chest::get_inventory(){
+	return &_inventory;
+}
+
 bool Chest::interact(std::vector<Item*>* inventory){
 	//Creates a new item and puts it in the actors inventory
 	if(_inventory.size() == 0){

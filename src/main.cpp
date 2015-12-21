@@ -39,9 +39,6 @@ void ui_print(Map* whole_map, WINDOW* gamebox){
 	//TODO WHOLE MAP MUST BE CONST!!!
 	werase(gamebox);
 	Player * p = whole_map->get_player();
-	//mvwprintw(gamebox,1,1,"Whats is going on");
-	//std::cout << "Did i do anything?" << std::endl;
-	//TODO make py, py private and call get pos routinte instead
 	int off_x = 30-p->_px; //(10,30) (y,x) is currently the middle
 	int off_y = 10-p->_py;
 
@@ -50,9 +47,6 @@ void ui_print(Map* whole_map, WINDOW* gamebox){
 	for(auto i = whole_map->get_gameobj()->begin(); i != whole_map->get_gameobj()->end(); ++i){
 		int print_x = (*i)->_px + off_x;
 		int print_y = (*i)->_py + off_y;
-		//std::string icon = (*i)->get_img();
-		//std::cout << "i" << std::endl;
-		//mvwprintw(gamebox, print_y, print_x, "%s", icon.c_str());
 		if(print_x>-1 || print_y>-1){
 			mvwprintw(gamebox, print_y, print_x, "%c", (*i)->get_img());
 		}
@@ -67,15 +61,7 @@ void ui_print(Map* whole_map, WINDOW* gamebox){
 int main(){
   //Load necessities
 
-  //Camera m(50, 30, 5, 5); //Create camera
-  //Textbox * textbox = new Textbox(0, 40, 50, 9); //px, py, sizex, sizey
-  //Map themap("maps/map2.txt", textbox); //Load map
-  //Prepare first print
-  //m.centralize(*themap.get_player()); 
-  //m.add_gameobjects(themap.get_map());
-  //m.print();
 
-  //while(1){
     //Setting up 4 windows, should be more..
     WINDOW* game_win;
 	WINDOW* inv_win;
@@ -112,12 +98,9 @@ int main(){
 	text_win = create_newwin(theight, twidth, tstarty, tstartx);
 	WINDOW* scroll_win = newwin(2,78,21,1);
 	getch();
-	//endwin();
-	//return 0;
 	scrollok(scroll_win, TRUE);
 	Map themap("maps/map2.txt", scroll_win);
 	ui_print(&themap, game_win);
-	//std::cout << "Made it here" << std::endl;
   
     //Move
     while((ch=getch()) != KEY_F(2)){
@@ -140,25 +123,13 @@ int main(){
     			dy = 1;
     			break;
     	}
-/*
-    //TODO, check if word is use
-    if(s.find("use") != std::string::npos){
-      //textbox.add_row("Attempts to use");
-    }
-    
-    if(s == "up" || s =="\33[A" || s == "w") dy = -1;
-    if(s == "down" || s == "\33[B" || s == "s") dy = 1;
-    if(s == "right" || s == "\33[C" || s == "d") dx = 1;
-    if(s == "left" || s == "\33[D" || s == "a") dx = -1;
-*/
+
 
 
     int newx = themap.get_player()->_px + dx;
     int newy = themap.get_player()->_py + dy;
 
-    //Segfault here...
-    //bool men =themap.is_free(newx, newy);
-    
+    //Players turn
     //Checks is wanted position is non-solid
     if(themap.is_free(newx, newy)){
       themap.get_player()->move(dx, dy);//->_px = newx;
@@ -168,7 +139,11 @@ int main(){
     }else if(themap.structure_exists(newx, newy)){
       themap.get_player()->interact(themap.get_structure(newx, newy));
     }
-    
+    themap.cleanup();
+    if(themap.get_player()->has_won()){
+      break;
+    }
+    //Enemies turn
     std::vector<Enemy *> enemies = themap.get_enemies();
     for(auto i = enemies.begin(); i != enemies.end(); ++i){
       if((**i).may_act()){
@@ -182,22 +157,18 @@ int main(){
 
         }
       }
-      
+      themap.cleanup();
     }
 
     //Update camera and print
-    themap.cleanup();
 
     ui_print(&themap, game_win);
-    /*
-    m.centralize(*themap.get_player());
-    m.add_gameobjects(themap.get_map());
-    m.print();
-    textbox->print();
-    */
   	}
-  //} is friend with while(1)
-  //delete textbox;
+  if(themap.get_player()->has_won()){
+    //You won
+  }else{
+    //You lost
+  }
   endwin();
 }
 	

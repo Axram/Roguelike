@@ -7,6 +7,7 @@
 #include <stdexcept>
 #include <algorithm>
 #include <cmath>
+#include <ncurses.h>
 
 #include "gameobject.hpp"
 #include "wall.hpp"
@@ -18,8 +19,7 @@
 #include "door.hpp"
 #include "chest.hpp"
 #include "textbox.hpp"
-
-#include <ncurses.h>
+#include "doorkey.hpp"
 
 //#ifndef MAP_HPP
 //#define MAP_HPP
@@ -48,6 +48,7 @@ public:
   }
   
 private:
+  void load_inventory(std::vector<Item*> * inventory, std::string filename, int & item_nr);
   Player * _player = nullptr;
   //TODO alla vectorer skall vara private
   std::vector<Gameobject*> _go;

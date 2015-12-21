@@ -1,0 +1,18 @@
+# '#' is comments and full row is ignored
+# '$ marks start of new gameobject
+# This is only to load up a gameobject with items
+# Just write the item key
+# Remember to match the item with the corresponding gameobject on the map.
+# Only gameobject with inventories counts
+
+#player - no items
+$ 
+
+#goblin - no items
+$
+
+#chest - a doorkey
+$
+doorkey
+doorkey
+doorkey

@@ -18,7 +18,7 @@ void Map::generate_map(std::string filename){
   std::ifstream mapfile;
   mapfile.open(filename);
   std::string line;
-	
+	int item_nr = 0;
   int y = 0;
   while(getline(mapfile, line)){
     int x = 0;
@@ -38,7 +38,7 @@ void Map::generate_map(std::string filename){
       }else if (s == "p"){
         Player * p = new Player(x, y, _textbox);
         Floor * f = new Floor(x, y);
-
+        load_inventory(p->get_inventory(), "maps/map2_info.txt" ,item_nr);
         _go.push_back(p);
         _go.push_back(f);
         _player = p;
@@ -46,6 +46,7 @@ void Map::generate_map(std::string filename){
       }else if (s == "g"){
         Goblin * g = new Goblin(x, y, _textbox);
         Floor * f = new Floor(x, y);
+        load_inventory(g->get_inventory(), "maps/map2_info.txt" ,item_nr);
 
         _go.push_back(g);
         _go.push_back(f);
@@ -59,6 +60,7 @@ void Map::generate_map(std::string filename){
       }else if (s == "c"){
         Chest * d = new Chest(x,y, _textbox);
         Floor * f = new Floor(x, y);
+        load_inventory(d->get_inventory(), "maps/map2_info.txt" ,item_nr);
         _go.push_back(d);
         _go.push_back(f);
         _st.push_back(d);
@@ -192,7 +194,28 @@ bool Map::is_free(int x, int y){
   }
   return is_free;
 }
-
+void Map::load_inventory(std::vector<Item*>* inventory, std::string filename, int & item_nr){
+  std::ifstream mapfile;
+  mapfile.open(filename);
+  std::string line;
+  int nr = -1;
+  int y = 0;
+  while(getline(mapfile, line)){
+    if(line[0] == '#') continue;
+    if(line[0] == '$') {
+      nr++;
+    }else if(nr == item_nr){
+      if(line == "doorkey") {
+        Doorkey * item = new Doorkey();
+        inventory->push_back(item);
+      }
+    }
+    if(nr > item_nr){
+      break;
+    }
+  }
+  item_nr++;
+}
 //Finds a good path from hunter to target and moves hunter one space
 //This will only try to move directly towards the player and will get stuck in walls
 void Map::find_path(Actor & hunter, Gameobject & target){
