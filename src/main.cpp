@@ -186,7 +186,7 @@ int main(){
     }
 
     //Update camera and print
-    //themap.cleanup();
+    themap.cleanup();
 
     ui_print(&themap, game_win);
     /*
