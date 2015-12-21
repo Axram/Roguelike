@@ -15,12 +15,17 @@
 
 std::string main_menu(void){
   //Make a main menu where yoy choose new game or load game from file, maybe?
+  
 }
 
 WINDOW* create_newwin(int height, int width, int starty, int startx){
 	WINDOW* local_win;
 	local_win = newwin(height, width, starty, startx);
+
+  //attron(COLOR_PAIR(1));
 	box(local_win, 0, 0);
+  //attroff(COLOR_PAIR(1));
+
 	wrefresh(local_win);
 	return local_win;
 }
@@ -57,13 +62,31 @@ void ui_print(Map* whole_map, WINDOW* gamebox){
 	wrefresh(gamebox);
 	//std::cout << "... apparently :)" << std::endl;
 }
+void inv_print(Player * p, WINDOW* inventbox){
+  werase(inventbox);
+  
+  mvwprintw(inventbox, 1,1 ,"    Inventory");
 
+  //TODO remove hårdkoding
+  for(int i = 2; i<20; ++i){
+    mvwprintw(inventbox,i,1,"~");
+  }
+
+  int j = 2;
+  for(auto i = p->get_inventory()->begin(); i != p->get_inventory()->end(); ++i){
+    std::string name = (**i)._name;
+    mvwprintw(inventbox,j,2,"%s",name.c_str());
+    ++j;
+  }
+
+  box(inventbox, 0, 0);
+  wrefresh(inventbox);
+}
 int main(){
   //Load necessities
 
-
-    //Setting up 4 windows, should be more..
-    WINDOW* game_win;
+  //Setting up 3+1 windows, should be more..
+  WINDOW* game_win;
 	WINDOW* inv_win;
 	WINDOW* text_win;
 
@@ -77,7 +100,10 @@ int main(){
 	noecho();
 	keypad(stdscr, TRUE);
 	curs_set(0);
-
+  //Init color mode, but is not working
+  start_color();
+  init_pair(1, COLOR_RED, COLOR_BLACK);
+  
 	gheight = 20;
 	gwidth = 60;
 	gstarty = 0;//(LINES - height)/2;
@@ -92,7 +118,8 @@ int main(){
 	twidth = 80;
 	tstarty = 20;
 	tstartx = 0;
-	refresh(); // APperently very important
+	refresh(); // Apparently very important
+
 	game_win = create_newwin(gheight, gwidth, gstarty, gstartx);
 	inv_win = create_newwin(iheight, iwidth, istarty, istartx);
 	text_win = create_newwin(theight, twidth, tstarty, tstartx);
@@ -122,6 +149,11 @@ int main(){
     		case KEY_DOWN:
     			dy = 1;
     			break;
+
+        case '\t':
+          mvwprintw(inv_win,3,1,"Got tab");
+          wrefresh(inv_win);
+          break;
     	}
 
 
@@ -143,6 +175,8 @@ int main(){
     if(themap.get_player()->has_won()){
       break;
     }
+    ui_print(&themap, game_win);
+    inv_print(themap.get_player(), inv_win);
     //Enemies turn
     std::vector<Enemy *> enemies = themap.get_enemies();
     for(auto i = enemies.begin(); i != enemies.end(); ++i){
@@ -164,11 +198,16 @@ int main(){
 
     ui_print(&themap, game_win);
   	}
+
   if(themap.get_player()->has_won()){
     //You won
   }else{
     //You lost
   }
+  delwin(game_win);
+  delwin(inv_win);
+  delwin(text_win);
+  delwin(scroll_win);
   endwin();
 }
 	
