@@ -62,6 +62,10 @@ void ui_print(Map* whole_map, WINDOW* gamebox){
 	wrefresh(gamebox);
 	//std::cout << "... apparently :)" << std::endl;
 }
+
+//Prints the players inventory in the right window
+//TODO only sholw the first x items, not scrollable/controlable
+//idealy we could swhitch to inv wing makr a ex. potion and press enter to use
 void inv_print(Player * p, WINDOW* inventbox){
   werase(inventbox);
   
@@ -100,7 +104,7 @@ int main(){
 	noecho();
 	keypad(stdscr, TRUE);
 	curs_set(0);
-  //Init color mode, but is not working
+  //Init color mode, but its not working
   start_color();
   init_pair(1, COLOR_RED, COLOR_BLACK);
   
@@ -151,6 +155,7 @@ int main(){
     			break;
 
         case '\t':
+          //Use tab to control ther windown in the ui maybe, welp
           mvwprintw(inv_win,3,1,"Got tab");
           wrefresh(inv_win);
           break;

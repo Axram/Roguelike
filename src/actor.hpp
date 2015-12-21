@@ -18,8 +18,10 @@ public:
   virtual void interact(Structure * target);
   virtual bool may_act();
   //virtual void die(); //TODO temp death
-protected:
+ 
+  //TODO alex move dhis from private but that is wrong, needed here for invetory print window 
   std::vector<Item*>* get_inventory();
+protected:
   std::vector<Item*> _inventory;
   int _hp = 1;
   int _attack = 0;
