@@ -22,7 +22,7 @@ bool Chest::interact(std::vector<Item*>* inventory){
 		//_textbox->add_row("The " + _name + " is empty.");
 		std::string prn_str = "The " + _name + " is empty.";
 		scroll(_textbox);
-    	mvwprintw(_textbox, LINES,1, "%s", prn_str.c_str());
+    	mvwprintw(_textbox, 1,1, "%s", prn_str.c_str());
     	wrefresh(_textbox);
 
 		return false;
