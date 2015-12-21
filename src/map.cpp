@@ -174,12 +174,15 @@ void Map::cleanup(){
 
 //Called by actors to see if the grid they want to move to is occupied.
 bool Map::is_free(int x, int y){
+  std::cout << "In is free" << std::endl;
   std::vector<Gameobject> g;
   for(auto i = _go.begin(); i != _go.end(); ++i){
     if((**i)._px == x && (**i)._py == y){
-      g.push_back( **i);
+      //g.push_back( **i);
     }
   }
+
+  std::cout << "Is still in is free" << std::endl;
   bool is_free = true;
   for(auto i = g.begin(); i != g.end(); ++i){
     if(i->get_solid()){

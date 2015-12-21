@@ -167,12 +167,14 @@ int main(){
     	scroll(scroll_win);
     	mvwprintw(scroll_win, 1,0,"%s", ranomstringb.c_str());
     	wrefresh(scroll_win);
-    //Checks is wanted position is non-solid
+    //Segfault here...
     bool men =themap.is_free(newx, newy);
+    	std::string rand_str = "Free";
     	scroll(scroll_win);
-    	mvwprintw(scroll_win, 1,0,"Free");
+    	mvwprintw(scroll_win, 1,0,"%s", rand_str.c_str());
     	wrefresh(scroll_win);
     
+    //Checks is wanted position is non-solid
     if(themap.is_free(newx, newy)){
         scroll(scroll_win);
     	mvwprintw(scroll_win, 1,0,"Free");
