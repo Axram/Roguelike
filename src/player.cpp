@@ -6,7 +6,7 @@ Player::Player(int x, int y, WINDOW * text){
   _py = y;
   _hp = 10;
   _attack = 1;
-  _depth = 1;
+  _depth = 2;
   _solid = true;
   _movable = false;
   _name = "Mario";
