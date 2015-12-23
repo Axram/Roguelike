@@ -4,7 +4,7 @@ Ui::Ui(){
 	int gstartx,gstarty,gheight,gwidth;
 	int istartx,istarty,iheight,iwidth;
 	int tstartx,tstarty,theight,twidth;
-	int ch;
+	//int ch;
 
 	//Ncurses parameters
 	initscr();
@@ -36,7 +36,7 @@ Ui::Ui(){
 	_game_win = create_newwin(gheight, gwidth, gstarty, gstartx);
 	_inv_win = create_newwin(iheight, iwidth, istarty, istartx);
 	_text_win = create_newwin(theight, twidth, tstarty, tstartx);
-	WINDOW* _scroll_win = newwin(2,78,21,1);
+	_scroll_win = newwin(2,78,21,1);
 	scrollok(_scroll_win, TRUE);
 }
 
@@ -45,7 +45,7 @@ Ui::~Ui(){
 	delwin(_inv_win);
 	delwin(_text_win);
 	delwin(_scroll_win);
-	endwin();
+	endwin(); //Clese the game
 }
 
 WINDOW* Ui::create_newwin(int height, int width, int starty, int startx){

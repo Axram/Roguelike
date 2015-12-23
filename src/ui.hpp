@@ -19,7 +19,7 @@ class Ui{
 	WINDOW* _inv_win;
 	WINDOW* _text_win;
 	WINDOW* _scroll_win;
-  private:
+  //private:
   	WINDOW* create_newwin(int height, int width, int starty, int startx);
   	void destroy_win(WINDOW* local_win);
 	void ui_print(Map* whole_map);
