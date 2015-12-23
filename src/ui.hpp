@@ -22,8 +22,8 @@ class Ui{
   private:
   	WINDOW* create_newwin(int height, int width, int starty, int startx);
   	void destroy_win(WINDOW* local_win);
-	void ui_print(Map* whole_map, WINDOW* gamebox);
-	void inv_print(Player * p, WINDOW* inventbox);
+	void ui_print(Map* whole_map);
+	void inv_print(Player * p);
 
 };
 

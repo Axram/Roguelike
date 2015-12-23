@@ -69,8 +69,9 @@ void ui_print(Map* whole_map, WINDOW* gamebox){
 void inv_print(Player * p, WINDOW* inventbox){
   werase(inventbox);
   
+  //attron(bold); bold is wrong.. :(
   mvwprintw(inventbox, 1,1 ,"    Inventory");
-
+  //attroff(bold);
   //TODO remove hårdkoding
   for(int i = 2; i<20; ++i){
     mvwprintw(inventbox,i,1,"~");
@@ -128,8 +129,8 @@ int main(){
 	inv_win = create_newwin(iheight, iwidth, istarty, istartx);
 	text_win = create_newwin(theight, twidth, tstarty, tstartx);
 	WINDOW* scroll_win = newwin(2,78,21,1);
+  scrollok(scroll_win, TRUE);
 	getch();
-	scrollok(scroll_win, TRUE);
 	Map themap("maps/map2.txt", scroll_win);
 	ui_print(&themap, game_win);
   

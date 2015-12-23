@@ -174,6 +174,7 @@ void Map::cleanup(){
 
 }
 
+//TODO make is_free safe if coordinate with no gameobject is called (return false)
 //Called by actors to see if the grid they want to move to is occupied.
 bool Map::is_free(int x, int y){
   //std::cout << "In is free" << std::endl;
