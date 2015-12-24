@@ -19,9 +19,69 @@ std::string main_menu(void){
   //Make a main menu where yoy choose new game or load game from file, maybe?
   
 */
+Ui * ui = new Ui(); //TODO make not GLOBAL...
+void text_control(); //Forward declare for now
+void inv_control(Player * p){
+//After tab is pressed you end up here.
+//Supposed to display desctiptions of carried items
+	int ch;
+	while((ch=getch()) != KEY_F(2)){
+		switch(ch){
+    		case '\t':
+    			text_control();
+    			return;
+    			break;
+    	}
+	}
+
+}
+void text_control(){
+//After tab+tab is pressed you end yp here.
+//Was supposed to scroll among olt log entries
+	int ch;
+	while((ch=getch()) != KEY_F(2)){
+		switch(ch){
+    		case KEY_UP:
+    			scroll(ui->_scroll_win);
+    			wrefresh(ui->_scroll_win);
+    			break;
+
+    		case KEY_DOWN:
+    			wscrl(ui->_scroll_win, -1);
+    			wrefresh(ui->_scroll_win);
+    			break;
+
+	        case '\t':
+	        	//Goto menu win
+	        	return;
+	        	break;
+
+	        case KEY_BTAB:
+	        	//Goto inv window
+	        	return;
+	        	break;
+    	}
+	}
+
+}
+void menu_control(){
+	int ch;
+	while((ch=getch()) != KEY_F(2)){
+		switch(ch){
+			case KEY_ENTER:
+				//Well?
+				//quit = true;
+				break;
+    		case '\t':
+    			text_control();
+    			return;
+    			break;
+    	}
+	}
+}
 int main(){
   //Load necessities
-  Ui * ui = new Ui();//kanske lägga allt på heapen ist
+  //Ui * ui = new Ui();//kanske lägga allt på heapen ist
   //Ui ui;
   int ch;
 	getch(); // Press enter to start the game
@@ -29,9 +89,9 @@ int main(){
 	Map themap("maps/map2.txt", ui->_scroll_win);
 	//ui_print(&themap, game_win);
   ui->ui_print(&themap);
-  
+  bool quit = false;
     //Move
-    while((ch=getch()) != KEY_F(2)){
+    while((ch=getch()) != KEY_F(2) && !quit){
     	int dx = 0;
     	int dy = 0;
     	switch(ch){
@@ -51,11 +111,18 @@ int main(){
     			dy = 1;
     			break;
 
-        case '\t':
-          //Use tab to control ther windown in the ui maybe, welp
-          mvwprintw(ui->_inv_win,3,1,"Got tab");
-          wrefresh(ui->_inv_win);
-          break;
+	        case '\t':
+	          //Use tab to control ther windown in the ui maybe, welp
+	          inv_control(themap.get_player());
+	          /*
+	          mvwprintw(ui->_inv_win,3,1,"Got tab");
+	          wrefresh(ui->_inv_win);
+	          */
+	          break;
+
+	        case KEY_BTAB:
+	        	//Goto menu window
+	        	break;
     	}
 
 
