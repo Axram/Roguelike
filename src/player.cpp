@@ -9,7 +9,7 @@ Player::Player(int x, int y, WINDOW * text){
   _depth = 2;
   _solid = true;
   _movable = false;
-  _name = "Mario";
+  _name = "Player";
   _desc = "It's a me";
   _img = '@';
   _textbox = text;

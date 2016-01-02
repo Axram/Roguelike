@@ -25,7 +25,14 @@ void Door::destroy(){
 	_to_be_removed = true;
 
 }
-
+std::string Door::get_data(){
+		std::string return_data;
+	return_data += _name+'\n';
+	return_data += std::to_string(_px)+'\n';
+	return_data += std::to_string(_py)+'\n';
+	return_data += std::to_string(_solid) +'\n';
+	return return_data;
+}
 bool Door::interact(std::vector<Item*>* inventory){
 	for(auto i = inventory->begin(); i != inventory->end(); ++i){
 		if((**i)._name == "Doorkey"){

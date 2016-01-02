@@ -77,6 +77,7 @@ int main(){
     if(themap.get_player()->has_won()){
       break;
     }
+    
     ui->ui_print(&themap);//, ui._game_win);
     ui->inv_print(themap.get_player());//, ui._inv_win);
     //Enemies turn

@@ -16,6 +16,7 @@ public:
 	~Chest();
 	bool interact(std::vector<Item*>* inventory);
 	std::vector<Item*> * get_inventory();
+	virtual std::string get_data()override;
 protected:
 	bool move(); 
 	void destroy();

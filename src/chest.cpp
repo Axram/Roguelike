@@ -19,7 +19,17 @@ Chest::~Chest(){
 std::vector<Item*>* Chest::get_inventory(){
 	return &_inventory;
 }
-
+std::string Chest::get_data(){
+	std::string return_data;
+	return_data += _name+'\n';
+	return_data += std::to_string(_px)+'\n';
+	return_data += std::to_string(_py)+'\n';
+	for(auto i = _inventory.begin(); i != _inventory.end(); ++i){
+    	return_data += (**i)._name + '\n';
+    }
+    return_data += "$\n";
+    return return_data;
+}
 bool Chest::interact(std::vector<Item*>* inventory){
 	//Creates a new item and puts it in the actors inventory
 	if(_inventory.size() == 0){

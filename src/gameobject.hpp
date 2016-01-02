@@ -5,9 +5,9 @@
 
 #include "textbox.hpp"
 
-//class Map;
+class Map;
 class Gameobject{
-  //friend class Map;
+  friend class Map;
 public:
   //Constructors
   Gameobject();
@@ -22,6 +22,7 @@ public:
   bool is_near_me(Gameobject & other);
   void remove(); //Now it's only possible to set _to_be removed to true. You can't undo. Hopefully we'll never want to.
   //Member variables
+  virtual std::string get_data();
   int _px = 0; //These are public as we both want to get and set these without caring.
   int _py = 0;
 
