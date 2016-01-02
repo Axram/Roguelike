@@ -33,7 +33,6 @@ bool Actor::damage(int amount){
   wrefresh(_textbox);
 
   if(_hp <= 0){ 
-   // _textbox->add_row(_name + " dies!");
     std::string out_str = _name + " dies!";
     scroll(_textbox);
     mvwprintw(_textbox,1,1, "%s", out_str.c_str());

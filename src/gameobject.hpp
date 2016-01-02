@@ -36,7 +36,5 @@ protected:
   std::string _desc = "Caped baldy";
   char _img = '@';
 private:
-
-
 };
 

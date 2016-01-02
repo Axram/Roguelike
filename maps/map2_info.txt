@@ -14,9 +14,24 @@ $
 #chest - a doorkey
 $
 doorkey
-doorkey
-doorkey
 
-#chest - winning item
+#chest - a doorkey
+$
+doorkey
+doorkey
+#Goblin
+$
+#goblin
+$
+#goblin
+$
+#chest
+$
+#chest 
+$
+doorkey
+#goblin
+$
+#chest
 $
 WINITEM
