@@ -20,7 +20,7 @@
 #include "chest.hpp"
 #include "textbox.hpp"
 #include "doorkey.hpp"
-
+#include "winitem.hpp"
 //#ifndef MAP_HPP
 //#define MAP_HPP
 //class Player;

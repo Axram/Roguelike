@@ -289,6 +289,9 @@ void Map::load_inventory(std::vector<Item*>* inventory, std::string filename, in
       if(line == "doorkey") {
         Doorkey * item = new Doorkey();
         inventory->push_back(item);
+      }else if(line == "WINITEM"){
+        Winitem * item = new Winitem();
+        inventory->push_back(item);
       }
     }
     if(nr > item_nr){
