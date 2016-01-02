@@ -35,8 +35,6 @@ void Map::generate_map(std::string filename){
       if(s == "#"){
         Wall * w =  new Wall(x,y);
         _go.push_back(w);
-
-
       }else if (s == "p"){
         Player * p = new Player(x, y, _textbox);
         Floor * f = new Floor(x, y);
@@ -44,12 +42,10 @@ void Map::generate_map(std::string filename){
         _go.push_back(p);
         _go.push_back(f);
         _player = p;
-        
       }else if (s == "g"){
         Goblin * g = new Goblin(x, y, _textbox);
         Floor * f = new Floor(x, y);
         load_inventory(g->get_inventory(), "maps/map2_info.txt" ,item_nr);
-
         _go.push_back(g);
         _go.push_back(f);
         _enemies.push_back(g);
@@ -118,6 +114,7 @@ void Map::load_data(){
       Door * item = new Door(px, py, _textbox);
       getline(file, line);
       item->_solid = atoi(line.c_str());
+      item->_img = 'd';
       _go.push_back(item);
       _st.push_back(item);      
     }else if(key == "Floor"){

@@ -7,12 +7,12 @@
 #include "goblin.hpp"
 #include "textbox.hpp"
 #include "ui.hpp"
-#include <ncurses.h>
 
+#include <ncurses.h>
 #include <vector>
 #include <string>
 #include <iostream>
-
+#include <cassert>
 /*
 std::string main_menu(void){
   //Make a main menu where yoy choose new game or load game from file, maybe?
@@ -72,7 +72,8 @@ int main(){
     }else if(themap.structure_exists(newx, newy)){
       themap.get_player()->interact(themap.get_structure(newx, newy));
     }
-    themap.cleanup();
+   
+   themap.cleanup();
 
     //Check for player victory.
     std::vector<Item*> * inv = themap.get_player()->get_inventory();
@@ -83,7 +84,6 @@ int main(){
       }
     }
     if(victory_achieved) break;
-
 
     ui->ui_print(&themap);//, ui._game_win);
     ui->inv_print(themap.get_player());//, ui._inv_win);
@@ -98,13 +98,13 @@ int main(){
         }
         //2. If not, chase the player
         else{
-        themap.find_path((**i), *themap.get_player());
-
+          themap.find_path((**i), *themap.get_player());
         }
       }
+      if(themap.get_player()->get_to_be_removed())break;//Player loss
       themap.cleanup();
     }
-
+    if(themap.get_player()->get_to_be_removed())break;
     //Update camera and print
 
     ui->ui_print(&themap);//, game_win);
@@ -115,7 +115,7 @@ int main(){
   }else{
     //Bad ending
   }
-  
+
   delete ui;
 }
 	
