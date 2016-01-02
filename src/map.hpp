@@ -8,6 +8,7 @@
 #include <algorithm>
 #include <cmath>
 #include <ncurses.h>
+#include <map>
 
 #include "gameobject.hpp"
 #include "wall.hpp"
@@ -36,10 +37,9 @@ public:
   Enemy * get_enemy(int x, int y);
   std::vector<Enemy*> & get_enemies();
   void cleanup(); //Removes dead enemies
-  void save_data();
-  void load_data();
+  void save_data(std::string);
+  //void runtime_load(std::string);
   void add_item(std::vector<Item*>*, std::string);
-  void generate_map(std::string filename);
   bool is_free(int x, int y);
   bool enemy_exists(int x, int y);
   bool structure_exists(int x, int y);
@@ -51,6 +51,14 @@ public:
   }
   
 private:
+  void generate_map(std::string filename);
+  void load_data(std::string);
+  void add_wall(int, int, int&, std::string);
+  void add_player(int, int, int&, std::string);
+  void add_chest(int, int, int&, std::string);
+  void add_goblin(int, int, int&, std::string);
+  void add_door(int, int, int&, std::string);
+  void add_floor(int, int, int&, std::string);
   void load_inventory(std::vector<Item*> * inventory, std::string filename, int & item_nr);
   Player * _player = nullptr;
   //TODO alla vectorer skall vara private
@@ -60,6 +68,7 @@ private:
 
   std::vector<Structure*> _st; //NOT CLEANED UP
   WINDOW * _textbox;
+  std::map<std::string, void (Map::*) (int, int, int&, std::string)> _funkpoint;
 };
 
 //#endif

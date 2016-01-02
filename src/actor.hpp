@@ -11,6 +11,7 @@ class Actor:public Gameobject{
 friend class Map;
 public:
   Actor();
+  ~Actor();
   virtual bool damage(int amount); 
   virtual void heal(int amount); //TODO temp
   virtual void move(int dx, int dy); //TODO temp 

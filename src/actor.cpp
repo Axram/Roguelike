@@ -1,6 +1,11 @@
 
 #include "actor.hpp"
 Actor::Actor(){};
+Actor::~Actor(){
+  for(auto i = _inventory.begin(); i != _inventory.end(); ++i){
+    delete *i;
+  }
+}
 
 void Actor::move(int dx, int dy){ //Player uses its own move with added prints
 
