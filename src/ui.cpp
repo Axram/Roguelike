@@ -72,7 +72,14 @@ void Ui::ui_print(Map* whole_map){
 	int off_x = 30-p->_px; //(10,30) (y,x) is currently the middle
 	int off_y = 10-p->_py;
 
-	std::sort(whole_map->get_gameobj()->begin(), whole_map->get_gameobj()->end(), nui_comp);
+	//std::sort(whole_map->get_gameobj()->begin(), whole_map->get_gameobj()->end(), nui_comp);
+	/*
+		LAMBDA, used as parameter 3 in sort
+	*/
+	std::sort(whole_map->get_gameobj()->begin(), whole_map->get_gameobj()->end(),
+		[](const Gameobject* a, const Gameobject* b){return (a->get_depth()) < (b->get_depth());}
+	);
+
 	//Fixa depth
 	for(auto i = whole_map->get_gameobj()->begin(); i != whole_map->get_gameobj()->end(); ++i){
 		int print_x = (*i)->_px + off_x;
