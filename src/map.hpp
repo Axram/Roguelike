@@ -20,7 +20,7 @@
 #include "chest.hpp"
 #include "textbox.hpp"
 #include "doorkey.hpp"
-
+#include "winitem.hpp"
 //#ifndef MAP_HPP
 //#define MAP_HPP
 //class Player;
@@ -36,6 +36,9 @@ public:
   Enemy * get_enemy(int x, int y);
   std::vector<Enemy*> & get_enemies();
   void cleanup(); //Removes dead enemies
+  void save_data();
+  void load_data();
+  void add_item(std::vector<Item*>*, std::string);
   void generate_map(std::string filename);
   bool is_free(int x, int y);
   bool enemy_exists(int x, int y);

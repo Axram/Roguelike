@@ -7,7 +7,6 @@
 #include "goblin.hpp"
 #include "textbox.hpp"
 #include "ui.hpp"
-
 #include <ncurses.h>
 
 #include <vector>
@@ -105,7 +104,7 @@ int main(){
   Map themap(load_filename, ui->_scroll_win);
 	//ui_print(&themap, game_win);
   ui->ui_print(&themap);
-  
+  bool victory_achieved = false;
     //Move
     while((ch=getch()) != KEY_F(2)){
     	int dx = 0;
@@ -150,11 +149,21 @@ int main(){
       themap.get_player()->interact(themap.get_structure(newx, newy));
     }
     themap.cleanup();
-    if(themap.get_player()->has_won()){
-      break;
+
+    //Check for player victory.
+    std::vector<Item*> * inv = themap.get_player()->get_inventory();
+    for(auto i = inv->begin(); i != inv->end(); ++i){
+      if((**i)._name == "WINITEM"){
+        victory_achieved = true;
+        break;
+      }
     }
+    if(victory_achieved) break;
+
+
     ui->ui_print(&themap);//, ui._game_win);
     ui->inv_print(themap.get_player());//, ui._inv_win);
+
     //Enemies turn
     std::vector<Enemy *> enemies = themap.get_enemies();
     for(auto i = enemies.begin(); i != enemies.end(); ++i){
@@ -177,12 +186,12 @@ int main(){
     ui->ui_print(&themap);//, game_win);
   	}
 
-  if(themap.get_player()->has_won()){
-    //You won
+  if(victory_achieved){
+    //Good ending
   }else{
-    //You lost
+    //Bad ending
   }
-
+  
   delete ui;
 }
 	

@@ -40,3 +40,16 @@ bool Gameobject::is_near_me(Gameobject & other){
 void Gameobject::remove(){
   _to_be_removed =true;
 }
+std::string Gameobject::get_data(){
+	std::string return_data;
+	return_data += _name+'\n';
+	return_data += std::to_string(_px)+'\n';
+	return_data += std::to_string(_py)+'\n';
+	return return_data;
+	//return_data += _depth+'\n';
+	//return_data += _solid+'\n';
+	//return_data += _movable+'\n';
+	//return_data += _img+'\n';
+	//return_data += _desc+'\n';
+
+}

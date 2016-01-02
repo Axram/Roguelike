@@ -5,6 +5,8 @@ Map::Map(std::string filename, WINDOW*& text){
 
   _textbox = text;
   generate_map(filename);
+  //save_data();
+  //load_data();
 }
 
 Map::~Map(){
@@ -77,6 +79,84 @@ void Map::generate_map(std::string filename){
   mapfile.close();
 }
 
+void Map::save_data(){
+  std::ofstream file;
+  file.open("maps/map_savedata.txt");
+  for(auto i = _go.begin(); i != _go.end(); ++i){
+    //file << '$';
+    std::string data = (**i).get_data();
+    file << data;
+  }
+  file.close();
+}
+void Map::load_data(){
+  std::ifstream file;
+  file.open("maps/map_savedata.txt");
+  std::string line;
+  while(getline(file, line)){
+    if(line[0] == '#') continue;
+    std::string key = line;
+    getline(file, line); //px
+    int px = atoi(line.c_str());
+    getline(file, line); //py
+    int py = atoi(line.c_str());
+    Actor * actor = nullptr;
+    if(key == "Wall"){
+      Wall * item = new Wall(px, py);
+      _go.push_back(item);
+    }else if(key == "Player"){
+      Player * item = new Player(px, py, _textbox);
+      actor = item;
+      _go.push_back(item);
+      _player = item;
+    }else if(key == "Goblin"){
+      Goblin * item = new Goblin(px, py, _textbox);
+      actor = item;
+      _go.push_back(item);
+      _enemies.push_back(item);
+    }else if(key == "Door"){
+      Door * item = new Door(px, py, _textbox);
+      getline(file, line);
+      item->_solid = atoi(line.c_str());
+      _go.push_back(item);
+      _st.push_back(item);      
+    }else if(key == "Floor"){
+      Floor * item = new Floor(px, py);
+      _go.push_back(item);
+    }else if(key == "Chest"){
+      Chest * item = new Chest(px, py, _textbox);
+      getline(file, line);
+      while(line != "$"){
+        add_item(item->get_inventory(), line);
+        getline(file, line);
+      }
+      _go.push_back(item);
+      _st.push_back(item);
+    }
+
+    if(actor != nullptr){ //All actors
+      getline(file, line);
+      int hp = atoi(line.c_str());
+      actor->_hp = hp;
+      getline(file, line);
+      int xp = atoi(line.c_str());
+      actor->_experience = xp;
+      getline(file, line);
+      while(line != "$"){
+        add_item(actor->get_inventory(), line);
+              getline(file, line);
+
+      }
+    }
+  }
+  file.close();
+}
+void Map::add_item(std::vector<Item*>* inventory, std::string name){
+  if(name == "Doorkey"){
+    Doorkey * dk = new Doorkey();
+    inventory->push_back(dk);
+  }
+}
 Player * Map::get_player(){
 
 	if(_player == nullptr) throw std::out_of_range("No player found.");
@@ -208,6 +288,9 @@ void Map::load_inventory(std::vector<Item*>* inventory, std::string filename, in
     }else if(nr == item_nr){
       if(line == "doorkey") {
         Doorkey * item = new Doorkey();
+        inventory->push_back(item);
+      }else if(line == "WINITEM"){
+        Winitem * item = new Winitem();
         inventory->push_back(item);
       }
     }

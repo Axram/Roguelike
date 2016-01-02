@@ -62,6 +62,19 @@ void Actor::attack(Actor & target){
 std::vector<Item*>* Actor::get_inventory(){
   return & _inventory;
 }
+std::string Actor::get_data(){
+  std::string return_data;
+  return_data += _name+'\n';
+  return_data += std::to_string(_px)+'\n';
+  return_data += std::to_string(_py)+'\n';
+  return_data += std::to_string(_hp)+'\n';
+  return_data += std::to_string(_experience)+'\n';
+  for(auto i = _inventory.begin(); i != _inventory.end(); ++i){
+    return_data += (**i)._name + '\n';
+  }
+  return_data += "$\n";
+  return return_data;
+}
 void Actor::interact(Structure * target){
   //_textbox->add_row(_name + " interacts with " + target->get_name() + ".");
   std::string out_str = _name + " interacts with " + target->get_name() + ".";
