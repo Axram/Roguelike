@@ -16,8 +16,8 @@ Player::Player(int x, int y, WINDOW * text){
 }
 
 void Player::move(int dx, int dy){
-	_px += dx;
-    _py += dy;
+	 _px += dx;
+  _py += dy;
     //_textbox->add_row(_name + " moves to " + std::to_string(_px)+ ";"+ std::to_string(_py) + ".");
     std::string prn_str = _name + " moves to " + std::to_string(_px)+ ";"+ std::to_string(_py) + ".";
     //prn_str = "Move";

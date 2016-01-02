@@ -8,6 +8,7 @@ class Enemy:public Npc{
 //Ska ärvas så vi gör mer specifika klasser som "Goblin" eller "Spooky Skeleton"
 public:
   Enemy();
+  Enemy(int, int, WINDOW * text);
   //Ska ha en unik pathfinding så att den jagar spelaren?
   virtual void patrol(); //temp
   virtual void wait(); //temp

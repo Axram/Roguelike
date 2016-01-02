@@ -11,6 +11,8 @@ _funkpoint["g"] =  &Map::add_goblin;
 _funkpoint["D"] =  &Map::add_door;
 _funkpoint["c"] =  &Map::add_chest;
 _funkpoint[" "] = &Map::add_floor;
+//load_data_new("maps/testmap.txt"); Om du vill testa kör denna rad istället för de under.
+
   if(FILE *file = fopen(premade.c_str(),"r")){
     fclose(file);
     generate_map(filename);
@@ -18,7 +20,6 @@ _funkpoint[" "] = &Map::add_floor;
     fclose(file);
     load_data(save);
   }
-
   //std::map<std::string, void (Map::*) (int, int)> _funkpoint;
   //save_data();
   //load_data();
@@ -30,6 +31,8 @@ Map::~Map(){
   }
   cleanup();
 }
+
+
 
 void Map::generate_map(std::string filename){
   std::ifstream mapfile;
@@ -115,6 +118,114 @@ void Map::save_data(std::string your_name){
   }
   file.close();
 }
+
+void Map::load_data_new(std::string filename){
+  std::ifstream file;
+  std::ofstream debugfile;
+  debugfile.open("shit.txt");
+  debugfile << "testing" << std::endl;
+  file.open(filename);
+  std::string line;
+  std::string type;
+  while(getline(file, line)){
+    type = line;
+    getline(file, line);
+    int px = atoi(line.c_str());
+    getline(file, line); //py
+    int py = atoi(line.c_str());
+    getline(file, line);
+    int depth = atoi(line.c_str());
+    getline(file, line);
+    std::string name = line;
+    getline(file, line);
+    std::string desc = line;
+    getline(file, line);
+    std::string img = line;
+    getline(file, line);
+    bool solid;
+    if(line == "True"){solid = true;}else{solid = false;}
+    getline(file, line);
+    bool movable;
+    if(line == "True"){movable = true;}else{movable = false;}
+
+    Gameobject * gameobject;
+
+    if(type == "Player" || type == "Enemy"){
+      debugfile << "Actor!" << std::endl;
+      getline(file, line);
+      int hp = atoi(line.c_str());
+      getline(file, line);
+      int attack = atoi(line.c_str());
+      getline(file, line);
+      int defense = atoi(line.c_str());
+      getline(file, line);
+      int experience = atoi(line.c_str());
+      getline(file, line);
+      int exp_worth = atoi(line.c_str());
+      getline(file, line);
+      int speed = atoi(line.c_str());
+      Actor * actor;
+      if(type == "Player"){
+        Player * player = new Player(px, py, _textbox);
+        debugfile << "- and PLayer!" << std::endl;
+        gameobject = player;
+        actor = player;
+        _player = player;
+      }else{
+        Enemy * enemy = new Enemy(px, py, _textbox);
+        _enemies.push_back(enemy);
+        gameobject = enemy;
+        actor = enemy;
+      }
+      actor->_hp = hp;
+      actor->_attack = attack;
+      actor->_defense = defense;
+      actor->_experience = experience;
+      actor->_experience_worth = exp_worth;
+      actor->_speed = speed;
+      debugfile << hp << " hp" << std::endl;
+      getline(file, line);
+      while(line != "$"){
+        add_item(actor->get_inventory(), line);
+        debugfile << "with item: " << line << std::endl;
+        getline(file, line);
+      }
+    }else if(type == "Gameobject"){
+      gameobject = new Gameobject();
+      debugfile << "Gameobject!" << std::endl;
+    }else if(type == "Chest"){
+      debugfile << "Chest!" << std::endl;
+      Chest * chest = new Chest(px, py, _textbox);
+      gameobject = chest;
+      _st.push_back(chest);
+      getline(file, line);
+      while(line != "$"){
+        add_item(chest->get_inventory(), line);
+        debugfile << "with item: " << line << std::endl;
+        getline(file, line);
+      }
+    }else if(type == "Door"){
+      Door * door = new Door(px, py, _textbox);
+      _st.push_back(door);
+      gameobject = door;
+    }
+    gameobject->_px = px;
+    gameobject->_py = py;
+    gameobject->_depth = depth;
+    gameobject->_name = name;
+    gameobject->_desc = desc;
+    gameobject->_img = img[0];
+    gameobject->_solid = solid;
+    gameobject->_movable = movable;
+    debugfile << "name " << name<< std::endl;
+    debugfile << "px "<<px << std::endl;
+    debugfile << "py" << py<< std::endl;
+    _go.push_back(gameobject);
+  }
+  debugfile.close();
+  file.close();
+}
+
 void Map::load_data(std::string filename){
   std::ifstream file;
   file.open(filename);
@@ -180,7 +291,7 @@ void Map::load_data(std::string filename){
   file.close();
 }
 void Map::add_item(std::vector<Item*>* inventory, std::string name){
-  if(name == "Doorkey"){
+  if(name == "Doorkey" || name == "doorkey"){
     Doorkey * dk = new Doorkey();
     inventory->push_back(dk);
   }

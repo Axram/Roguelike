@@ -53,6 +53,7 @@ public:
 private:
   void generate_map(std::string filename);
   void load_data(std::string);
+  void load_data_new(std::string);
   void add_wall(int, int, int&, std::string);
   void add_player(int, int, int&, std::string);
   void add_chest(int, int, int&, std::string);
