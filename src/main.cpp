@@ -13,20 +13,96 @@
 #include <vector>
 #include <string>
 #include <iostream>
+#include <cassert>
 
-/*
+void introduction(){
+  erase();
+  printw("\"Who dares enter my temple\"");
+  printw("\n(Move with arrow keys, exit with F2, save with F5, load with F9)");
+  printw("\nPress ANY key to continue");
+  int ch;
+  ch = getch();
+}
+
 std::string main_menu(void){
-  //Make a main menu where yoy choose new game or load game from file, maybe?
+  //Make a main menu where you choose new game or load game from file, maybe?
+  initscr();
+  cbreak();       //Read one char at the time
+  noecho();       //Pressed button in not shown
+  keypad(stdscr, TRUE); //Enables the keyboard
+  curs_set(0);
   
-*/
+  printw("THE MIGHTY CRUSADE \n");
+  printw("NEW GAME \n");
+  printw("LOAD GAME \n");
+  int choose_state = 0;
+  int ch;
+  while((ch=getch()) != KEY_F(2)){
+      switch(ch){
+        case KEY_DOWN:
+          choose_state = 1;
+          break;
+        
+        case KEY_UP:
+          choose_state = 0;
+          break;
+
+        case 10:
+            //assert(false);
+          if(choose_state == 0){
+
+            introduction();
+            endwin();
+            return "maps/map2.txt";
+
+          }else if(choose_state = 1){
+            curs_set(1);
+            echo();
+            raw(); 
+            refresh();
+            std::string str = "maps/";
+            std::string ext = ".txt";
+            char in[100];
+            int gotfile = 0; 
+            while(!gotfile){
+              printw("\nEnter name of save\n");
+              getstr(in);
+              
+              std::string fname = in;
+              std::string filename = str+fname+ext;
+
+              //Check if valid filename
+              if(FILE *file = fopen(filename.c_str(),"r")){
+                fclose(file);
+                gotfile = 1;
+                erase();
+                refresh();
+                endwin();
+                return filename;
+              }
+              printw("FILE DOES NOT EXIST, TRY AGAIN\n");
+            }
+          }
+          break;
+      }
+    
+  }
+  endwin();
+  return "maps/map2.txt";
+}
+
 int main(){
+  std::string load_filename = main_menu();
+  //std::cout << strhd << strhd.length() <<std::endl;
+  //assert(false);
   //Load necessities
-  Ui * ui = new Ui();//kanske lägga allt på heapen ist
+  Ui * ui = new Ui();
   //Ui ui;
   int ch;
-	getch(); // Press enter to start the game
+	//getch(); // Press enter to start the game
 
-	Map themap("maps/map2.txt", ui->_scroll_win);
+	//Map themap("maps/map2.txt", ui->_scroll_win);
+  Map themap(load_filename, ui->_scroll_win);
 	//ui_print(&themap, game_win);
   ui->ui_print(&themap);
   
