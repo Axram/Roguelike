@@ -76,7 +76,7 @@ std::string main_menu(void){
 
             introduction();
             endwin();
-            return "map2";
+            return "testmap";
 
           }else if(choose_state = 1){
             curs_set(1);
@@ -163,7 +163,8 @@ int main(){
           wrefresh(ui->_scroll_win);
           wgetstr(ui->_scroll_win,in);
           std::string yourname = in;
-          themap->save_data(yourname);
+          //themap->save_data(yourname);
+          themap->save_data_new(yourname);
           cbreak();
           curs_set(0);
           noecho();
@@ -208,6 +209,15 @@ int main(){
 
     //Players turn
     //Checks is wanted position is non-solid
+    if(themap->enemy_exists(newx, newy)){
+      Enemy * newenemy = themap->get_enemy(newx, newy);
+      themap->get_player()->attack(*newenemy); //Tell player to attack it, attack defined in actor
+    }else if(themap->structure_exists(newx, newy)){
+      themap->get_player()->interact(themap->get_structure(newx, newy));
+    }else if(themap->is_free(newx, newy)){
+      themap->get_player()->move(dx, dy);
+    }
+    /*
     if(themap->is_free(newx, newy)){
       themap->get_player()->move(dx, dy);//->_px = newx;
     }else if(themap->enemy_exists(newx, newy)){ //If an enemy exists on that position
@@ -216,7 +226,7 @@ int main(){
     }else if(themap->structure_exists(newx, newy)){
       themap->get_player()->interact(themap->get_structure(newx, newy));
     }
-   
+   */
    themap->cleanup();
 
     //Check for player victory.

@@ -6,13 +6,22 @@ Map::Map(std::string filename, WINDOW*& text){
   std::string premade = "maps/"+ filename +".txt";
   std::string save = "maps/"+filename +".savegame";
  _funkpoint["#"] =  &Map::add_wall;
-_funkpoint["p"] =  &Map::add_player;
-_funkpoint["g"] =  &Map::add_goblin;
-_funkpoint["D"] =  &Map::add_door;
-_funkpoint["c"] =  &Map::add_chest;
-_funkpoint[" "] = &Map::add_floor;
-//load_data_new("maps/testmap.txt"); Om du vill testa kör denna rad istället för de under.
-
+ _funkpoint["p"] =  &Map::add_player;
+ _funkpoint["g"] =  &Map::add_goblin;
+ _funkpoint["D"] =  &Map::add_door;
+ _funkpoint["c"] =  &Map::add_chest;
+ _funkpoint[" "] = &Map::add_floor;
+   if(FILE *file = fopen(premade.c_str(),"r")){
+    fclose(file);
+    load_data_new(premade);
+  }else if(FILE *file = fopen(save.c_str(),"r")){
+    fclose(file);
+    load_data_new(save);
+  }else{
+    throw std::out_of_range("No file named" + filename + "found");
+  }
+ //load_data_new("maps/testmap.txt");// Om du vill testa kör denna rad istället för de under.
+/*
   if(FILE *file = fopen(premade.c_str(),"r")){
     fclose(file);
     generate_map(filename);
@@ -20,6 +29,7 @@ _funkpoint[" "] = &Map::add_floor;
     fclose(file);
     load_data(save);
   }
+  */
   //std::map<std::string, void (Map::*) (int, int)> _funkpoint;
   //save_data();
   //load_data();
@@ -118,12 +128,34 @@ void Map::save_data(std::string your_name){
   }
   file.close();
 }
+void Map::save_data_new(std::string name){
+  std::ofstream file;
+  std::ofstream debugfile;
+  debugfile.open("save_log.txt");
+  debugfile << "saving map..." << std::endl;
+  std::string filename = "maps/" + name + ".savegame";
+  debugfile << "filename " << filename << std::endl;
+
+  remove(filename.c_str());
+  file.open(filename);
+  for(auto i = _go.begin(); i != _go.end(); ++i){
+    //file << '$';
+    debugfile << "getting item " << (**i).get_name() << std::endl;
+    std::string data = (**i).get_data_new();
+    if((**i).get_name() == "Goblin" || (**i).get_name() == "Mario") debugfile << data << std::endl;
+    file << data;
+  }
+  debugfile << "done!" << std::endl;
+  debugfile.close();
+  file.close();
+}
 
 void Map::load_data_new(std::string filename){
   std::ifstream file;
   std::ofstream debugfile;
-  debugfile.open("shit.txt");
-  debugfile << "testing" << std::endl;
+  debugfile.open("load_log.txt");
+  debugfile << "loading map..." << std::endl;
+  debugfile << "filename " << filename << std::endl;
   file.open(filename);
   std::string line;
   std::string type;
@@ -164,6 +196,8 @@ void Map::load_data_new(std::string filename){
       int exp_worth = atoi(line.c_str());
       getline(file, line);
       int speed = atoi(line.c_str());
+      getline(file, line);
+      int speed_c = atoi(line.c_str());
       Actor * actor;
       if(type == "Player"){
         Player * player = new Player(px, py, _textbox);
@@ -183,6 +217,7 @@ void Map::load_data_new(std::string filename){
       actor->_experience = experience;
       actor->_experience_worth = exp_worth;
       actor->_speed = speed;
+      actor->_speed_counter = speed_c;
       debugfile << hp << " hp" << std::endl;
       getline(file, line);
       while(line != "$"){
@@ -209,6 +244,7 @@ void Map::load_data_new(std::string filename){
       _st.push_back(door);
       gameobject = door;
     }
+    gameobject ->_type = type;
     gameobject->_px = px;
     gameobject->_py = py;
     gameobject->_depth = depth;
@@ -222,6 +258,7 @@ void Map::load_data_new(std::string filename){
     debugfile << "py" << py<< std::endl;
     _go.push_back(gameobject);
   }
+  debugfile << "done! " << std::endl;
   debugfile.close();
   file.close();
 }
@@ -447,8 +484,10 @@ void Map::find_path(Actor & hunter, Gameobject & target){
 
   int distance = int (std::sqrt(diffx*diffx + diffy*diffy));
 if(distance < 6){ //Arbitary number to avoid everyone chasing the player all the time
-    int diffx_normalized = diffx/distance;
-    int diffy_normalized = diffy/distance;
+    int diffx_normalized; 
+    int diffy_normalized;
+    distance != 0 ? diffx_normalized = diffx/distance : diffx_normalized = 1;
+    distance != 0 ? diffy_normalized = diffy/distance : diffy_normalized = 1;
     if(std::abs(diffx_normalized) > std::abs(diffy_normalized) && is_free(hunter._px + diffx_normalized, hunter._py)){
       hunter.move(diffx_normalized, 0);
     }

@@ -23,6 +23,7 @@ public:
   //TODO alex move dhis from private but that is wrong, needed here for invetory print window 
   std::vector<Item*>* get_inventory();
   virtual std::string get_data() override;
+  virtual std::string get_data_new() override;
 protected:
   std::vector<Item*> _inventory;
   int _hp = 1;

@@ -17,6 +17,7 @@ public:
 	bool interact(std::vector<Item*>* inventory);
 	std::vector<Item*> * get_inventory();
 	virtual std::string get_data()override;
+	virtual std::string get_data_new() override;
 protected:
 	bool move(); 
 	void destroy();

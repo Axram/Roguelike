@@ -53,3 +53,18 @@ std::string Gameobject::get_data(){
 	//return_data += _desc+'\n';
 
 }
+
+std::string Gameobject::get_data_new(){
+	std::string s;
+	s+= _type+'\n';
+	s+= std::to_string(_px) + '\n';
+	s+= std::to_string(_py) + '\n';
+	s+= std::to_string(_depth) + '\n';
+	s+= _name+'\n';
+	s+= _desc+'\n';
+	s+= _img;
+	s+= '\n';
+	_solid == true ? s+="True\n" : s+= "False\n";
+	_movable == true ? s+= "True\n" : s+= "False\n";
+	return s; 
+}

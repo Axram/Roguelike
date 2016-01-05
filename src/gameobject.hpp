@@ -23,11 +23,13 @@ public:
   void remove(); //Now it's only possible to set _to_be removed to true. You can't undo. Hopefully we'll never want to.
   //Member variables
   virtual std::string get_data();
+  virtual std::string get_data_new();
   int _px = 0; //These are public as we both want to get and set these without caring.
   int _py = 0;
 
 protected:
   WINDOW * _textbox = nullptr;
+  std::string _type;
   int _depth = 1;
   bool _solid = true; //Can the object be collided with?
   bool _movable = true; //Can the object be moved?

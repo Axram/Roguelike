@@ -30,6 +30,17 @@ std::string Chest::get_data(){
     return_data += "$\n";
     return return_data;
 }
+
+std::string Chest::get_data_new(){
+	std::string s;
+ 	s += Gameobject::get_data_new();
+  	for(auto i = _inventory.begin(); i != _inventory.end(); ++i){
+    	s += (**i)._name + '\n';
+  	}
+  	s += "$\n";
+  	return s;
+}
+
 bool Chest::interact(std::vector<Item*>* inventory){
 	//Creates a new item and puts it in the actors inventory
 	if(_inventory.size() == 0){

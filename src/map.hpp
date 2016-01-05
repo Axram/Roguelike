@@ -38,11 +38,13 @@ public:
   std::vector<Enemy*> & get_enemies();
   void cleanup(); //Removes dead enemies
   void save_data(std::string);
+  void save_data_new(std::string);
   //void runtime_load(std::string);
   void add_item(std::vector<Item*>*, std::string);
   bool is_free(int x, int y);
   bool enemy_exists(int x, int y);
   bool structure_exists(int x, int y);
+  void spawn_chest(Actor & me);
   Structure * get_structure(int x, int y);
   void find_path(Actor & hunter, Gameobject & target);
 

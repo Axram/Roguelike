@@ -66,6 +66,16 @@ void Actor::attack(Actor & target){
 std::vector<Item*>* Actor::get_inventory(){
   return & _inventory;
 }
+
+void Actor::interact(Structure * target){
+  //_textbox->add_row(_name + " interacts with " + target->get_name() + ".");
+  std::string out_str = _name + " interacts with " + target->get_name() + ".";
+  scroll(_textbox);
+  mvwprintw(_textbox,1,1, "%s", out_str.c_str());
+  wrefresh(_textbox);
+  target->interact(&_inventory);
+}
+
 std::string Actor::get_data(){
   std::string return_data;
   return_data += _name+'\n';
@@ -79,11 +89,20 @@ std::string Actor::get_data(){
   return_data += "$\n";
   return return_data;
 }
-void Actor::interact(Structure * target){
-  //_textbox->add_row(_name + " interacts with " + target->get_name() + ".");
-  std::string out_str = _name + " interacts with " + target->get_name() + ".";
-  scroll(_textbox);
-  mvwprintw(_textbox,1,1, "%s", out_str.c_str());
-  wrefresh(_textbox);
-  target->interact(&_inventory);
+
+std::string Actor::get_data_new(){
+  std::string s = "";
+  s += Gameobject::get_data_new();
+  s += std::to_string(_hp) + '\n';
+  s += std::to_string(_attack) + '\n';
+  s += std::to_string(_defense) + '\n';
+  s += std::to_string(_experience) + '\n';
+  s += std::to_string(_experience_worth) + '\n';
+  s += std::to_string(_speed) + '\n';
+  s += std::to_string(_speed_counter) + '\n';
+  for(auto i = _inventory.begin(); i != _inventory.end(); ++i){
+    s += (**i)._name + '\n';
+  }
+  s += "$\n";
+  return s;
 }
