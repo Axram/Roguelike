@@ -183,7 +183,7 @@ void Map::load_data_new(std::string filename){
 
     Gameobject * gameobject;
 
-    if(type == "Player" || type == "Enemy"){
+    if(type == "Player" || type == "Enemy" || type == "Npc"){
       debugfile << "Actor!" << std::endl;
       getline(file, line);
       int hp = atoi(line.c_str());
@@ -206,11 +206,18 @@ void Map::load_data_new(std::string filename){
         gameobject = player;
         actor = player;
         _player = player;
-      }else{
+      }else if (type == "Enemy"){
         Enemy * enemy = new Enemy(px, py, _textbox);
         _enemies.push_back(enemy);
         gameobject = enemy;
         actor = enemy;
+      }else if(type == "Npc"){
+        Npc * npc = new Npc(px, py, _textbox);
+        _npcs.push_back(npc);
+        gameobject = npc;
+        actor = npc;
+      }else {
+        throw std::out_of_range("type " + type + " does not exist");
       }
       actor->_hp = hp;
       actor->_attack = attack;
@@ -348,6 +355,10 @@ void Map::add_item(std::vector<Item*>* inventory, std::string name){
     Doorkey * dk = new Doorkey();
     inventory->push_back(dk);
   }
+  if(name == "WINITEM" || name == "Winitem" || name == "winitem"){
+    Winitem * win = new Winitem();
+    inventory->push_back(win);
+  }
 }
 Player * Map::get_player(){
 
@@ -382,6 +393,9 @@ Enemy * Map::get_enemy(int x, int y){
 }
 std::vector<Enemy*> & Map::get_enemies(){
   return _enemies;
+}
+std::vector<Npc*> * Map::get_npcs(){
+  return  &_npcs;
 }
 bool Map::structure_exists(int x, int y){
   for(auto i = _st.begin(); i != _st.end(); ++i){
@@ -426,6 +440,13 @@ void Map::cleanup(){
 
     }
   }
+
+  std::vector<Npc*> npcs_to_remove;
+  for(auto n = _npcs.begin(); n != _npcs.end(); ++n){
+    if((**n).get_to_be_removed()){
+      npcs_to_remove.push_back(*n);
+    }
+  }
   //Secondly they are removed
 
   for(auto s = structures_to_remove.begin(); s != structures_to_remove.end(); ++s){
@@ -437,7 +458,11 @@ void Map::cleanup(){
     _enemies.erase(std::remove(_enemies.begin(), _enemies.end(), (*e)), _enemies.end());
     
   }
-
+  for(auto n = npcs_to_remove.begin(); n != npcs_to_remove.end(); ++n){
+    spawn_chest(*n);
+    _npcs.erase(std::remove(_npcs.begin(), _npcs.end(), (*n)), _npcs.end());
+    
+  }
   //Thirdly the objects are deleted and the final pointer is removed.
   for(auto g = gameobjects_to_remove.begin(); g != gameobjects_to_remove.end(); ++g){
     delete(*g);

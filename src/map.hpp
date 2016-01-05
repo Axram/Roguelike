@@ -22,6 +22,7 @@
 #include "textbox.hpp"
 #include "doorkey.hpp"
 #include "winitem.hpp"
+#include "npc.hpp"
 //#ifndef MAP_HPP
 //#define MAP_HPP
 //class Player;
@@ -36,6 +37,7 @@ public:
   std::vector<Gameobject*> & get_map();
   Enemy * get_enemy(int x, int y);
   std::vector<Enemy*> & get_enemies();
+  std::vector<Npc*> * get_npcs();
   void cleanup(); //Removes dead enemies
   void save_data(std::string);
   void save_data_new(std::string);
@@ -68,8 +70,8 @@ private:
   //TODO alla vectorer skall vara private
   std::vector<Gameobject*> _go;
   std::vector<Enemy*> _enemies;
-  std::vector<Wall*> _s;
-
+  //std::vector<Wall*> _s;
+  std::vector<Npc*> _npcs;
   std::vector<Structure*> _st; //NOT CLEANED UP
   WINDOW * _textbox;
   std::map<std::string, void (Map::*) (int, int, int&, std::string)> _funkpoint;

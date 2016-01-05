@@ -13,6 +13,7 @@
 #include <string>
 #include <iostream>
 #include <cassert>
+#include <stdlib.h> 
 
 
 void introduction(){
@@ -212,10 +213,10 @@ int main(){
     if(themap->enemy_exists(newx, newy)){
       Enemy * newenemy = themap->get_enemy(newx, newy);
       themap->get_player()->attack(*newenemy); //Tell player to attack it, attack defined in actor
-    }else if(themap->structure_exists(newx, newy)){
-      themap->get_player()->interact(themap->get_structure(newx, newy));
     }else if(themap->is_free(newx, newy)){
       themap->get_player()->move(dx, dy);
+    }else if(themap->structure_exists(newx, newy)){
+      themap->get_player()->interact(themap->get_structure(newx, newy));
     }
     /*
     if(themap->is_free(newx, newy)){
@@ -239,19 +240,30 @@ int main(){
     }
     if(victory_achieved) break;
 
-    ui->ui_print(themap);
-    ui->inv_print(themap->get_player());
+    //ui->ui_print(themap);
+    //ui->inv_print(themap->get_player());
 
     //Enemies turn
     std::vector<Enemy *> enemies = themap->get_enemies();
     for(auto i = enemies.begin(); i != enemies.end(); ++i){
       if((**i).may_act()){
         //1. Is there anything around me I can attack?
+        bool action_taken = false;
+
         if((**i).is_near_me(*themap->get_player())){
           (**i).attack(*themap->get_player());
+          continue;
+        }
+
+        for(auto npc = themap->get_npcs()->begin(); npc != themap->get_npcs()->end(); ++npc){
+            if((**i).is_near_me(**npc)){
+              (**i).attack(**npc);
+              action_taken = true;
+              break;
+            }
         }
         //2. If not, chase the player
-        else{
+        if(!action_taken){
           themap->find_path((**i), *themap->get_player());
         }
       }
@@ -260,8 +272,25 @@ int main(){
     }
     if(themap->get_player()->get_to_be_removed())break;
     
+    //NPCs turn
+    int npc_dx[4] = {0,0,1,-1}; //North, south, east, west
+    int npc_dy[4] = {1,-1,0,0};
+    std::vector<Npc*> * npcs = themap->get_npcs();
+    for(auto i = npcs->begin(); i != npcs->end(); ++i){
+      if((**i).may_act()){
+        if((**i).is_roaming()){
+          int numb = rand()%4;
+          int newx = (**i)._px + npc_dx[numb];
+          int newy = (**i)._py + npc_dy[numb];
+          if(themap->is_free(newx, newy)){
+            (**i).move(npc_dx[numb], npc_dy[numb]);
+          } 
+        }
+      }
+    }
     //Update camera and print
     ui->ui_print(themap);//, game_win);
+    ui->inv_print(themap->get_player());
   	}
     
   while(getch() != 10){}
