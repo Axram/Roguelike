@@ -283,6 +283,8 @@ void Map::spawn_chest(Actor * someone){
         chest->get_inventory()->push_back(*i);
       }
     }
+  }else {
+    someone->remove_items();
   }
 }
 
@@ -463,6 +465,8 @@ void Map::cleanup(){
     _npcs.erase(std::remove(_npcs.begin(), _npcs.end(), (*n)), _npcs.end());
     
   }
+
+  if(_player->get_to_be_removed())_player->remove_items();
   //Thirdly the objects are deleted and the final pointer is removed.
   for(auto g = gameobjects_to_remove.begin(); g != gameobjects_to_remove.end(); ++g){
     delete(*g);

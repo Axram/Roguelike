@@ -33,5 +33,6 @@ protected:
   int _experience_worth = 0; //How much is this actor worth in experience?
   int _speed = 0; //a lower number is faster, it's basically "turns until next action"
   int _speed_counter = 0; //How many turns have it been idle?
+  void remove_items();
 };
 

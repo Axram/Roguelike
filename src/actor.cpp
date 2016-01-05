@@ -107,3 +107,9 @@ std::string Actor::get_data_new(){
   s += "$\n";
   return s;
 }
+
+void Actor::remove_items(){
+  for(auto i = _inventory.begin(); i != _inventory.end(); ++i){
+    delete *i;
+  }
+}
