@@ -36,6 +36,7 @@ Map::Map(std::string filename, WINDOW*& text){
 }
 
 Map::~Map(){
+  _cleaning_up = true;
   for(auto i = _go.begin(); i != _go.end(); ++i){
     (**i).remove();
   }
@@ -263,6 +264,21 @@ void Map::load_data_new(std::string filename){
   file.close();
 }
 
+void Map::spawn_chest(Actor * someone){
+  if(!_cleaning_up){
+    if(someone->get_inventory()->size() != 0){
+      Chest * chest = new Chest(someone->_px, someone->_py, _textbox);
+      chest->_temporary = true;
+      _go.push_back(chest);
+      _st.push_back(chest);
+      for(auto i = someone->get_inventory()->begin(); i != someone->get_inventory()->end(); ++i){
+        //Item * item = new Item(**i);
+        chest->get_inventory()->push_back(*i);
+      }
+    }
+  }
+}
+
 void Map::load_data(std::string filename){
   std::ifstream file;
   file.open(filename);
@@ -400,7 +416,6 @@ void Map::cleanup(){
   for(auto e = _enemies.begin(); e != _enemies.end(); ++e){
     if((**e).get_to_be_removed()){
       enemies_to_remove.push_back(*e);
-
     }
   }
 
@@ -418,8 +433,9 @@ void Map::cleanup(){
   }
 
   for(auto e = enemies_to_remove.begin(); e != enemies_to_remove.end(); ++e){
-    
+    spawn_chest(*e);
     _enemies.erase(std::remove(_enemies.begin(), _enemies.end(), (*e)), _enemies.end());
+    
   }
 
   //Thirdly the objects are deleted and the final pointer is removed.

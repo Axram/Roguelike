@@ -9,9 +9,10 @@
 #include "item.hpp"
 
 #include "doorkey.hpp"
-
+class Map;
 class Chest:public Structure{
 public:
+	friend class Map;
 	Chest(int x, int y, WINDOW * text);
 	~Chest();
 	bool interact(std::vector<Item*>* inventory);
@@ -21,6 +22,6 @@ public:
 protected:
 	bool move(); 
 	void destroy();
-
+	bool _temporary = false;
 	std::vector<Item*> _inventory;
 };

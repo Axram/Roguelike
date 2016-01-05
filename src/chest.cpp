@@ -49,7 +49,7 @@ bool Chest::interact(std::vector<Item*>* inventory){
 		scroll(_textbox);
     	mvwprintw(_textbox, 1,1, "%s", prn_str.c_str());
     	wrefresh(_textbox);
-
+    	if(_temporary) _to_be_removed = true;
 		return false;
 	}
 	//_textbox->add_row("This " + _name + " contained: ");

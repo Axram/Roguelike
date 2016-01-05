@@ -44,7 +44,7 @@ public:
   bool is_free(int x, int y);
   bool enemy_exists(int x, int y);
   bool structure_exists(int x, int y);
-  void spawn_chest(Actor & me);
+  void spawn_chest(Actor * me);
   Structure * get_structure(int x, int y);
   void find_path(Actor & hunter, Gameobject & target);
 
@@ -64,6 +64,7 @@ private:
   void add_floor(int, int, int&, std::string);
   void load_inventory(std::vector<Item*> * inventory, std::string filename, int & item_nr);
   Player * _player = nullptr;
+  bool _cleaning_up = false;
   //TODO alla vectorer skall vara private
   std::vector<Gameobject*> _go;
   std::vector<Enemy*> _enemies;
