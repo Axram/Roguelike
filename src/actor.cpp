@@ -85,7 +85,7 @@ std::string Actor::get_data(){
   return_data += std::to_string(_hp)+'\n';
   return_data += std::to_string(_experience)+'\n';
   for(auto i = _inventory.begin(); i != _inventory.end(); ++i){
-    return_data += (**i)._name + '\n';
+    return_data += (**i).get_name() + '\n';
   }
   return_data += "$\n";
   return return_data;
@@ -102,7 +102,7 @@ std::string Actor::get_data_new(){
   s += std::to_string(_speed) + '\n';
   s += std::to_string(_speed_counter) + '\n';
   for(auto i = _inventory.begin(); i != _inventory.end(); ++i){
-    s += (**i)._name + '\n';
+    s += (**i).get_name() + '\n';
   }
   s += "$\n";
   return s;

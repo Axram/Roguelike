@@ -114,28 +114,28 @@ std::string main_menu(void){
 
 int main(){
   std::string load_filename = main_menu();
-  //std::cout << strhd << strhd.length() <<std::endl;
-  //assert(false);
-  //Load necessities
+
+  //##### Load necessities #####
   Ui * ui = new Ui();
-  //Ui ui;
   int ch;
-	//getch(); // Press enter to start the game
+  /* Code reference
   std::map<std::string, bool (Gameobject::*) (Gameobject &)> funkpoint;
   funkpoint["near me"] = &Gameobject::is_near_me;
-
-	//Map themap("maps/map2.txt", ui->_scroll_win);
-  //Map themap(load_filename, ui->_scroll_win);
+  */
   Map * themap = new Map(load_filename, ui->_scroll_win);
+  /*
   Gameobject p;
   bool h = (p.*funkpoint["near me"])(p);
-	//ui_print(&themap, game_win);
+  */
   ui->ui_print(themap);
   bool victory_achieved = false;
-    //Move
+
+
+  //##### Get keyinputs #####
     while((ch=getch()) != KEY_F(2)){
     	int dx = 0;
     	int dy = 0;
+        //Movement
     	switch(ch){
     		case KEY_LEFT:
     			dx = -1;
@@ -152,8 +152,8 @@ int main(){
     		case KEY_DOWN:
     			dy = 1;
     			break;
-        
-        case KEY_F(5):
+                
+        case KEY_F(5): //Save
         {
           raw();
           curs_set(1);
@@ -164,14 +164,14 @@ int main(){
           wrefresh(ui->_scroll_win);
           wgetstr(ui->_scroll_win,in);
           std::string yourname = in;
-          //themap->save_data(yourname);
+          //themap->save_data(yourname); // Old code
           themap->save_data_new(yourname);
           cbreak();
           curs_set(0);
           noecho();
           break;
         }
-        case KEY_F(9):
+        case KEY_F(9): //Load
         {
           delete themap;
           raw();
@@ -208,53 +208,34 @@ int main(){
     int newx = themap->get_player()->_px + dx;
     int newy = themap->get_player()->_py + dy;
 
-    //Players turn
-    //Checks is wanted position is non-solid
+    //##### Players turn #####
+
     if(themap->enemy_exists(newx, newy)){
       Enemy * newenemy = themap->get_enemy(newx, newy);
-      themap->get_player()->attack(*newenemy); //Tell player to attack it, attack defined in actor
+      themap->get_player()->attack(*newenemy);
     }else if(themap->is_free(newx, newy)){
       themap->get_player()->move(dx, dy);
     }else if(themap->structure_exists(newx, newy)){
       themap->get_player()->interact(themap->get_structure(newx, newy));
     }
-    /*
-    if(themap->is_free(newx, newy)){
-      themap->get_player()->move(dx, dy);//->_px = newx;
-    }else if(themap->enemy_exists(newx, newy)){ //If an enemy exists on that position
-      Enemy * newenemy = themap->get_enemy(newx, newy);
-      themap->get_player()->attack(*newenemy); //Tell player to attack it, attack defined in actor
-    }else if(themap->structure_exists(newx, newy)){
-      themap->get_player()->interact(themap->get_structure(newx, newy));
-    }
-   */
    themap->cleanup();
 
     //Check for player victory.
-    std::vector<Item*> * inv = themap->get_player()->get_inventory();
-    for(auto i = inv->begin(); i != inv->end(); ++i){
-      if((**i)._name == "WINITEM"){
-        victory_achieved = true;
-        break;
-      }
-    }
-    if(victory_achieved) break;
 
-    //ui->ui_print(themap);
-    //ui->inv_print(themap->get_player());
+   if(themap->get_player()->has_won()){
+     victory_achieved = true;
+     break;
+   }
 
-    //Enemies turn
+    //##### Enemies turn #####
     std::vector<Enemy *> enemies = themap->get_enemies();
     for(auto i = enemies.begin(); i != enemies.end(); ++i){
       if((**i).may_act()){
-        //1. Is there anything around me I can attack?
         bool action_taken = false;
-
         if((**i).is_near_me(*themap->get_player())){
           (**i).attack(*themap->get_player());
           continue;
         }
-
         for(auto npc = themap->get_npcs()->begin(); npc != themap->get_npcs()->end(); ++npc){
             if((**i).is_near_me(**npc)){
               (**i).attack(**npc);
@@ -262,17 +243,16 @@ int main(){
               break;
             }
         }
-        //2. If not, chase the player
         if(!action_taken){
           themap->find_path((**i), *themap->get_player());
         }
       }
-      if(themap->get_player()->get_to_be_removed())break;//Player loss
+      if(themap->get_player()->get_to_be_removed())break;
       themap->cleanup();
     }
     if(themap->get_player()->get_to_be_removed())break;
     
-    //NPCs turn
+    //##### NPCs turn #####
     int npc_dx[4] = {0,0,1,-1}; //North, south, east, west
     int npc_dy[4] = {1,-1,0,0};
     std::vector<Npc*> * npcs = themap->get_npcs();
@@ -292,7 +272,7 @@ int main(){
     ui->ui_print(themap);//, game_win);
     ui->inv_print(themap->get_player());
   	}
-    
+    //##### Post game #####
   while(getch() != 10){}
   delete themap;
   delete ui;

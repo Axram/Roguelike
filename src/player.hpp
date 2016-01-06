@@ -9,4 +9,5 @@ class Player:public Actor{
 public:
 	Player(int x, int y, WINDOW * text);
 	virtual void  move(int x, int y) override;
+  bool has_won();
 };

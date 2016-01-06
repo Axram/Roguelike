@@ -106,7 +106,7 @@ void Ui::inv_print(Player * p){
 
   int j = 2;
   for(auto i = p->get_inventory()->begin(); i != p->get_inventory()->end(); ++i){
-    std::string name = (**i)._name;
+    std::string name = (**i).get_name();
     mvwprintw(_inv_win,j,2,"%s",name.c_str());
     ++j;
   }

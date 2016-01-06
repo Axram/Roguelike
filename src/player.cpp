@@ -26,4 +26,12 @@ void Player::move(int dx, int dy){
     wrefresh(_textbox);
 }
 
+bool Player::has_won(){
+  for(auto i = _inventory.begin(); i != _inventory.end(); ++i){
+    if((**i).get_name() == "WINITEM"){
+      return true;
+    }
+  }
+  return false;
+}
 

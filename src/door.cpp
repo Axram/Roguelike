@@ -35,15 +35,13 @@ std::string Door::get_data(){
 }
 bool Door::interact(std::vector<Item*>* inventory){
 	for(auto i = inventory->begin(); i != inventory->end(); ++i){
-		if((**i)._name == "Doorkey"){
-			//_textbox->add_row("The " + _name + " opens!");
-			//_textbox->add_row("The " + (**i)._name + " is used up.");
+      if((**i).get_name() == "Doorkey"){
 			
 			scroll(_textbox);
-			mvwprintw(_textbox,1,1, "I am DOOR, i open");
+			mvwprintw(_textbox,1,1, "The door opens!");
 			wrefresh(_textbox);
 			scroll(_textbox);
-			mvwprintw(_textbox,1,1, "Out of key");
+			mvwprintw(_textbox,1,1, "The key is consumed.");
 			wrefresh(_textbox);
 			
 			delete(*i);

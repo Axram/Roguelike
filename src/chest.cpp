@@ -25,7 +25,7 @@ std::string Chest::get_data(){
 	return_data += std::to_string(_px)+'\n';
 	return_data += std::to_string(_py)+'\n';
 	for(auto i = _inventory.begin(); i != _inventory.end(); ++i){
-    	return_data += (**i)._name + '\n';
+      return_data += (**i).get_name() + '\n';
     }
     return_data += "$\n";
     return return_data;
@@ -35,7 +35,7 @@ std::string Chest::get_data_new(){
 	std::string s;
  	s += Gameobject::get_data_new();
   	for(auto i = _inventory.begin(); i != _inventory.end(); ++i){
-    	s += (**i)._name + '\n';
+      s += (**i).get_name() + '\n';
   	}
   	s += "$\n";
   	return s;
@@ -57,7 +57,7 @@ bool Chest::interact(std::vector<Item*>* inventory){
 		inventory->push_back(*i);
 		
 		//_textbox->add_row((**i)._name);
-		std::string prn_str = (**i)._name;
+		std::string prn_str = (**i).get_name();
 		scroll(_textbox);
     	mvwprintw(_textbox, 1,1, "%s", prn_str.c_str());
     	wrefresh(_textbox);
