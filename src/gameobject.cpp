@@ -11,7 +11,8 @@ void Gameobject::set_vars(std::string type,
 	std::string name, 
 	std::string desc, 
 	char img, bool solid, 
-	bool movable){
+	bool movable,
+	WINDOW * text){
 _type =type; 
 _px = px; 
 _py = py; 
@@ -21,6 +22,7 @@ _desc=desc;
 _img=img; 
 _solid=solid; 
 _movable=movable;
+_textbox = text;
 }
 
 Gameobject::~Gameobject(){}

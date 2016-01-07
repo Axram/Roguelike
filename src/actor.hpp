@@ -6,10 +6,12 @@
 #include "item.hpp"
 #include "structure.hpp"
 
-class Map;
+//class Map;
 class Actor:public Gameobject{
-friend class Map;
+//friend class Map;
 public:
+  Actor();
+  Actor(int hp, int attack, int defense, int experience, int exp_worth, int speed, int speed_c );
   virtual bool damage(int amount); 
   virtual void heal(int amount); //TODO temp
   virtual void move(int dx, int dy); //TODO temp 
@@ -17,6 +19,7 @@ public:
   virtual void interact(Structure * target);
   virtual bool may_act();
   virtual void add_item(Item *);
+  void remove_items();
   //void set_vars(int hp, int attack, int defense, int experience, int exp_worth, int speed, int speed_c);
  
   //TODO alex move dhis from private but that is wrong, needed here for invetory print window 
@@ -32,6 +35,5 @@ protected:
   int _experience_worth = 0; //How much is this actor worth in experience?
   int _speed = 0; //a lower number is faster, it's basically "turns until next action"
   int _speed_counter = 0; //How many turns have it been idle?
-  void remove_items();
 };
 

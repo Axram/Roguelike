@@ -1,7 +1,7 @@
 
 #include "actor.hpp"
-
-
+#include <cassert>
+Actor::Actor(){}
 void Actor::move(int dx, int dy){ //Player uses its own move with added prints
 
     _px += dx;
@@ -10,6 +10,21 @@ void Actor::move(int dx, int dy){ //Player uses its own move with added prints
     scroll(_textbox);
     mvwprintw(_textbox,1,1, "%s", out_str.c_str());
     wrefresh(_textbox);
+}
+
+Actor::Actor(int hp, int attack, int defense, int experience, int exp_worth, int speed, int speed_c ){
+  _hp = hp;
+  _attack = attack;
+  _defense = defense;
+  _experience = experience;
+  _experience_worth = exp_worth;
+  _speed = speed; 
+  _speed_counter = speed_c;
+  //std::cout << _hp << std::endl;
+  //std::cout << _attack << std::endl;
+  //std::cout << _defense << std::endl;
+
+  //assert(false);
 }
 /*
 void Actor::set_vars(int hp, int attack, int defense, int experience, int exp_worth, int speed, int speed_c){
@@ -32,6 +47,7 @@ bool Actor::may_act(){
   return false;
 }
 bool Actor::damage(int amount){
+
   int resulting_damage = amount - _defense;
   if(resulting_damage < 0) resulting_damage = 0;
   _hp -= resulting_damage;

@@ -103,22 +103,22 @@ void Map::load_data_new(std::string filename){
   std::string type;
   while(getline(file, line)){
     type = line;
-    getline(file, line);
+    getline(file, line); 
     int px = atoi(line.c_str());
-    getline(file, line); //py
+    getline(file, line); 
     int py = atoi(line.c_str());
-    getline(file, line);
+    getline(file, line); 
     int depth = atoi(line.c_str());
-    getline(file, line);
+    getline(file, line); 
     std::string name = line;
-    getline(file, line);
+    getline(file, line); 
     std::string desc = line;
-    getline(file, line);
+    getline(file, line); 
     std::string img = line;
-    getline(file, line);
+    getline(file, line); 
     bool solid;
     if(line == "True"){solid = true;}else{solid = false;}
-    getline(file, line);
+    getline(file, line); 
     bool movable;
     if(line == "True"){movable = true;}else{movable = false;}
 
@@ -126,50 +126,40 @@ void Map::load_data_new(std::string filename){
 
     if(type == "Player" || type == "Enemy" || type == "Npc"){
       debugfile << "Actor!" << std::endl;
-      getline(file, line);
+      getline(file, line); 
       int hp = atoi(line.c_str());
-      getline(file, line);
+      getline(file, line); 
       int attack = atoi(line.c_str());
-      getline(file, line);
+      getline(file, line); 
       int defense = atoi(line.c_str());
       getline(file, line);
       int experience = atoi(line.c_str());
-      getline(file, line);
+      getline(file, line); 
       int exp_worth = atoi(line.c_str());
-      getline(file, line);
+      getline(file, line); 
       int speed = atoi(line.c_str());
-      getline(file, line);
+      getline(file, line); 
       int speed_c = atoi(line.c_str());
       Actor * actor;
       if(type == "Player"){
-        Player * player = new Player(px, py, _textbox);
+        Player * player = new Player(hp, attack, defense, experience, exp_worth, speed, speed_c);
         debugfile << "- and PLayer!" << std::endl;
         gameobject = player;
         actor = player;
         _player = player;
       }else if (type == "Enemy"){
-        Enemy * enemy = new Enemy(px, py, _textbox);
+        Enemy * enemy = new Enemy(hp, attack, defense, experience, exp_worth, speed, speed_c);
         _enemies.push_back(enemy);
         gameobject = enemy;
         actor = enemy;
       }else if(type == "Npc"){
-        Npc * npc = new Npc(px, py, _textbox);
+        Npc * npc = new Npc(hp, attack, defense, experience, exp_worth, speed, speed_c);
         _npcs.push_back(npc);
         gameobject = npc;
         actor = npc;
       }else {
         throw std::out_of_range("type " + type + " does not exist");
       }
-      //actor->set_vars(hp, attack, defense, experience, exp_worth, speed, speed_c);
-      
-      actor->_hp = hp;
-      actor->_attack = attack;
-      actor->_defense = defense;
-      actor->_experience = experience;
-      actor->_experience_worth = exp_worth;
-      actor->_speed = speed;
-      actor->_speed_counter = speed_c;
-      
       debugfile << hp << " hp" << std::endl;
       getline(file, line);
       while(line != "$"){
@@ -208,7 +198,7 @@ void Map::load_data_new(std::string filename){
       debugfile.close();
       assert(false);
     }
-    gameobject->set_vars(type, px, py, depth, name, desc, img[0], solid, movable);
+    gameobject->set_vars(type, px, py, depth, name, desc, img[0], solid, movable, _textbox);
     debugfile << "name " << name<< std::endl;
     debugfile << "px "<<px << std::endl;
     debugfile << "py" << py<< std::endl;
@@ -301,7 +291,7 @@ Structure * Map::get_structure(int x, int y){
 
 void Map::cleanup(){
   //As we do have multiple pointers to the same objects this needs extra care
-  //Firstly all pointers that are to be removed are copied
+  //Firstly all pointerget_gameobjs that are to be removed are copied
   std::vector<Gameobject*> gameobjects_to_remove;
   for(auto g = _go.begin(); g != _go.end(); ++g){
     if((**g).get_to_be_removed()){

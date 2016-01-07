@@ -15,6 +15,18 @@ Player::Player(int x, int y, WINDOW * text){
   _textbox = text;
 }
 
+Player::Player(int hp, int attack, int defense, int experience, int exp_worth, int speed, int speed_c ){
+  _hp = hp;
+  _max_hp = hp;
+  _attack = attack;
+  _defense = defense;
+  _experience = experience;
+  _experience_worth = exp_worth;
+  _speed = speed; 
+  _speed_counter = speed_c;
+
+}
+
 void Player::move(int dx, int dy){
 	_px += dx;
   _py += dy;
@@ -26,14 +38,16 @@ void Player::move(int dx, int dy){
 void Player::heal(int amount){
   for (auto i = _inventory.begin(); i != _inventory.end(); ++i){
     if((**i).get_name() == "healing potion"){
-      _hp += amount;
-      delete(*i);
-      _inventory.erase(i);
-      std::string prn_str = _name + " heals " + std::to_string(amount) + " hp.";
-      scroll(_textbox);
-      mvwprintw(_textbox, 1,1, "%s", prn_str.c_str());
-      wrefresh(_textbox);
-      break;
+      if(_hp < _max_hp){
+        _hp += amount;
+        delete(*i);
+        _inventory.erase(i);
+        std::string prn_str = _name + " heals " + std::to_string(amount) + " hp.";
+        scroll(_textbox);
+        mvwprintw(_textbox, 1,1, "%s", prn_str.c_str());
+        wrefresh(_textbox);
+        break;
+      }
     }
   }
 }

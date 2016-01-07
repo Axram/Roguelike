@@ -50,7 +50,6 @@ public:
   void spawn_chest(Actor * me);
   Structure * get_structure(int x, int y);
   void find_path(Actor & hunter, Gameobject & target);
-
   std::vector<Gameobject*>* get_gameobj(){
     return &_go;
   }
