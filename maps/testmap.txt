@@ -1715,7 +1715,7 @@ False
 0
 3
 0
-doorkey
+healing potion
 $
 Gameobject
 4

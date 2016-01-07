@@ -732,7 +732,7 @@ px 27
 py-1
 Actor!
 5 hp
-with item: doorkey
+with item: healing potion
 name Beholder
 px 10
 py2

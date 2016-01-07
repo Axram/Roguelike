@@ -156,7 +156,9 @@ int main(){
     		case KEY_DOWN:
     			dy = 1;
     			break;
-                
+        case 104:
+          themap->get_player()->heal(10);
+          break;
         case KEY_F(5): //Save
         {
           raw();
