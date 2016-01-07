@@ -16,20 +16,18 @@ Player::Player(int x, int y, WINDOW * text){
 }
 
 void Player::move(int dx, int dy){
-	 _px += dx;
+	_px += dx;
   _py += dy;
-    //_textbox->add_row(_name + " moves to " + std::to_string(_px)+ ";"+ std::to_string(_py) + ".");
-    std::string prn_str = _name + " moves to " + std::to_string(_px)+ ";"+ std::to_string(_py) + ".";
-    //prn_str = "Move";
-    scroll(_textbox);
-    mvwprintw(_textbox, 1,1, "%s", prn_str.c_str());
-    wrefresh(_textbox);
+  std::string prn_str = _name + " moves to " + std::to_string(_px)+ ";"+ std::to_string(_py) + ".";
+  scroll(_textbox);
+  mvwprintw(_textbox, 1,1, "%s", prn_str.c_str());
+  wrefresh(_textbox);
 }
 
 bool Player::has_won(){
   for(auto i = _inventory.begin(); i != _inventory.end(); ++i){
     if((**i).get_name() == "winitem"){
-      std::string prn_str = "Mario gives the chalice to the Altar, victory is iminent";
+      std::string prn_str = "Mario gives the chalice to the Altar, victory is imminent";
       scroll(_textbox);
       mvwprintw(_textbox, 1,1, "%s", prn_str.c_str());
       wrefresh(_textbox);

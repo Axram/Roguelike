@@ -8,9 +8,7 @@
 
 #include "structure.hpp"
 #include "item.hpp"
-class Map;
 class Altar:public Structure{
-friend class Map;
 public:
 	Altar();
 	Altar(int x, int y, WINDOW*);

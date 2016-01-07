@@ -4,12 +4,11 @@
 #include <ncurses.h>
 //#include "textbox.hpp"
 
-class Map;
 class Gameobject{
-  friend class Map;
 public:
   //Constructors
   Gameobject();
+  //Gameobject(std::string type, int px, int py, int depth, std::string name, std::string desc, char img, bool solid, bool movable);
   virtual ~Gameobject();
   bool operator<(const Gameobject & b);
   char get_img()const;
@@ -21,6 +20,7 @@ public:
   bool is_near_me(Gameobject & other);
   void remove(); //Now it's only possible to set _to_be removed to true. You can't undo. Hopefully we'll never want to.
   //Member variables
+  void set_vars(std::string type, int px, int py, int depth, std::string name, std::string desc, char img, bool solid, bool movable);
   virtual std::string get_data();
   virtual std::string get_data_new();
   int _px = 0; //These are public as we both want to get and set these without caring.

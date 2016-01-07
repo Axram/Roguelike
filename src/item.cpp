@@ -12,4 +12,3 @@ std::string Item::get_description(){
 }
 
 
-//tom så länge ???

@@ -17,6 +17,5 @@ public:
   virtual bool interact(std::vector<Item *>* inventory);
 protected:
   virtual bool move();
-  //virtual bool interact(Structure & target); 
   virtual void destroy();	
 };

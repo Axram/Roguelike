@@ -19,13 +19,10 @@ public:
   WINDOW* _inv_win;
   WINDOW* _text_win;
   WINDOW* _scroll_win;
-  //private:
   WINDOW* create_newwin(int height, int width, int starty, int startx);
-  void destroy_win(WINDOW* local_win);
   void ui_print(Map* whole_map);
   void inv_print(Player * p);
 
 };
 
-//Sorts the gameobject list on depth NOT USED ATM
-bool nui_comp(const Gameobject* a, const Gameobject* b);
+

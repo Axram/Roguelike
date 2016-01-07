@@ -5,20 +5,19 @@
 #include "gameobject.hpp"
 #include "item.hpp"
 #include "structure.hpp"
-//#include "map.hpp" //May create circular dependency
+
 class Map;
 class Actor:public Gameobject{
 friend class Map;
 public:
-  Actor();
-  ~Actor();
   virtual bool damage(int amount); 
   virtual void heal(int amount); //TODO temp
   virtual void move(int dx, int dy); //TODO temp 
   virtual void attack(Actor & target); 
   virtual void interact(Structure * target);
   virtual bool may_act();
-  //virtual void die(); //TODO temp death
+  virtual void add_item(Item *);
+  //void set_vars(int hp, int attack, int defense, int experience, int exp_worth, int speed, int speed_c);
  
   //TODO alex move dhis from private but that is wrong, needed here for invetory print window 
   std::vector<Item*>* get_inventory();

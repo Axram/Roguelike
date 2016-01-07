@@ -4,6 +4,25 @@
 
 Gameobject::Gameobject(){}
 
+void Gameobject::set_vars(std::string type, 
+	int px, 
+	int py, 
+	int depth, 
+	std::string name, 
+	std::string desc, 
+	char img, bool solid, 
+	bool movable){
+_type =type; 
+_px = px; 
+_py = py; 
+_depth=depth; 
+_name=name; 
+_desc=desc; 
+_img=img; 
+_solid=solid; 
+_movable=movable;
+}
+
 Gameobject::~Gameobject(){}
 bool Gameobject::operator<(const Gameobject & b){
   return _depth < b._depth;

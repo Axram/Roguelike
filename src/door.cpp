@@ -35,7 +35,7 @@ std::string Door::get_data(){
 }
 bool Door::interact(std::vector<Item*>* inventory){
 	for(auto i = inventory->begin(); i != inventory->end(); ++i){
-      if((**i).get_name() == "doorkey"){
+      if((**i).get_name() == "doorkey" || (**i).get_name() == "Doorkey"){
 			
 			scroll(_textbox);
 			mvwprintw(_textbox,1,1, "The door opens!");

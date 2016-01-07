@@ -2,9 +2,6 @@
 
 Structure::Structure(){}
 
-bool Structure::interact(std::vector<Item*>* inventory){}
-bool Structure::move(){}
-//bool Structure::interact(Structure & target){
-//  return false;
-//}
+bool Structure::interact(std::vector<Item*>* inventory){return false;}
+bool Structure::move(){return false;}
 void Structure::destroy(){}

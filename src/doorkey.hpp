@@ -3,7 +3,6 @@
 #include <string>
 
 #include "item.hpp"
-//#include "door.h"
 
 class Doorkey:public Item{
 public:

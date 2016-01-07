@@ -1,11 +1,8 @@
 #include "gameobject.hpp"
-//#include "camera.hpp"
 #include "wall.hpp"
-//#include "functions.cpp"
 #include "player.hpp"
 #include "map.hpp"
 #include "goblin.hpp"
-//#include "textbox.hpp"
 #include "ui.hpp"
 
 #include <ncurses.h>
@@ -18,24 +15,25 @@
 
 void introduction(){
   erase();
-  printw("\"Who dares to enter THE GATES OF XOR\"\n");
+  printw("\"Who dares to enter THE GATES OF XOR?\"\n");
   printw("...\n");
-  printw("\"An adventurer, I see, hmm i might have use for you.\n");
-  printw("Find the long lost chalcie of doom and bring it to the statue\n");
-  printw("If you acomplish this I will be mericeful, else...\n\n");
+  printw("\"An adventurer I see. Hmm... I might have use for you.\n");
+  printw("Find the long lost Chalice of Doom and bring it to the Altar of Doom\n");
+  printw("If you accomplish this I will be merciful, else{}...\"\n\n");
   printw("\n");
   printw("\n(Move with arrow keys, exit with F2, save with F5, load with F9)\n");
   printw("\nPress ANY key to continue");
   int ch;
   ch = getch();
+  ch = ch; //To remove that pesky warning
 }
 void good_ending(){
   erase();
-  printw("\"CONGRATULATIONS you have won the gaem\"");
+  printw("\"CONGRATULATIONS you have won the game\"");
   printw("\n");
-  printw("\"Well done my adventurer, truly useful you proved to be have.\n");
-  printw("Found the long lost chalice of doom \n");
-  printw("I am good hearted an now relive you of your burden. Good Bye\"\n\n");
+  printw("\"Well done my adventurer, you have proven to be worthy.\n");
+  printw("Found the long lost Chalice of Doom \n");
+  printw("I am good hearted and will now relieve you of your burden. Good Bye\"\n\n");
   printw("\n\n");
   printw("\nPress ENTER key to exit the game");
   while(getch() != 10){}
@@ -45,7 +43,7 @@ void bad_ending(){
   erase();
   printw("\"YOU DIED\"");
   printw("\n");
-  printw("\nTry being less crap next time \n");
+  printw("\nTry being less crap next time. \n");
   printw("\nPress ENTER key to exit the game");
   while(getch() != 10){}
 }
@@ -79,14 +77,13 @@ std::string main_menu(void){
           break;
 
         case 10:
-            //assert(false);
           if(choose_state == 0){
 
             introduction();
             endwin();
             return "testmap";
 
-          }else if(choose_state = 1){
+          }else if(choose_state == 1){
             curs_set(1);
             echo();
             raw(); 
@@ -116,7 +113,7 @@ std::string main_menu(void){
     
   }
   endwin();
-  return "testmap";
+  return "secretlegacy"; //OOEOOEOO
 }
 
 int main(){
@@ -124,7 +121,6 @@ int main(){
 
   //##### Load necessities #####
   Ui * ui = new Ui();
-  int ch;
   /* Code reference
   std::map<std::string, bool (Gameobject::*) (Gameobject &)> funkpoint;
   funkpoint["near me"] = &Gameobject::is_near_me;
@@ -139,6 +135,7 @@ int main(){
 
 
   //##### Get keyinputs #####
+  int ch;
     while((ch=getch()) != KEY_F(2)){
     	int dx = 0;
     	int dy = 0;
@@ -171,7 +168,6 @@ int main(){
           wrefresh(ui->_scroll_win);
           wgetstr(ui->_scroll_win,in);
           std::string yourname = in;
-          //themap->save_data(yourname); // Old code
           themap->save_data_new(yourname);
           cbreak();
           curs_set(0);
@@ -204,7 +200,6 @@ int main(){
           break;
         }
         case '\t':
-          //Use tab to control ther windown in the ui maybe, welp
           mvwprintw(ui->_inv_win,3,1,"Got tab");
           wrefresh(ui->_inv_win);
           break;
@@ -283,7 +278,6 @@ int main(){
 
   std::string lol = "Press enter to continue";
   scroll(ui->_scroll_win);
-  //scroll(ui->_scroll_win);
   mvwprintw(ui->_scroll_win,1,1,"%s", lol.c_str());
   wrefresh(ui->_scroll_win);
   delete themap;

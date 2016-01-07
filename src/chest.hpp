@@ -9,14 +9,13 @@
 #include "item.hpp"
 
 #include "doorkey.hpp"
-class Map;
 class Chest:public Structure{
 public:
-	friend class Map;
-	Chest(int x, int y, WINDOW * text);
+	Chest(int x, int y, WINDOW * text, bool temp = false);
 	~Chest();
 	bool interact(std::vector<Item*>* inventory);
 	std::vector<Item*> * get_inventory();
+	void add_item(Item * item);
 	virtual std::string get_data()override;
 	virtual std::string get_data_new() override;
 protected:

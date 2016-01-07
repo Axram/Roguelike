@@ -11,7 +11,9 @@ Map::Map(std::string filename, WINDOW*& text){
  _funkpoint["D"] =  &Map::add_door;
  _funkpoint["c"] =  &Map::add_chest;
  _funkpoint[" "] = &Map::add_floor;
-   if(FILE *file = fopen(premade.c_str(),"r")){
+ if(filename == "secretlegacy"){
+  generate_map("map2");
+ }else if(FILE *file = fopen(premade.c_str(),"r")){
     fclose(file);
     load_data_new(premade);
   }else if(FILE *file = fopen(save.c_str(),"r")){
@@ -20,19 +22,6 @@ Map::Map(std::string filename, WINDOW*& text){
   }else{
     throw std::out_of_range("No file named" + filename + "found");
   }
- //load_data_new("maps/testmap.txt");// Om du vill testa kör denna rad istället för de under.
-/*
-  if(FILE *file = fopen(premade.c_str(),"r")){
-    fclose(file);
-    generate_map(filename);
-  }else if(FILE *file = fopen(save.c_str(),"r")){
-    fclose(file);
-    load_data(save);
-  }
-  */
-  //std::map<std::string, void (Map::*) (int, int)> _funkpoint;
-  //save_data();
-  //load_data();
 }
 
 Map::~Map(){
@@ -60,48 +49,7 @@ void Map::generate_map(std::string filename){
       std::string s;
       s += line[0];
       line.erase(line.begin());
-      if(_funkpoint.count(s) != 0)(this->*_funkpoint[s])(x,y,item_nr, item_filename);
-      /*
-      //TODO destruktor i map
-      if(s == "#"){
-        //Wall * w =  new Wall(x,y);
-        //_go.push_back(w);
-        (this->*_funkpoint[s])(x,y);
-          //bool h = (.*funkpoint["near me"])(p);
-
-      }else if (s == "p"){
-        Player * p = new Player(x, y, _textbox);
-        Floor * f = new Floor(x, y);
-        load_inventory(p->get_inventory(), item_filename ,item_nr);
-        _go.push_back(p);
-        _go.push_back(f);
-        _player = p;
-      }else if (s == "g"){
-        Goblin * g = new Goblin(x, y, _textbox);
-        Floor * f = new Floor(x, y);
-        load_inventory(g->get_inventory(), item_filename ,item_nr);
-        _go.push_back(g);
-        _go.push_back(f);
-        _enemies.push_back(g);
-      }else if (s == "D"){
-        Door * d = new Door(x,y, _textbox);
-        Floor * f = new Floor(x, y);
-        _go.push_back(d);
-        _go.push_back(f);
-        _st.push_back(d);
-      }else if (s == "c"){
-        Chest * d = new Chest(x,y, _textbox);
-        Floor * f = new Floor(x, y);
-        load_inventory(d->get_inventory(), item_filename ,item_nr);
-        _go.push_back(d);
-        _go.push_back(f);
-        _st.push_back(d);
-      }else if (s == " "){ 
-         Floor * f = new Floor(x, y);
-         _go.push_back(f);
-      }else{    
-      }
-      */      
+      if(_funkpoint.count(s) != 0)(this->*_funkpoint[s])(x,y,item_nr, item_filename);   
       ++x;
     }        
     ++y;
@@ -109,14 +57,7 @@ void Map::generate_map(std::string filename){
     
   mapfile.close();
 }
-/*
-void Map::runtime_load(std::string name){
-  if(FILE *file = fopen(premade.c_str(),"r")){
 
-  }
-
-}
-*/
 void Map::save_data(std::string your_name){
   std::ofstream file;
   std::string filename = "maps/" + your_name + ".savegame";
@@ -219,6 +160,8 @@ void Map::load_data_new(std::string filename){
       }else {
         throw std::out_of_range("type " + type + " does not exist");
       }
+      //actor->set_vars(hp, attack, defense, experience, exp_worth, speed, speed_c);
+      
       actor->_hp = hp;
       actor->_attack = attack;
       actor->_defense = defense;
@@ -226,12 +169,12 @@ void Map::load_data_new(std::string filename){
       actor->_experience_worth = exp_worth;
       actor->_speed = speed;
       actor->_speed_counter = speed_c;
+      
       debugfile << hp << " hp" << std::endl;
       getline(file, line);
       while(line != "$"){
         Item * item = new Item(line);
-        actor->get_inventory()->push_back(item);
-        //add_item(actor->get_inventory(), line);
+        actor->add_item(item);
         debugfile << "with item: " << line << std::endl;
         getline(file, line);
       }
@@ -246,8 +189,7 @@ void Map::load_data_new(std::string filename){
       getline(file, line);
       while(line != "$"){
         Item * item = new Item(line);
-        chest->get_inventory()->push_back(item);
-        //add_item(chest->get_inventory(), line);
+        chest->add_item(item);
         debugfile << "with item: " << line << std::endl;
         getline(file, line);
       }
@@ -266,15 +208,7 @@ void Map::load_data_new(std::string filename){
       debugfile.close();
       assert(false);
     }
-    gameobject ->_type = type;
-    gameobject->_px = px;
-    gameobject->_py = py;
-    gameobject->_depth = depth;
-    gameobject->_name = name;
-    gameobject->_desc = desc;
-    gameobject->_img = img[0];
-    gameobject->_solid = solid;
-    gameobject->_movable = movable;
+    gameobject->set_vars(type, px, py, depth, name, desc, img[0], solid, movable);
     debugfile << "name " << name<< std::endl;
     debugfile << "px "<<px << std::endl;
     debugfile << "py" << py<< std::endl;
@@ -288,83 +222,16 @@ void Map::load_data_new(std::string filename){
 void Map::spawn_chest(Actor * someone){
   if(!_cleaning_up){
     if(someone->get_inventory()->size() != 0){
-      Chest * chest = new Chest(someone->_px, someone->_py, _textbox);
-      chest->_temporary = true;
+      Chest * chest = new Chest(someone->_px, someone->_py, _textbox, true);
       _go.push_back(chest);
       _st.push_back(chest);
       for(auto i = someone->get_inventory()->begin(); i != someone->get_inventory()->end(); ++i){
-        //Item * item = new Item(**i);
         chest->get_inventory()->push_back(*i);
       }
     }
   }else {
     someone->remove_items();
   }
-}
-
-void Map::load_data(std::string filename){
-  std::ifstream file;
-  file.open(filename);
-  std::string line;
-
-  while(getline(file, line)){
-    if(line[0] == '#') continue;
-    std::string key = line;
-    getline(file, line); //px
-    int px = atoi(line.c_str());
-    getline(file, line); //py
-    int py = atoi(line.c_str());
-    Actor * actor = nullptr;
-    if(key == "Wall"){
-      Wall * item = new Wall(px, py);
-      _go.push_back(item);
-    }else if(key == "Player"){
-      Player * item = new Player(px, py, _textbox);
-      actor = item;
-      _go.push_back(item);
-      _player = item;
-    }else if(key == "Goblin"){
-      Goblin * item = new Goblin(px, py, _textbox);
-      actor = item;
-      _go.push_back(item);
-      _enemies.push_back(item);
-    }else if(key == "Door"){
-      Door * item = new Door(px, py, _textbox);
-      getline(file, line);
-      item->_solid = atoi(line.c_str());
-      if(!item->_solid)item->_img = 'd';
-      _go.push_back(item);
-      _st.push_back(item);      
-    }else if(key == "Floor"){
-      Floor * item = new Floor(px, py);
-      _go.push_back(item);
-    }else if(key == "Chest"){
-      Chest * item = new Chest(px, py, _textbox);
-      getline(file, line);
-      while(line != "$"){
-        add_item(item->get_inventory(), line);
-        getline(file, line);
-      }
-      _go.push_back(item);
-      _st.push_back(item);
-    }
-
-    if(actor != nullptr){ //All actors
-      getline(file, line);
-      int hp = atoi(line.c_str());
-      actor->_hp = hp;
-      getline(file, line);
-      int xp = atoi(line.c_str());
-      actor->_experience = xp;
-      getline(file, line);
-      while(line != "$"){
-        add_item(actor->get_inventory(), line);
-        getline(file, line);
-
-      }
-    }
-  }
-  file.close();
 }
 void Map::add_item(std::vector<Item*>* inventory, std::string name){
   if(name == "Doorkey" || name == "doorkey"){
@@ -492,7 +359,6 @@ void Map::cleanup(){
 //TODO make is_free safe if coordinate with no gameobject is called (return false)
 //Called by actors to see if the grid they want to move to is occupied.
 bool Map::is_free(int x, int y){
-  //std::cout << "In is free" << std::endl;
   std::vector<Gameobject> g;
   for(auto i = _go.begin(); i != _go.end(); ++i){
     if((**i)._px == x && (**i)._py == y){
@@ -500,7 +366,6 @@ bool Map::is_free(int x, int y){
     }
   }
 
-  //std::cout << "Is still in is free" << std::endl;
   bool is_free = true;
   for(auto i = g.begin(); i != g.end(); ++i){
     if(i->get_solid()){
@@ -515,7 +380,6 @@ void Map::load_inventory(std::vector<Item*>* inventory, std::string filename, in
   mapfile.open(filename);
   std::string line;
   int nr = -1;
-  int y = 0;
   while(getline(mapfile, line)){
     if(line[0] == '#') continue;
     if(line[0] == '$') {
@@ -535,6 +399,7 @@ void Map::load_inventory(std::vector<Item*>* inventory, std::string filename, in
   }
   item_nr++;
 }
+
 //Finds a good path from hunter to target and moves hunter one space
 //This will only try to move directly towards the player and will get stuck in walls
 void Map::find_path(Actor & hunter, Gameobject & target){
