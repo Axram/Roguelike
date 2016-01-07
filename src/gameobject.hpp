@@ -2,8 +2,7 @@
 #include <string>
 
 #include <ncurses.h>
-
-#include "textbox.hpp"
+//#include "textbox.hpp"
 
 class Map;
 class Gameobject{

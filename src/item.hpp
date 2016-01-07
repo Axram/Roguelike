@@ -5,7 +5,9 @@
 class Item{
 public:
 	//virtual ~Item() = 0;
-	~Item(){}
+  Item();
+	Item(std::string);
+  ~Item(){}
   std::string get_name();
   int get_weight();
   std::string get_description();

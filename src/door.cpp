@@ -26,7 +26,7 @@ void Door::destroy(){
 
 }
 std::string Door::get_data(){
-		std::string return_data;
+	std::string return_data;
 	return_data += _name+'\n';
 	return_data += std::to_string(_px)+'\n';
 	return_data += std::to_string(_py)+'\n';
@@ -35,7 +35,7 @@ std::string Door::get_data(){
 }
 bool Door::interact(std::vector<Item*>* inventory){
 	for(auto i = inventory->begin(); i != inventory->end(); ++i){
-      if((**i).get_name() == "Doorkey"){
+      if((**i).get_name() == "doorkey"){
 			
 			scroll(_textbox);
 			mvwprintw(_textbox,1,1, "The door opens!");

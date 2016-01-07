@@ -28,7 +28,11 @@ void Player::move(int dx, int dy){
 
 bool Player::has_won(){
   for(auto i = _inventory.begin(); i != _inventory.end(); ++i){
-    if((**i).get_name() == "WINITEM"){
+    if((**i).get_name() == "winitem"){
+      std::string prn_str = "Mario gives the chalice to the Altar, victory is iminent";
+      scroll(_textbox);
+      mvwprintw(_textbox, 1,1, "%s", prn_str.c_str());
+      wrefresh(_textbox);
       return true;
     }
   }

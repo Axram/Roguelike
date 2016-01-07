@@ -229,7 +229,9 @@ void Map::load_data_new(std::string filename){
       debugfile << hp << " hp" << std::endl;
       getline(file, line);
       while(line != "$"){
-        add_item(actor->get_inventory(), line);
+        Item * item = new Item(line);
+        actor->get_inventory()->push_back(item);
+        //add_item(actor->get_inventory(), line);
         debugfile << "with item: " << line << std::endl;
         getline(file, line);
       }
@@ -243,7 +245,9 @@ void Map::load_data_new(std::string filename){
       _st.push_back(chest);
       getline(file, line);
       while(line != "$"){
-        add_item(chest->get_inventory(), line);
+        Item * item = new Item(line);
+        chest->get_inventory()->push_back(item);
+        //add_item(chest->get_inventory(), line);
         debugfile << "with item: " << line << std::endl;
         getline(file, line);
       }
@@ -251,6 +255,16 @@ void Map::load_data_new(std::string filename){
       Door * door = new Door(px, py, _textbox);
       _st.push_back(door);
       gameobject = door;
+    }else if(type == "Altar"){
+      
+      Altar * altar = new Altar(px, py, _textbox);
+      _st.push_back(altar);
+      gameobject = altar;
+      
+    }else{
+      debugfile << "Error " << type << " not found!" << std::endl;
+      debugfile.close();
+      assert(false);
     }
     gameobject ->_type = type;
     gameobject->_px = px;

@@ -1,11 +1,11 @@
 #include "gameobject.hpp"
-#include "camera.hpp"
+//#include "camera.hpp"
 #include "wall.hpp"
-#include "functions.cpp"
+//#include "functions.cpp"
 #include "player.hpp"
 #include "map.hpp"
 #include "goblin.hpp"
-#include "textbox.hpp"
+//#include "textbox.hpp"
 #include "ui.hpp"
 
 #include <ncurses.h>
@@ -18,7 +18,11 @@
 
 void introduction(){
   erase();
-  printw("\"Who dares to enter THE GATES OF XOR\"");
+  printw("\"Who dares to enter THE GATES OF XOR\"\n");
+  printw("...\n");
+  printw("\"An adventurer, I see, hmm i might have use for you.\n");
+  printw("Find the long lost chalcie of doom and bring it to the statue\n");
+  printw("If you acomplish this I will be mericeful, else...\n\n");
   printw("\n");
   printw("\n(Move with arrow keys, exit with F2, save with F5, load with F9)\n");
   printw("\nPress ANY key to continue");
@@ -27,8 +31,11 @@ void introduction(){
 }
 void good_ending(){
   erase();
-  printw("\"CONGRATULATIONS you have opened THE GATES OF XOR\"");
+  printw("\"CONGRATULATIONS you have won the gaem\"");
   printw("\n");
+  printw("\"Well done my adventurer, truly useful you proved to be have.\n");
+  printw("Found the long lost chalice of doom \n");
+  printw("I am good hearted an now relive you of your burden. Good Bye\"\n\n");
   printw("\n\n");
   printw("\nPress ENTER key to exit the game");
   while(getch() != 10){}
@@ -109,7 +116,7 @@ std::string main_menu(void){
     
   }
   endwin();
-  return "map2";
+  return "testmap";
 }
 
 int main(){
@@ -273,8 +280,15 @@ int main(){
     ui->inv_print(themap->get_player());
   	}
     //##### Post game #####
-  while(getch() != 10){}
+
+  std::string lol = "Press enter to continue";
+  scroll(ui->_scroll_win);
+  //scroll(ui->_scroll_win);
+  mvwprintw(ui->_scroll_win,1,1,"%s", lol.c_str());
+  wrefresh(ui->_scroll_win);
   delete themap;
+
+  while(getch() != 10){}
   delete ui;
   
   initscr();
@@ -282,6 +296,8 @@ int main(){
   noecho();       //Pressed button in not shown
   keypad(stdscr, TRUE); //Enables the keyboard
   curs_set(0);
+  //Gets enter to continue
+  
   if(victory_achieved){
     good_ending();
   }else{
