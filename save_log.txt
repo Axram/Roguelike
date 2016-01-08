@@ -1,0 +1,998 @@
+saving map...
+filename maps/isleak.savegame
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Floor
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Altar of Doom
+getting item Wall
+getting item Altar of Doom
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Altar of Doom
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Altar of Doom
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Altar of Doom
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Chest
+getting item Altar of Doom
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Door
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Door
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Altar of Doom
+getting item Wall
+getting item Wall
+getting item Altar of Doom
+getting item Altar of Doom
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Altar of Doom
+getting item Wall
+getting item Chest
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Altar of Doom
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Altar of Doom
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Chest
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Altar of Doom
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Altar of Doom
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Chest
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Altar of Doom
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Altar of Doom
+getting item Altar of Doom
+getting item Chest
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Altar of Doom
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Altar of Doom
+getting item Altar of Doom
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Door
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Altar of Doom
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Altar of Doom
+getting item Wall
+getting item Wall
+getting item Altar of Doom
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Altar of Doom
+getting item Wall
+getting item Altar of Doom
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Chest
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Altar of Doom
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Wall
+getting item Goblin
+Enemy
+16
+-7
+2
+Goblin
+Ugly
+g
+True
+False
+10
+1
+0
+0
+0
+2
+0
+$
+
+getting item Goblin
+Enemy
+0
+11
+2
+Goblin
+Ugly
+g
+True
+False
+10
+1
+0
+0
+0
+2
+0
+$
+
+getting item Goblin
+Enemy
+15
+-4
+2
+Goblin
+Ugly
+g
+True
+False
+10
+1
+0
+0
+0
+2
+0
+$
+
+getting item Goblin
+Enemy
+1
+9
+2
+Goblin
+Ugly
+g
+True
+False
+10
+1
+0
+0
+0
+2
+0
+$
+
+getting item Goblin
+Enemy
+0
+10
+2
+Goblin
+Ugly
+g
+True
+False
+10
+1
+0
+0
+0
+2
+0
+$
+
+getting item Mario
+Player
+23
+-10
+2
+Mario
+Red dude
+@
+True
+False
+27
+3
+0
+0
+0
+0
+0
+healing potion
+chalice of doom
+$
+
+getting item Goblin
+Enemy
+1
+11
+2
+Goblin
+Ugly
+g
+True
+False
+10
+1
+0
+0
+0
+2
+0
+$
+
+getting item Troll
+getting item Goblin
+Enemy
+15
+-3
+2
+Goblin
+Ugly
+g
+True
+False
+10
+1
+0
+0
+0
+2
+0
+$
+
+getting item Goblin
+Enemy
+1
+10
+2
+Goblin
+Ugly
+g
+True
+False
+10
+1
+0
+0
+0
+2
+0
+$
+
+getting item Kungen
+getting item Goblin
+Enemy
+0
+9
+2
+Goblin
+Ugly
+g
+True
+False
+10
+1
+0
+0
+0
+2
+0
+$
+
+getting item Kungen
+done!

@@ -3,13 +3,12 @@
 #include "gameobject.hpp"
 
 Gameobject::Gameobject(){}
-
-void Gameobject::set_vars(std::string type, 
+void Gameobject::set_vars(const std::string& type, 
 	int px, 
 	int py, 
 	int depth, 
-	std::string name, 
-	std::string desc, 
+	const std::string& name, 
+	const std::string& desc, 
 	char img, bool solid, 
 	bool movable,
 	WINDOW * text){
@@ -49,7 +48,7 @@ std::string Gameobject::get_name()const{
 std::string Gameobject::get_desc()const{
 	return _desc;
 }
-bool Gameobject::is_near_me(Gameobject & other){
+bool Gameobject::is_near_me(const Gameobject & other)const{
 	//NSEW 
 	int dx[4] = {0,0,1,-1};
 	int dy[4] = {1,-1,0,0};

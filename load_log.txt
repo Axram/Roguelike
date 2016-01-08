@@ -1,832 +1,2299 @@
 loading map...
-filename maps/testmap.txt
-Gameobject!
-name Wall
-px 37
-py-2
-Gameobject!
-name Wall
-px 37
-py-1
-Gameobject!
-name Wall
-px 37
-py0
-Gameobject!
-name Wall
-px 37
-py0
-Gameobject!
-name Wall
-px 37
-py1
-Gameobject!
-name Wall
-px 37
-py2
-Gameobject!
-name Wall
-px 37
-py3
-Gameobject!
-name Wall
-px 37
-py4
-Gameobject!
-name Wall
-px 37
-py5
-Gameobject!
-name Wall
-px 37
-py6
-Gameobject!
-name Wall
-px 37
-py7
-Gameobject!
-name Wall
-px 36
-py-2
-Gameobject!
-name Wall
-px 36
-py7
-Gameobject!
-name Floor
-px 36
-py-1
-Gameobject!
-name Floor
-px 35
-py-1
-Gameobject!
-name Floor
-px 35
-py0
-Gameobject!
-name Floor
-px 36
-py0
-Gameobject!
-name Floor
-px 36
-py0
-Gameobject!
-name Floor
-px 35
-py0
-Gameobject!
-name Floor
-px 35
-py1
-Gameobject!
-name Floor
-px 36
-py1
-Gameobject!
-name Floor
-px 36
-py2
-Gameobject!
-name Floor
-px 35
-py2
-Gameobject!
-name Floor
-px 35
-py3
-Gameobject!
-name Floor
-px 36
-py3
-Gameobject!
-name Floor
-px 35
-py4
-Gameobject!
-name Floor
-px 36
-py4
-Gameobject!
-name Floor
-px 35
-py5
-Gameobject!
-name Floor
-px 36
-py5
-Gameobject!
-name Floor
-px 36
-py6
-Gameobject!
-name Floor
-px 35
-py6
-Gameobject!
-name Floor
-px 34
-py-1
-Gameobject!
-name Floor
-px 33
-py-1
-Gameobject!
-name Floor
-px 32
-py-1
+filename maps/isleak.savegame
 Gameobject!
 name Floor
 px 31
-py-1
-Gameobject!
-name Floor
-px 30
-py-1
-Gameobject!
-name Floor
-px 29
-py-1
-Gameobject!
-name Floor
-px 28
-py-1
-Gameobject!
-name Floor
-px 27
-py-1
-Gameobject!
-name Floor
-px 26
-py-1
-Gameobject!
-name Floor
-px 25
-py-1
-Gameobject!
-name Floor
-px 24
-py-1
-Gameobject!
-name Floor
-px 23
-py-1
-Gameobject!
-name Floor
-px 22
-py-1
-Gameobject!
-name Wall
-px 21
-py-2
-name Altar of Doom
-px 29
-py2
-name Altar of Doom
-px 30
-py1
-name Altar of Doom
-px 31
-py1
-name Altar of Doom
-px 28
-py1
-name Altar of Doom
-px 27
-py1
-name Altar of Doom
-px 28
-py4
-name Altar of Doom
-px 29
-py4
-name Altar of Doom
-px 30
-py4
-name Altar of Doom
-px 31
-py4
-name Altar of Doom
-px 31
-py3
-name Altar of Doom
-px 30
-py3
-name Altar of Doom
-px 29
-py3
-name Altar of Doom
-px 28
-py3
-name Altar of Doom
-px 27
-py4
-name Altar of Doom
-px 27
-py3
-name Altar of Doom
-px 32
-py2
-name Altar of Doom
-px 26
-py2
-name Altar of Doom
-px 33
-py1
-name Altar of Doom
-px 25
-py1
-name Altar of Doom
-px 26
-py0
-name Altar of Doom
-px 32
-py0
-name Altar of Doom
-px 31
-py-1
-name Altar of Doom
-px 30
-py-1
-name Altar of Doom
-px 29
-py-1
-name Altar of Doom
-px 28
-py-1
-Gameobject!
-name Wall
-px 35
-py-2
-Gameobject!
-name Wall
-px 35
-py7
-Gameobject!
-name Wall
-px 28
-py-2
-Gameobject!
-name Wall
-px 29
-py-2
-Gameobject!
-name Wall
-px 30
-py-2
-Gameobject!
-name Wall
-px 31
-py-2
-Gameobject!
-name Wall
-px 32
-py-2
-Gameobject!
-name Wall
-px 33
-py-2
-Gameobject!
-name Wall
-px 34
-py-2
-Gameobject!
-name Wall
-px 28
-py7
-Gameobject!
-name Wall
-px 29
-py7
-Gameobject!
-name Wall
-px 30
-py7
-Gameobject!
-name Wall
-px 31
-py7
-Gameobject!
-name Wall
-px 32
-py7
-Gameobject!
-name Wall
-px 33
-py7
-Gameobject!
-name Wall
-px 34
-py7
-Gameobject!
-name Floor
-px 34
-py2
-Gameobject!
-name Floor
-px 34
-py3
-Gameobject!
-name Floor
-px 34
-py0
-Gameobject!
-name Floor
-px 34
-py1
-Gameobject!
-name Floor
-px 34
-py0
-Gameobject!
-name Floor
-px 34
-py4
-Gameobject!
-name Floor
-px 34
-py5
-Gameobject!
-name Floor
-px 34
 py6
 Gameobject!
 name Floor
-px 33
-py2
-Gameobject!
-name Floor
-px 33
-py3
-Gameobject!
-name Floor
-px 33
-py0
-Gameobject!
-name Floor
-px 33
-py1
-Gameobject!
-name Floor
-px 33
-py0
-Gameobject!
-name Floor
-px 33
-py4
-Gameobject!
-name Floor
-px 33
-py5
-Gameobject!
-name Floor
-px 33
-py6
-Gameobject!
-name Floor
-px 32
-py2
-Gameobject!
-name Floor
-px 32
-py3
-Gameobject!
-name Floor
-px 32
-py0
-Gameobject!
-name Floor
-px 32
-py0
-Gameobject!
-name Floor
-px 32
-py4
-Gameobject!
-name Floor
-px 32
-py5
-Gameobject!
-name Floor
-px 32
-py6
-Gameobject!
-name Floor
-px 31
-py3
-Gameobject!
-name Floor
-px 31
-py1
-Gameobject!
-name Floor
-px 31
-py4
-Gameobject!
-name Floor
-px 31
-py5
-Gameobject!
-name Floor
-px 31
-py6
-Gameobject!
-name Floor
-px 30
-py3
-Gameobject!
-name Floor
-px 30
-py1
-Gameobject!
-name Floor
-px 30
-py4
-Gameobject!
-name Floor
-px 30
-py5
-Gameobject!
-name Floor
-px 30
-py6
-Gameobject!
-name Floor
-px 29
-py6
-Gameobject!
-name Floor
-px 28
-py6
-Gameobject!
-name Floor
-px 29
-py5
-Gameobject!
-name Floor
-px 28
-py5
-Gameobject!
-name Floor
-px 29
-py4
-Gameobject!
-name Floor
-px 28
-py4
-Gameobject!
-name Floor
-px 27
-py4
-Gameobject!
-name Floor
-px 27
-py1
-Gameobject!
-name Floor
-px 28
-py1
-Gameobject!
-name Floor
-px 27
-py3
-Gameobject!
-name Floor
-px 28
-py3
-Gameobject!
-name Floor
-px 29
-py3
-Gameobject!
-name Floor
-px 29
-py2
-Gameobject!
-name Floor
-px 27
-py5
-Gameobject!
-name Floor
-px 27
-py6
-Gameobject!
-name Wall
-px 27
-py7
-Gameobject!
-name Wall
-px 26
-py7
-Gameobject!
-name Wall
-px 25
-py7
-Gameobject!
-name Wall
-px 24
-py7
-Gameobject!
-name Wall
-px 23
-py7
-Gameobject!
-name Wall
-px 22
-py7
-Gameobject!
-name Wall
-px 21
-py7
-Gameobject!
-name Wall
-px 27
-py-2
-Gameobject!
-name Wall
-px 26
-py-2
-Gameobject!
-name Wall
-px 25
-py-2
-Gameobject!
-name Wall
-px 24
-py-2
-Gameobject!
-name Wall
-px 23
-py-2
-Gameobject!
-name Wall
-px 22
-py-2
-Gameobject!
-name Wall
-px 21
-py-1
-Gameobject!
-name Floor
-px 26
-py0
-Gameobject!
-name Floor
-px 26
-py0
-Gameobject!
-name Floor
-px 26
-py2
-Gameobject!
-name Floor
-px 26
-py3
-Gameobject!
-name Floor
-px 26
-py4
-Gameobject!
-name Floor
-px 26
-py5
-Gameobject!
-name Floor
-px 26
-py6
-Gameobject!
-name Floor
-px 25
-py6
-Gameobject!
-name Floor
-px 25
-py5
-Gameobject!
-name Floor
-px 25
-py4
-Gameobject!
-name Floor
-px 25
-py3
-Gameobject!
-name Floor
-px 25
-py2
-Gameobject!
-name Floor
-px 25
-py1
-Gameobject!
-name Floor
-px 25
-py0
-Gameobject!
-name Floor
-px 25
-py0
-Gameobject!
-name Floor
-px 24
-py6
-Gameobject!
-name Floor
-px 23
-py6
-Gameobject!
-name Floor
-px 24
-py0
-Gameobject!
-name Floor
-px 23
-py0
-Gameobject!
-name Floor
-px 24
-py0
-Gameobject!
-name Floor
-px 24
-py5
-Gameobject!
-name Floor
-px 24
-py1
-Gameobject!
-name Floor
-px 24
-py2
-Gameobject!
-name Floor
-px 23
-py0
-Gameobject!
-name Floor
-px 24
-py4
-Gameobject!
-name Floor
-px 23
-py5
-Gameobject!
-name Floor
-px 23
-py1
-Gameobject!
-name Floor
-px 23
-py2
-Gameobject!
-name Floor
-px 23
-py4
-Gameobject!
-name Floor
-px 24
-py3
-Gameobject!
-name Floor
-px 23
-py3
-Gameobject!
-name Floor
-px 22
-py6
-Gameobject!
-name Floor
-px 22
-py0
-Gameobject!
-name Floor
-px 22
-py0
-Gameobject!
-name Floor
-px 22
-py1
-Gameobject!
-name Floor
-px 22
-py2
-Gameobject!
-name Floor
-px 22
-py5
-Gameobject!
-name Floor
-px 22
-py3
-Gameobject!
-name Floor
-px 22
-py4
-Gameobject!
-name Floor
-px 21
-py4
-name Altar of Doom
-px 27
-py-1
-Actor!
-5 hp
-with item: healing potion
-name Beholder
 px 10
+py-3
+Gameobject!
+name Floor
+px 20
 py2
 Gameobject!
 name Floor
-px 4
-py2
-Gameobject!
-name Floor
-px 4
-py-2
+px 8
+py1
 Gameobject!
 name Floor
 px 5
+py6
+Gameobject!
+name Floor
+px 28
 py3
 Gameobject!
 name Floor
-px 7
+px 12
 py4
 Gameobject!
 name Floor
-px 10
-py0
-Gameobject!
-name Floor
-px 11
-py-4
-Gameobject!
-name Wall
-px 27
-py-4
-Gameobject!
-name Floor
-px 7
-py0
-Gameobject!
-name Floor
-px 17
-py2
-Gameobject!
-name Wall
 px 2
-py-5
-Gameobject!
-name Wall
-px 7
-py-1
-Gameobject!
-name Floor
-px 6
-py-8
-Gameobject!
-name Floor
-px 5
-py-3
-Gameobject!
-name Wall
-px 5
-py-1
-Gameobject!
-name Wall
-px 10
-py-1
-Gameobject!
-name Floor
-px 6
-py-3
+py2
 Gameobject!
 name Floor
 px 11
-py1
+py3
+Gameobject!
+name Floor
+px 18
+py-4
+Gameobject!
+name Floor
+px 16
+py5
+Gameobject!
+name Floor
+px 16
+py6
+Gameobject!
+name Floor
+px 35
+py2
+Gameobject!
+name Floor
+px 22
+py0
+Gameobject!
+name Floor
+px 8
+py-10
+Gameobject!
+name Floor
+px 34
+py6
+Gameobject!
+name Floor
+px 34
+py4
+Gameobject!
+name Floor
+px 31
+py5
+Gameobject!
+name Floor
+px 11
+py6
+Gameobject!
+name Floor
+px 35
+py3
+Gameobject!
+name Floor
+px 29
+py-1
 Gameobject!
 name Floor
 px 15
+py-4
+Gameobject!
+name Floor
+px 3
+py3
+Gameobject!
+name Floor
+px 19
+py4
+Gameobject!
+name Floor
+px 12
+py5
+Gameobject!
+name Floor
+px 4
 py0
 Gameobject!
 name Floor
-px 13
+px 24
+py1
+Gameobject!
+name Floor
+px 23
+py0
+Gameobject!
+name Floor
+px 2
+py3
+Gameobject!
+name Floor
+px 9
+py3
+Gameobject!
+name Floor
+px 2
+py6
+Gameobject!
+name Floor
+px 14
+py-10
+Gameobject!
+name Floor
+px 9
+py0
+Gameobject!
+name Floor
+px 9
+py5
+Gameobject!
+name Floor
+px 8
+py4
+Gameobject!
+name Floor
+px 8
+py2
+Gameobject!
+name Floor
+px 7
+py5
+Gameobject!
+name Floor
+px 2
+py0
+Gameobject!
+name Floor
+px 8
+py1
+Gameobject!
+name Floor
+px 25
+py-4
+Gameobject!
+name Floor
+px 25
+py0
+Gameobject!
+name Floor
+px 27
+py-1
+Gameobject!
+name Floor
+px 23
+py6
+Gameobject!
+name Floor
+px 12
+py2
+Gameobject!
+name Floor
+px 36
+py0
+Gameobject!
+name Floor
+px 27
+py6
+Gameobject!
+name Floor
+px 10
+py-10
+Gameobject!
+name Floor
+px 15
+py-8
+Gameobject!
+name Floor
+px 21
+py6
+Gameobject!
+name Floor
+px 32
 py6
 Gameobject!
 name Floor
 px 9
-py-9
+py-10
 Gameobject!
 name Floor
-px 8
-py-8
+px 31
+py-1
+Gameobject!
+name Floor
+px 1
+py3
+Gameobject!
+name Floor
+px 22
+py-1
+Gameobject!
+name Floor
+px 23
+py5
 Gameobject!
 name Floor
 px 20
 py4
 Gameobject!
 name Floor
+px 18
+py2
+Gameobject!
+name Floor
+px 0
+py3
+Gameobject!
+name Floor
+px 11
+py4
+Gameobject!
+name Floor
+px 15
+py2
+Gameobject!
+name Floor
+px 19
+py0
+Gameobject!
+name Floor
+px 20
+py1
+Gameobject!
+name Floor
+px 14
+py-11
+Gameobject!
+name Floor
 px 9
+py-3
+Gameobject!
+name Floor
+px 8
+py4
+Gameobject!
+name Floor
+px 0
+py5
+Gameobject!
+name Floor
+px 34
+py5
+Gameobject!
+name Floor
+px 23
+py0
+Gameobject!
+name Floor
+px 11
+py2
+Gameobject!
+name Floor
+px 25
+py-1
+Gameobject!
+name Floor
+px 17
+py-10
+Gameobject!
+name Floor
+px 27
+py1
+Gameobject!
+name Floor
+px 11
+py-6
+Gameobject!
+name Floor
+px 26
+py2
+Gameobject!
+name Floor
+px 13
+py2
+Gameobject!
+name Floor
+px 32
+py-1
+Gameobject!
+name Floor
+px 25
+py0
+Gameobject!
+name Floor
+px 21
+py-10
+Gameobject!
+name Floor
+px 25
+py1
+Gameobject!
+name Floor
+px 17
+py-4
+Gameobject!
+name Floor
+px 13
+py1
+Gameobject!
+name Floor
+px 12
+py-8
+Gameobject!
+name Floor
+px 12
+py2
+Gameobject!
+name Floor
+px 16
+py6
+Gameobject!
+name Floor
+px 28
+py4
+Gameobject!
+name Floor
+px 25
+py4
+Gameobject!
+name Floor
+px 15
+py-5
+Gameobject!
+name Floor
+px 11
+py5
+Gameobject!
+name Floor
+px 24
+py3
+Gameobject!
+name Floor
+px 7
+py3
+Gameobject!
+name Floor
+px 15
+py4
+Gameobject!
+name Floor
+px 18
+py5
+Gameobject!
+name Floor
+px 11
+py0
+Gameobject!
+name Floor
+px 10
+py5
+Gameobject!
+name Floor
+px 26
+py-4
+Gameobject!
+name Floor
+px 10
+py1
+Gameobject!
+name Floor
+px 22
+py1
+Gameobject!
+name Floor
+px 20
+py0
+Gameobject!
+name Floor
+px 5
+py-8
+Gameobject!
+name Floor
+px 0
+py2
+Gameobject!
+name Floor
+px 3
+py0
+Gameobject!
+name Floor
+px 15
+py1
+Gameobject!
+name Floor
+px 19
+py-4
+Gameobject!
+name Floor
+px 16
+py2
+Gameobject!
+name Floor
+px 27
+py5
+Gameobject!
+name Floor
+px 22
+py5
+Gameobject!
+name Floor
+px 24
+py-4
+Gameobject!
+name Floor
+px 13
+py5
+Gameobject!
+name Floor
+px 3
+py1
+Gameobject!
+name Floor
+px 10
+py5
+Gameobject!
+name Floor
+px 18
+py0
+Gameobject!
+name Floor
+px 33
+py0
+Gameobject!
+name Floor
+px 35
+py-1
+Gameobject!
+name Floor
+px 29
+py3
+Gameobject!
+name Floor
+px 3
+py-2
+Gameobject!
+name Floor
+px 11
+py-11
+Gameobject!
+name Floor
+px 16
+py0
+Gameobject!
+name Floor
+px 11
+py-3
+Gameobject!
+name Floor
+px 5
+py-10
+Gameobject!
+name Floor
+px 10
+py4
+Gameobject!
+name Floor
+px 27
+py3
+Gameobject!
+name Floor
+px 24
+py5
+Gameobject!
+name Floor
+px 9
+py5
+Gameobject!
+name Floor
+px 8
+py-3
+Gameobject!
+name Floor
+px 5
+py4
+Gameobject!
+name Floor
+px 7
+py11
+Gameobject!
+name Floor
+px 28
+py1
+Gameobject!
+name Floor
+px 11
+py2
+Gameobject!
+name Floor
+px 6
+py1
+Gameobject!
+name Floor
+px 11
+py-4
+Gameobject!
+name Floor
+px 20
+py3
+Gameobject!
+name Floor
+px 10
+py13
+Gameobject!
+name Floor
+px 5
+py0
+Gameobject!
+name Floor
+px 25
+py3
+Gameobject!
+name Floor
+px 17
+py6
+Gameobject!
+name Floor
+px 20
+py5
+Gameobject!
+name Floor
+px 21
+py4
+Gameobject!
+name Floor
+px 9
+py2
+Gameobject!
+name Floor
+px 31
+py1
+Gameobject!
+name Floor
+px 8
+py0
+Gameobject!
+name Floor
+px 9
+py-8
+Gameobject!
+name Floor
+px 16
+py6
+Gameobject!
+name Floor
+px 12
+py5
+Gameobject!
+name Floor
+px 3
+py-3
+Gameobject!
+name Floor
+px 12
+py6
+Gameobject!
+name Floor
+px 32
+py0
+Gameobject!
+name Floor
+px 30
+py-1
+Gameobject!
+name Floor
+px 18
+py1
+Gameobject!
+name Floor
+px 10
+py-9
+Gameobject!
+name Floor
+px 6
+py-11
+Gameobject!
+name Floor
+px 29
+py4
+Gameobject!
+name Floor
+px 14
+py2
+Gameobject!
+name Floor
+px 26
+py4
+Gameobject!
+name Floor
+px 15
+py-3
+Gameobject!
+name Floor
+px 19
+py1
+Gameobject!
+name Floor
+px 13
+py-8
+Gameobject!
+name Floor
+px 36
+py-1
+Gameobject!
+name Floor
+px 20
+py3
+Gameobject!
+name Floor
+px 8
+py2
+Gameobject!
+name Floor
+px 7
+py-9
+Gameobject!
+name Floor
+px 4
+py3
+Gameobject!
+name Floor
+px 34
+py1
+Gameobject!
+name Floor
+px 5
+py-11
+Gameobject!
+name Floor
+px 24
+py-1
+Gameobject!
+name Floor
+px 16
+py-6
+Gameobject!
+name Floor
+px 34
+py0
+Gameobject!
+name Floor
+px 11
+py-7
+Gameobject!
+name Floor
+px 29
+py6
+Gameobject!
+name Floor
+px 7
+py-11
+Gameobject!
+name Floor
+px 32
+py3
+Gameobject!
+name Floor
+px 12
+py1
+Gameobject!
+name Floor
+px 20
+py-10
+Gameobject!
+name Floor
+px 24
+py0
+Gameobject!
+name Floor
+px 30
+py5
+Gameobject!
+name Floor
+px 16
+py3
+Gameobject!
+name Floor
+px 10
+py3
+Gameobject!
+name Floor
+px 5
+py-4
+Gameobject!
+name Floor
+px 31
+py4
+Gameobject!
+name Floor
+px 1
+py1
+Gameobject!
+name Floor
+px 11
+py-8
+Gameobject!
+name Floor
+px 11
+py0
+Gameobject!
+name Floor
+px 10
+py0
+Gameobject!
+name Floor
+px 36
+py0
+Gameobject!
+name Floor
+px 4
+py2
+Gameobject!
+name Floor
+px 11
+py13
+Gameobject!
+name Floor
+px 22
+py-4
+Gameobject!
+name Floor
+px 5
+py-3
+Gameobject!
+name Floor
+px 4
+py-2
+Gameobject!
+name Floor
+px 12
+py-4
+Gameobject!
+name Floor
+px 8
+py0
+Gameobject!
+name Floor
+px 10
+py4
+Gameobject!
+name Floor
+px 33
+py0
+Gameobject!
+name Floor
+px 10
+py3
+Gameobject!
+name Floor
+px 26
+py5
+Gameobject!
+name Floor
+px 18
+py4
+Gameobject!
+name Floor
+px 22
+py2
+Gameobject!
+name Floor
+px 10
+py14
+Gameobject!
+name Floor
+px 31
+py3
+Gameobject!
+name Floor
+px 0
+py10
+Gameobject!
+name Floor
+px 0
+py11
+Gameobject!
+name Floor
+px 4
+py10
+Gameobject!
+name Floor
+px 22
+py3
+Gameobject!
+name Floor
+px 24
+py2
+Gameobject!
+name Floor
+px 28
+py6
+Gameobject!
+name Floor
+px 15
+py0
+Gameobject!
+name Floor
+px 11
+py1
+Gameobject!
+name Floor
+px 6
+py-3
+Gameobject!
+name Floor
+px 5
+py3
+Gameobject!
+name Floor
+px 7
+py4
+Gameobject!
+name Floor
+px 13
+py0
+Gameobject!
+name Floor
+px 23
+py-4
+Gameobject!
+name Floor
+px 23
+py-1
+Gameobject!
+name Floor
+px 6
+py2
+Gameobject!
+name Floor
+px 16
+py-3
+Gameobject!
+name Floor
+px 5
+py1
+Gameobject!
+name Floor
+px 0
+py0
+Gameobject!
+name Floor
+px 1
+py4
+Gameobject!
+name Floor
+px 12
+py-11
+Gameobject!
+name Floor
+px 26
+py-1
+Gameobject!
+name Floor
+px 11
+py1
+Gameobject!
+name Floor
+px 6
+py5
+Gameobject!
+name Floor
+px 22
+py6
+Gameobject!
+name Floor
+px 35
+py6
+Gameobject!
+name Floor
+px 16
+py-10
+Gameobject!
+name Floor
+px 24
+py0
+Gameobject!
+name Floor
+px 33
+py5
+Gameobject!
+name Floor
+px 16
+py-9
+Gameobject!
+name Floor
+px 26
+py0
+Gameobject!
+name Floor
+px 19
+py5
+Gameobject!
+name Floor
+px 21
+py-4
+Gameobject!
+name Floor
+px 16
+py-5
+Gameobject!
+name Floor
+px 3
+py5
+Gameobject!
+name Floor
+px 11
+py4
+Gameobject!
+name Floor
+px 15
+py6
+Gameobject!
+name Floor
+px 3
+py6
+Gameobject!
+name Floor
+px 13
+py3
+Gameobject!
+name Floor
+px 14
+py-9
+Gameobject!
+name Floor
+px 9
+py1
+Gameobject!
+name Floor
+px 36
+py2
+Gameobject!
+name Floor
+px 33
+py4
+Gameobject!
+name Floor
+px 18
+py-10
+Gameobject!
+name Floor
+px 2
+py1
+Gameobject!
+name Floor
+px 8
+py-11
+Gameobject!
+name Floor
+px 18
+py6
+Gameobject!
+name Floor
+px 7
+py1
+Gameobject!
+name Floor
+px 11
+py3
+Gameobject!
+name Floor
+px 33
+py3
+Gameobject!
+name Floor
+px 36
+py4
+Gameobject!
+name Floor
+px 11
+py-2
+Gameobject!
+name Floor
+px 23
+py4
+Gameobject!
+name Floor
+px 34
+py0
+Gameobject!
+name Floor
+px 5
+py2
+Gameobject!
+name Floor
+px 21
+py6
+Gameobject!
+name Floor
+px 36
+py3
+Gameobject!
+name Floor
+px 33
+py1
+Gameobject!
+name Floor
+px 35
+py4
+Gameobject!
+name Floor
+px 6
+py0
+Gameobject!
+name Floor
+px 32
+py5
+Gameobject!
+name Floor
+px 25
+py2
+Gameobject!
+name Floor
+px 5
+py6
+Gameobject!
+name Floor
+px 14
+py-8
+Gameobject!
+name Floor
+px 10
+py1
+Gameobject!
+name Floor
+px 2
+py9
+Gameobject!
+name Floor
+px 16
+py4
+Gameobject!
+name Floor
+px 25
+py5
+Gameobject!
+name Floor
+px 16
+py-8
+Gameobject!
+name Floor
+px 14
+py6
+Gameobject!
+name Floor
+px 19
+py2
+Gameobject!
+name Floor
+px 36
+py1
+Gameobject!
+name Floor
+px -1
+py10
+Gameobject!
+name Floor
+px 9
+py-11
+Gameobject!
+name Floor
+px 35
+py1
+Gameobject!
+name Floor
+px 9
+py0
+Gameobject!
+name Floor
+px 1
+py8
+Gameobject!
+name Floor
+px 4
+py5
+Gameobject!
+name Floor
+px 1
+py8
+Gameobject!
+name Floor
+px 36
+py5
+Gameobject!
+name Floor
+px 13
+py8
+Gameobject!
+name Floor
+px 27
+py4
+Gameobject!
+name Floor
+px 5
+py-9
+Gameobject!
+name Floor
+px 4
+py1
+Gameobject!
+name Floor
+px 9
+py11
+Gameobject!
+name Floor
+px 1
+py9
+Gameobject!
+name Floor
+px 10
+py11
+Gameobject!
+name Floor
+px 20
+py6
+Gameobject!
+name Floor
+px 1
+py10
+Gameobject!
+name Floor
+px 11
+py10
+Gameobject!
+name Floor
+px 11
+py9
+Gameobject!
+name Floor
+px 2
+py10
+Gameobject!
+name Floor
+px 10
+py9
+Gameobject!
+name Floor
+px 10
+py8
+Gameobject!
+name Floor
+px 7
+py8
+Gameobject!
+name Floor
+px 12
+py-6
+Gameobject!
+name Floor
+px 12
+py-7
+Gameobject!
+name Floor
+px 5
+py5
+Gameobject!
+name Floor
+px 4
+py6
+Gameobject!
+name Floor
+px 13
+py12
+Gameobject!
+name Floor
+px 15
+py-10
+Gameobject!
+name Floor
+px 13
+py11
+Gameobject!
+name Floor
+px 8
+py6
+Gameobject!
+name Floor
+px 8
+py7
+Gameobject!
+name Floor
+px 7
+py7
+Gameobject!
+name Floor
+px 7
+py6
+Gameobject!
+name Floor
+px 15
+py-7
+Gameobject!
+name Floor
+px 13
+py4
+Gameobject!
+name Floor
+px 13
+py9
+Gameobject!
+name Floor
+px 10
+py7
+Gameobject!
+name Floor
+px 8
+py8
+Gameobject!
+name Floor
+px 8
+py9
+Gameobject!
+name Floor
+px 7
+py9
+Gameobject!
+name Floor
+px 7
+py10
+Gameobject!
+name Floor
+px 8
+py10
+Gameobject!
+name Floor
+px 8
+py11
+Gameobject!
+name Floor
+px 3
+py4
+Gameobject!
+name Floor
+px 7
+py12
+Gameobject!
+name Floor
+px 8
+py12
+Gameobject!
+name Floor
+px 13
+py-10
+Gameobject!
+name Floor
+px 8
+py3
+Gameobject!
+name Floor
+px 8
+py1
+Gameobject!
+name Floor
+px 13
+py10
+Gameobject!
+name Floor
+px 19
+py6
+Gameobject!
+name Floor
+px 6
+py-2
+Gameobject!
+name Floor
+px 16
+py-11
+Gameobject!
+name Floor
+px 0
+py9
+Gameobject!
+name Floor
+px 0
+py8
+Gameobject!
+name Floor
+px 0
+py8
+Gameobject!
+name Floor
+px 13
+py-9
+Gameobject!
+name Floor
+px 26
+py3
+Gameobject!
+name Floor
+px 1
+py12
+Gameobject!
+name Floor
+px 20
+py5
+Gameobject!
+name Floor
+px 0
+py9
+Gameobject!
+name Floor
+px 0
+py10
+Gameobject!
+name Floor
+px 1
+py5
+Gameobject!
+name Floor
+px 0
+py11
+Gameobject!
+name Floor
+px 25
+py-10
+Gameobject!
+name Floor
+px 30
+py3
+Gameobject!
+name Floor
+px 32
+py4
+Gameobject!
+name Floor
+px 12
+py0
+Gameobject!
+name Floor
+px 0
+py12
+Gameobject!
+name Floor
+px 2
+py4
+Gameobject!
+name Floor
+px -1
+py12
+Gameobject!
+name Floor
+px -1
+py11
+Gameobject!
+name Floor
+px 1
+py7
+Gameobject!
+name Floor
+px 0
+py7
+Gameobject!
+name Floor
+px 11
+py11
+Gameobject!
+name Floor
+px 0
+py7
+Gameobject!
+name Floor
+px -1
+py7
+Gameobject!
+name Floor
+px -1
+py8
+Gameobject!
+name Floor
+px -1
+py9
+Gameobject!
+name Floor
+px 5
+py7
+Gameobject!
+name Floor
+px 11
+py7
+Gameobject!
+name Floor
+px 12
+py7
+Gameobject!
+name Floor
+px 13
+py7
+Gameobject!
+name Floor
+px 13
+py7
+Gameobject!
+name Floor
+px 6
+py11
+Gameobject!
+name Floor
+px 5
+py11
+Gameobject!
+name Floor
+px 12
+py-10
+Gameobject!
+name Floor
+px 2
+py11
+Gameobject!
+name Floor
+px 4
+py11
+Gameobject!
+name Floor
+px 9
+py1
+Gameobject!
+name Floor
+px 18
+py3
+Gameobject!
+name Floor
+px 4
+py4
+Gameobject!
+name Floor
+px 6
+py-4
+Gameobject!
+name Floor
+px 7
+py-8
+Gameobject!
+name Floor
+px 15
+py-11
+Gameobject!
+name Floor
+px 24
+py4
+Gameobject!
+name Floor
+px 7
+py-10
+Gameobject!
+name Floor
+px 0
+py6
+Gameobject!
+name Floor
+px 11
+py-9
+Gameobject!
+name Floor
+px 12
+py1
+Gameobject!
+name Floor
+px 22
+py-10
+Gameobject!
+name Floor
+px 13
+py-11
+Gameobject!
+name Floor
+px 15
+py5
+Gameobject!
+name Floor
+px 6
+py4
+Gameobject!
+name Floor
+px 12
+py4
+Gameobject!
+name Floor
+px 36
+py6
+Gameobject!
+name Floor
+px 30
+py4
+Gameobject!
+name Floor
+px 23
+py1
+Gameobject!
+name Floor
+px 30
+py1
+Gameobject!
+name Floor
+px 33
+py6
+Gameobject!
+name Floor
+px 23
+py3
+Gameobject!
+name Floor
+px 33
+py-1
+Gameobject!
+name Floor
+px 0
+py1
+Gameobject!
+name Floor
+px 5
+py-2
+Gameobject!
+name Floor
+px 19
+py-10
+Gameobject!
+name Floor
+px 11
+py-1
+Gameobject!
+name Floor
+px 8
+py-9
+Gameobject!
+name Floor
+px 32
+py0
+Gameobject!
+name Floor
+px 3
+py2
+Gameobject!
+name Floor
+px 0
+py12
+Gameobject!
+name Floor
+px 35
+py0
+Gameobject!
+name Floor
+px 11
+py-5
+Gameobject!
+name Floor
+px 4
+py-4
+Gameobject!
+name Floor
+px 9
+py3
+Gameobject!
+name Floor
+px 8
+py3
+Gameobject!
+name Floor
+px 16
+py1
+Gameobject!
+name Floor
+px 11
+py5
+Gameobject!
+name Floor
+px 12
+py-9
+Gameobject!
+name Floor
+px 15
+py3
+Gameobject!
+name Floor
+px 33
+py2
+Gameobject!
+name Floor
+px 24
+py-10
+Gameobject!
+name Floor
+px 24
+py6
+Gameobject!
+name Floor
+px 34
+py-1
+Gameobject!
+name Floor
+px 1
+py0
+Gameobject!
+name Floor
+px 4
+py9
+Gameobject!
+name Floor
+px 12
+py0
+Gameobject!
+name Floor
+px 20
+py-4
+Gameobject!
+name Floor
+px 3
+py-4
+Gameobject!
+name Floor
+px 26
+py6
+Gameobject!
+name Floor
+px 23
+py-10
+Gameobject!
+name Floor
+px 10
+py0
+Gameobject!
+name Floor
+px 9
+py4
+Gameobject!
+name Floor
+px 1
+py6
+Gameobject!
+name Floor
+px 11
+py-10
+Gameobject!
+name Floor
+px 4
+py-3
+Gameobject!
+name Floor
+px 35
+py0
+Gameobject!
+name Floor
+px 7
+py-3
+Gameobject!
+name Floor
+px 10
+py-11
+Gameobject!
+name Floor
+px 7
+py2
+Gameobject!
+name Floor
+px 34
+py2
+Gameobject!
+name Floor
+px 29
+py2
+Gameobject!
+name Floor
+px 16
+py-4
+Gameobject!
+name Floor
+px 32
+py2
+Gameobject!
+name Floor
+px 15
+py-6
+Gameobject!
+name Floor
+px 29
+py5
+Gameobject!
+name Floor
+px 2
+py7
+Gameobject!
+name Floor
+px 1
+py11
+Gameobject!
+name Floor
+px 2
+py7
+Gameobject!
+name Floor
+px 3
+py7
+Gameobject!
+name Floor
+px 4
+py7
+Gameobject!
+name Floor
+px 13
+py13
+Gameobject!
+name Floor
+px 5
+py8
+Gameobject!
+name Floor
+px 5
+py9
+Gameobject!
+name Floor
+px 6
+py-8
+Gameobject!
+name Floor
+px 20
+py1
+Gameobject!
+name Floor
+px 10
+py2
+Gameobject!
+name Floor
+px 28
+py-1
+Gameobject!
+name Floor
+px 11
+py0
+Gameobject!
+name Floor
+px 28
+py5
+Gameobject!
+name Floor
+px 10
+py-8
+Gameobject!
+name Floor
+px 15
+py-9
+Gameobject!
+name Floor
+px 6
+py-9
+Gameobject!
+name Floor
+px 30
+py6
+Gameobject!
+name Floor
+px 19
+py3
+Gameobject!
+name Floor
+px 25
+py6
+Gameobject!
+name Floor
+px 8
+py5
+Gameobject!
+name Floor
+px 20
+py2
+Gameobject!
+name Floor
+px 26
+py0
+Gameobject!
+name Floor
+px 2
+py5
+Gameobject!
+name Floor
+px 35
+py5
+Gameobject!
+name Floor
+px 12
+py3
+Gameobject!
+name Floor
+px 20
+py0
+Gameobject!
+name Floor
+px 11
+py13
+Gameobject!
+name Floor
+px 12
+py13
+Gameobject!
+name Floor
+px 17
+py2
+Gameobject!
+name Floor
+px 7
+py0
+Gameobject!
+name Floor
+px 9
+py4
+Gameobject!
+name Floor
+px 6
+py-10
+Gameobject!
+name Floor
+px 6
+py3
+Gameobject!
+name Floor
+px 0
+py4
+Gameobject!
+name Floor
+px 9
+py2
+Gameobject!
+name Floor
+px 12
+py3
+Gameobject!
+name Floor
+px 1
+py2
+Gameobject!
+name Floor
+px 22
+py0
+Gameobject!
+name Floor
+px 16
+py-7
+Gameobject!
+name Floor
+px 12
+py-5
+Gameobject!
+name Floor
+px 12
+py-3
+Gameobject!
+name Floor
+px 20
+py4
+Gameobject!
+name Floor
+px 12
+py-2
+Gameobject!
+name Floor
+px 34
+py3
+Gameobject!
+name Floor
+px 12
+py0
+Gameobject!
+name Floor
+px 12
+py-1
+Gameobject!
+name Floor
+px 22
+py4
+Gameobject!
+name Floor
+px 23
+py2
+Gameobject!
+name Floor
+px 8
+py-8
+Gameobject!
+name Floor
+px 9
+py-9
+Gameobject!
+name Floor
+px 13
+py6
+Gameobject!
+name Wall
+px 21
+py-3
+Gameobject!
+name Wall
+px 19
+py6
+Gameobject!
+name Wall
+px 8
+py-2
+Gameobject!
+name Wall
+px 7
+py-5
+Gameobject!
+name Wall
+px 8
+py-4
+Gameobject!
+name Wall
+px 3
+py-5
+Gameobject!
+name Wall
+px 6
+py-1
+Gameobject!
+name Wall
+px 2
+py0
+Gameobject!
+name Wall
+px 3
+py0
+Gameobject!
+name Wall
+px 14
+py3
+Gameobject!
+name Wall
+px 21
+py5
+name Altar of Doom
+px 27
+py-1
+Gameobject!
+name Wall
+px 5
+py0
+name Altar of Doom
+px 31
+py1
+Gameobject!
+name Wall
+px 21
+py0
+Gameobject!
+name Wall
+px 4
+py-10
+Gameobject!
+name Wall
+px 0
+py2
+name Altar of Doom
+px 27
+py4
+Gameobject!
+name Wall
+px 14
+py-5
+Gameobject!
+name Wall
+px 14
+py-3
+Gameobject!
+name Wall
+px 5
+py12
+Gameobject!
+name Wall
+px 4
+py12
+Gameobject!
+name Wall
+px 3
+py12
+Gameobject!
+name Wall
+px 3
+py11
+Gameobject!
+name Wall
+px 0
+py0
+Gameobject!
+name Wall
+px 8
+py13
+Gameobject!
+name Wall
+px 12
+py8
+Gameobject!
+name Wall
+px 36
+py7
+Gameobject!
+name Wall
+px 11
+py14
+name Altar of Doom
+px 30
+py3
+Gameobject!
+name Wall
+px 19
+py-3
+Gameobject!
+name Wall
+px 5
+py-1
+Gameobject!
+name Wall
+px 13
+py-5
+Gameobject!
+name Wall
+px 37
+py3
+Gameobject!
+name Wall
+px 10
+py-6
+Gameobject!
+name Wall
+px 22
+py-11
+Gameobject!
+name Wall
+px 28
+py-2
+Gameobject!
+name Wall
+px -2
+py9
+Gameobject!
+name Wall
+px 18
+py6
+Gameobject!
+name Wall
+px 1
+py6
+Gameobject!
+name Wall
+px 14
+py-6
+Gameobject!
+name Wall
+px 9
+py-4
+name Altar of Doom
+px 28
+py1
+Gameobject!
+name Wall
+px 3
+py-1
+Gameobject!
+name Wall
+px 22
+py-2
+Gameobject!
+name Wall
+px 20
+py-5
+Chest!
+with item: doorkey
+with item: doorkey
+name Chest
+px 16
+py1
+name Altar of Doom
+px 31
+py4
+Gameobject!
+name Wall
+px 21
+py-11
+Gameobject!
+name Wall
+px -2
+py11
+Gameobject!
+name Wall
+px 17
+py1
+Gameobject!
+name Wall
+px 15
+py-2
+Gameobject!
+name Wall
+px 8
+py0
+Gameobject!
+name Wall
+px 23
+py-3
+Gameobject!
+name Wall
+px 6
+py-7
+Gameobject!
+name Wall
+px 13
+py6
+Gameobject!
+name Wall
+px 24
+py7
+Gameobject!
+name Wall
+px 10
+py-7
+Gameobject!
+name Wall
+px 25
+py-3
+Gameobject!
+name Wall
+px 17
+py3
+Gameobject!
+name Wall
+px 14
+py-7
+Gameobject!
+name Wall
+px -2
+py10
+Gameobject!
+name Wall
+px 6
+py9
+Gameobject!
+name Wall
+px 0
+py4
+Gameobject!
+name Wall
+px 26
+py-10
+Gameobject!
+name Wall
+px 24
+py-9
+Gameobject!
+name Wall
+px 22
+py7
+Gameobject!
+name Wall
+px 8
+py-12
+Gameobject!
+name Wall
+px 20
+py-11
+Gameobject!
+name Wall
+px 6
+py10
+Gameobject!
+name Wall
+px 17
+py6
+Gameobject!
+name Wall
+px 16
+py6
+Gameobject!
+name Wall
+px 2
+py12
+Gameobject!
+name Wall
+px 6
+py13
+Gameobject!
+name Wall
+px 26
+py-11
+Gameobject!
+name Wall
+px 22
+py-5
+Gameobject!
+name Wall
+px 2
+py-4
+Gameobject!
+name Wall
+px 27
+py-5
+Gameobject!
+name Wall
+px 3
+py6
+Gameobject!
+name Wall
+px 9
+py-2
+Gameobject!
+name Wall
+px 17
+py-5
+Gameobject!
+name Wall
+px 14
+py-2
+Gameobject!
+name Wall
+px 13
+py-2
+Gameobject!
+name Wall
+px 10
+py-12
+Gameobject!
+name Wall
+px 10
+py-2
+Gameobject!
+name Wall
+px 6
+py-12
+Gameobject!
+name Wall
+px 34
+py7
+Gameobject!
+name Wall
+px 20
+py-9
+Gameobject!
+name Wall
+px 14
+py6
+Gameobject!
+name Wall
+px 17
+py-8
+Gameobject!
+name Wall
+px 11
+py14
+Gameobject!
+name Wall
+px 23
+py7
+Gameobject!
+name Wall
+px 6
+py8
+Gameobject!
+name Wall
+px 29
+py-2
+name Door
+px 17
+py2
+Gameobject!
+name Wall
+px 37
+py5
+Gameobject!
+name Wall
+px 19
+py-9
+Gameobject!
+name Wall
+px 17
 py4
 Gameobject!
 name Wall
@@ -834,1798 +2301,947 @@ px 18
 py-3
 Gameobject!
 name Wall
-px 17
-py4
-Gameobject!
-name Floor
-px 12
-py3
+px 10
+py-1
 Gameobject!
 name Wall
-px 19
-py-9
+px 27
+py-4
 Gameobject!
-name Floor
+name Wall
+px 5
+py6
+Gameobject!
+name Wall
 px 6
-py3
+py7
+Gameobject!
+name Wall
+px 7
+py-1
+Gameobject!
+name Wall
+px 14
+py11
+Gameobject!
+name Wall
+px 2
+py-5
+Gameobject!
+name Wall
+px 9
+py8
+Gameobject!
+name Wall
+px 13
+py-1
+Gameobject!
+name Wall
+px 9
+py7
+Gameobject!
+name Wall
+px 13
+py-3
 name Door
 px 17
-py2
-Gameobject!
-name Floor
-px 6
-py1
-Gameobject!
-name Floor
-px 8
-py5
+py-10
 Gameobject!
 name Wall
-px 10
+px 37
+py-2
+Gameobject!
+name Wall
+px 21
+py1
+Gameobject!
+name Wall
+px 9
+py0
+Gameobject!
+name Wall
+px 9
+py9
+Gameobject!
+name Wall
+px 14
+py12
+Gameobject!
+name Wall
+px 14
+py13
+Gameobject!
+name Wall
+px 14
+py14
+Gameobject!
+name Wall
+px 13
+py14
+Gameobject!
+name Wall
+px 12
+py14
+Gameobject!
+name Wall
+px 9
+py12
+Gameobject!
+name Wall
+px 13
 py-6
 Gameobject!
 name Wall
-px 19
-py-3
+px 14
+py0
 Gameobject!
-name Floor
+name Wall
+px 0
+py6
+Gameobject!
+name Wall
 px 12
+py-12
+Gameobject!
+name Wall
+px 15
+py6
+name Altar of Doom
+px 32
+py2
+Gameobject!
+name Wall
+px 32
+py-2
+Gameobject!
+name Wall
+px 25
 py-9
+name Altar of Doom
+px 27
+py3
+name Altar of Doom
+px 30
+py4
 Gameobject!
-name Floor
-px 11
-py5
-Gameobject!
-name Floor
-px 16
+name Wall
+px 14
 py1
 Gameobject!
-name Floor
-px 8
+name Wall
+px 17
+py-9
+Gameobject!
+name Wall
+px 0
+py3
+Gameobject!
+name Wall
+px 4
+py0
+Gameobject!
+name Wall
+px 23
+py-5
+name Altar of Doom
+px 31
 py3
 Gameobject!
 name Wall
 px 14
+py4
+Chest!
+name Chest
+px 2
+py1
+Gameobject!
+name Wall
+px 24
+py-11
+Gameobject!
+name Wall
+px 3
+py10
+Gameobject!
+name Wall
+px 0
+py0
+Gameobject!
+name Wall
+px 13
+py-4
+Gameobject!
+name Wall
+px 6
+py6
+name Altar of Doom
+px 25
+py1
+Gameobject!
+name Wall
+px 24
+py-5
+Gameobject!
+name Wall
+px 19
+py-5
+Gameobject!
+name Wall
+px 23
+py-11
+Gameobject!
+name Wall
+px 21
+py-5
+Gameobject!
+name Wall
+px 14
+py10
+Gameobject!
+name Wall
+px 9
+py10
+Gameobject!
+name Wall
+px 2
+py-3
+Gameobject!
+name Wall
+px 0
+py6
+Gameobject!
+name Wall
+px 19
+py-11
+Gameobject!
+name Wall
+px 23
 py-2
 Gameobject!
-name Floor
+name Wall
+px 16
+py0
+Gameobject!
+name Wall
+px 12
+py9
+Gameobject!
+name Wall
+px 7
+py13
+Gameobject!
+name Wall
+px 25
+py-11
+Gameobject!
+name Wall
+px 11
+py8
+Gameobject!
+name Wall
+px 5
+py10
+name Altar of Doom
+px 33
+py1
+Gameobject!
+name Wall
+px -2
+py8
+Gameobject!
+name Wall
+px 11
+py6
+Gameobject!
+name Wall
 px 9
+py13
+Gameobject!
+name Wall
+px 10
+py12
+Gameobject!
+name Wall
+px 11
+py12
+Gameobject!
+name Wall
+px 10
+py10
+Gameobject!
+name Wall
+px 12
+py12
+Gameobject!
+name Wall
+px 12
+py11
+Gameobject!
+name Wall
+px 12
+py10
+Gameobject!
+name Wall
+px 11
+py14
+Gameobject!
+name Wall
+px 14
+py9
+Gameobject!
+name Wall
+px 7
+py0
+Gameobject!
+name Wall
+px 9
+py14
+Gameobject!
+name Wall
+px 9
+py15
+Gameobject!
+name Wall
+px 10
+py15
+Gameobject!
+name Wall
+px 11
+py15
+Chest!
+with item: doorkey
+name Chest
+px 10
+py14
+Gameobject!
+name Wall
+px 11
+py8
+Gameobject!
+name Wall
+px 6
+py12
+Gameobject!
+name Wall
+px 14
+py8
+Gameobject!
+name Wall
+px 14
+py7
+name Altar of Doom
+px 30
+py1
+Gameobject!
+name Wall
+px 11
+py-12
+Gameobject!
+name Wall
+px 24
+py-3
+Gameobject!
+name Wall
+px 8
+py-7
+Gameobject!
+name Wall
+px 22
+py-9
+Gameobject!
+name Wall
+px 0
+py0
+Gameobject!
+name Wall
+px 32
+py7
+Gameobject!
+name Wall
+px 13
+py0
+Gameobject!
+name Wall
+px 0
+py5
+Gameobject!
+name Wall
+px 6
+py0
+Gameobject!
+name Wall
+px 13
+py-7
+Gameobject!
+name Wall
+px 31
+py-2
+Gameobject!
+name Wall
+px 31
+py7
+Gameobject!
+name Wall
+px 37
+py0
+name Altar of Doom
+px 29
+py2
+Gameobject!
+name Wall
+px 17
+py-2
+Gameobject!
+name Wall
+px 21
+py0
+Gameobject!
+name Wall
+px 4
+py-8
+Gameobject!
+name Wall
+px 18
+py0
+Gameobject!
+name Wall
+px 2
+py-2
+Gameobject!
+name Wall
+px 2
+py6
+Gameobject!
+name Wall
+px 4
+py8
+Gameobject!
+name Wall
+px 2
+py8
+Gameobject!
+name Wall
+px -1
+py6
+Gameobject!
+name Wall
+px -2
+py6
+Gameobject!
+name Wall
+px -2
+py7
+Gameobject!
+name Wall
+px 21
+py6
+Gameobject!
+name Wall
+px 17
+py-6
+Gameobject!
+name Wall
+px 7
+py-7
+Gameobject!
+name Wall
+px 3
+py9
+Gameobject!
+name Wall
+px 3
+py8
+Gameobject!
+name Wall
+px 4
+py-7
+Gameobject!
+name Wall
+px 33
+py-2
+Chest!
+name Chest
+px 25
+py-10
+Gameobject!
+name Wall
+px 14
+py5
+Gameobject!
+name Wall
+px 21
+py2
+Gameobject!
+name Wall
+px 4
+py-9
+Gameobject!
+name Wall
+px 37
+py6
+Gameobject!
+name Wall
+px 7
+py-4
+name Altar of Doom
+px 27
+py1
+Gameobject!
+name Wall
+px 16
+py-12
+Gameobject!
+name Wall
+px 10
+py-4
+Gameobject!
+name Wall
+px 17
+py-7
+Gameobject!
+name Wall
+px 1
+py0
+Gameobject!
+name Wall
+px 17
+py-3
+Gameobject!
+name Wall
+px 2
+py-1
+name Altar of Doom
+px 29
 py3
+name Altar of Doom
+px 31
+py-1
+Chest!
+with item: doorkey
+with item: useless item
+name Chest
+px 26
+py-4
+Gameobject!
+name Wall
+px 10
+py-5
+Gameobject!
+name Wall
+px 20
+py0
+Gameobject!
+name Wall
+px 37
+py-1
+Gameobject!
+name Wall
+px 10
+py0
+Gameobject!
+name Wall
+px 34
+py-2
+Gameobject!
+name Wall
+px 29
+py7
+Gameobject!
+name Wall
+px 9
+py6
+Gameobject!
+name Wall
+px 21
+py-1
+Gameobject!
+name Wall
+px 7
+py-2
+name Altar of Doom
+px 26
+py0
+Gameobject!
+name Wall
+px 15
+py0
+Gameobject!
+name Wall
+px 37
+py0
+Gameobject!
+name Wall
+px 37
+py1
+Gameobject!
+name Wall
+px 21
+py-2
+Gameobject!
+name Wall
+px 23
+py-9
+Gameobject!
+name Wall
+px 2
+py13
+Gameobject!
+name Wall
+px 1
+py13
+Gameobject!
+name Wall
+px 0
+py13
+Gameobject!
+name Wall
+px 0
+py13
+Gameobject!
+name Wall
+px -1
+py13
+Gameobject!
+name Wall
+px -2
+py13
+Gameobject!
+name Wall
+px 27
+py7
+Gameobject!
+name Wall
+px 37
+py2
+Gameobject!
+name Wall
+px 4
+py-12
+Gameobject!
+name Wall
+px 17
+py-11
+name Altar of Doom
+px 28
+py4
+name Altar of Doom
+px 28
+py-1
+Gameobject!
+name Wall
+px 26
+py-5
+Gameobject!
+name Wall
+px 21
+py7
+Gameobject!
+name Wall
+px 26
+py7
+name Door
+px 14
+py2
+Gameobject!
+name Wall
+px -2
+py12
+Gameobject!
+name Wall
+px 30
+py-2
+Gameobject!
+name Wall
+px 5
+py-7
+Gameobject!
+name Wall
+px 18
+py-11
+name Altar of Doom
+px 30
+py-1
+Gameobject!
+name Wall
+px 25
+py7
+Gameobject!
+name Wall
+px 4
+py-5
+Gameobject!
+name Wall
+px 25
+py-5
+Gameobject!
+name Wall
+px 19
+py0
+Gameobject!
+name Wall
+px 18
+py-5
+name Altar of Doom
+px 26
+py2
+Gameobject!
+name Wall
+px 12
+py6
+Gameobject!
+name Wall
+px 4
+py-11
+name Altar of Doom
+px 32
+py0
+Gameobject!
+name Wall
+px 14
+py-4
+Gameobject!
+name Wall
+px 4
+py6
+Gameobject!
+name Wall
+px 7
+py-12
+Gameobject!
+name Wall
+px 26
+py-3
+Gameobject!
+name Wall
+px 6
+py-5
+Gameobject!
+name Wall
+px 10
+py6
+Gameobject!
+name Wall
+px 28
+py7
+Gameobject!
+name Wall
+px 4
+py-1
+Gameobject!
+name Wall
+px 17
+py0
+Gameobject!
+name Wall
+px 25
+py-2
+name Altar of Doom
+px 29
+py4
+Gameobject!
+name Wall
+px 14
+py-12
+name Altar of Doom
+px 28
+py3
+Gameobject!
+name Wall
+px 18
+py-9
+Gameobject!
+name Wall
+px 16
+py-2
+Gameobject!
+name Wall
+px 17
+py0
+Gameobject!
+name Wall
+px 30
+py7
+Gameobject!
+name Wall
+px 20
+py6
+Gameobject!
+name Wall
+px 17
+py-12
+Chest!
+name Chest
+px 3
+py-4
+Gameobject!
+name Wall
+px 24
+py-2
+Gameobject!
+name Wall
+px 13
+py-12
+Gameobject!
+name Wall
+px 35
+py-2
+Gameobject!
+name Wall
+px 33
+py7
+Gameobject!
+name Wall
+px 36
+py-2
+Gameobject!
+name Wall
+px 21
+py-9
+Gameobject!
+name Wall
+px 17
+py5
+Gameobject!
+name Wall
+px 37
+py7
+Gameobject!
+name Wall
+px 15
+py-12
+Gameobject!
+name Wall
+px 5
+py-5
+Gameobject!
+name Wall
+px 0
+py1
+Gameobject!
+name Wall
+px 19
+py-5
+Gameobject!
+name Wall
+px 9
+py-12
+Gameobject!
+name Wall
+px 21
+py3
+Gameobject!
+name Wall
+px 27
+py-3
+Gameobject!
+name Wall
+px 9
+py-7
+Gameobject!
+name Wall
+px 5
+py-12
+Gameobject!
+name Wall
+px 37
+py4
+name Altar of Doom
+px 29
+py-1
+Gameobject!
+name Wall
+px 26
+py-9
+Gameobject!
+name Wall
+px 14
+py0
+Gameobject!
+name Wall
+px 27
+py-2
+Gameobject!
+name Wall
+px 20
+py-3
+Gameobject!
+name Wall
+px 35
+py7
+Gameobject!
+name Wall
+px 22
+py-3
+Gameobject!
+name Wall
+px 26
+py-2
+Actor!
+10 hp
+name Goblin
+px 16
+py-7
+Actor!
+10 hp
+name Goblin
+px 0
+py11
+Actor!
+10 hp
+name Goblin
+px 15
+py-4
+Actor!
+10 hp
+name Goblin
+px 1
+py9
+Actor!
+10 hp
+name Goblin
+px 0
+py10
+Actor!
+- and PLayer!
+27 hp
+with item: healing potion
+with item: chalice of doom
+name Mario
+px 23
+py-10
+Actor!
+10 hp
+name Goblin
+px 1
+py11
+Actor!
+20 hp
+name Troll
+px 13
+py11
+Actor!
+10 hp
+name Goblin
+px 15
+py-3
+Actor!
+10 hp
+name Goblin
+px 1
+py10
 Actor!
 2 hp
 name Kungen
-px 11
-py3
-Gameobject!
-name Floor
-px 20
-py6
-Gameobject!
-name Floor
-px 11
-py2
-Gameobject!
-name Wall
-px 15
-py-7
-Gameobject!
-name Wall
-px 21
-py-5
-Gameobject!
-name Wall
-px 23
-py-11
-Gameobject!
-name Wall
-px 19
-py-5
-Gameobject!
-name Wall
-px 24
-py-5
-Gameobject!
-name Floor
-px 11
-py-8
-Gameobject!
-name Wall
-px 6
-py6
-Gameobject!
-name Wall
-px 9
-py0
-Gameobject!
-name Floor
-px 11
-py-5
-Gameobject!
-name Floor
-px 20
-py3
-Gameobject!
-name Floor
-px 5
-py0
-Gameobject!
-name Wall
-px 0
-py4
-Gameobject!
-name Wall
-px 12
-py-5
-Gameobject!
-name Wall
-px 26
-py-10
-Gameobject!
-name Wall
-px 24
-py-9
-Gameobject!
-name Floor
-px 13
-py0
-Gameobject!
-name Floor
-px 10
-py3
-Gameobject!
-name Wall
-px 12
-py-4
-Gameobject!
-name Wall
-px 8
-py-12
-Gameobject!
-name Floor
-px 10
-py4
-Gameobject!
-name Floor
-px 8
-py0
-Gameobject!
-name Floor
-px 12
-py0
-Gameobject!
-name Wall
-px 20
-py-11
-Gameobject!
-name Floor
-px 7
-py-3
-Gameobject!
-name Wall
-px 1
-py6
-Gameobject!
-name Floor
-px 4
-py-3
-Gameobject!
-name Floor
-px 11
-py-10
-Gameobject!
-name Floor
-px 1
-py6
-Gameobject!
-name Wall
-px 17
-py6
-Gameobject!
-name Floor
-px 23
-py-10
-Gameobject!
-name Wall
-px 12
-py-3
-Gameobject!
-name Floor
-px 3
-py-4
-Gameobject!
-name Wall
-px 18
-py6
-Gameobject!
-name Wall
-px 26
-py-11
-Gameobject!
-name Floor
-px 5
-py-8
-Gameobject!
-name Wall
-px 22
-py-5
-Gameobject!
-name Wall
-px 2
-py-4
-Gameobject!
-name Floor
-px 10
-py1
-Gameobject!
-name Floor
-px 26
-py-4
-Gameobject!
-name Wall
-px 27
-py-5
-Gameobject!
-name Wall
-px 3
-py6
-Gameobject!
-name Wall
-px 9
-py-2
-Gameobject!
-name Floor
-px 18
-py5
-Gameobject!
-name Wall
-px 17
-py-5
-Gameobject!
-name Wall
-px 4
-py-8
-Gameobject!
-name Wall
-px 16
-py6
-Gameobject!
-name Floor
-px 11
-py2
-Gameobject!
-name Floor
-px 17
-py-10
-Gameobject!
-name Wall
-px 5
-py6
-Chest!
-with item: doorkey
-with item: doorkey
-name Chest
-px 3
-py-4
-Gameobject!
-name Floor
-px 21
-py-10
-Gameobject!
-name Wall
-px 17
-py-12
-Gameobject!
-name Wall
-px 20
-py6
-Gameobject!
-name Floor
-px 13
-py1
-Gameobject!
-name Floor
-px 12
-py-8
-Gameobject!
-name Floor
-px 12
-py2
-Gameobject!
-name Floor
-px 16
-py6
-Gameobject!
-name Wall
-px 20
-py-3
-Chest!
-name Chest
-px 26
-py-4
-Gameobject!
-name Floor
-px 4
-py4
-Gameobject!
-name Floor
-px 18
-py3
-Gameobject!
-name Wall
-px 1
-py0
-Gameobject!
-name Floor
-px 12
-py4
-Gameobject!
-name Floor
-px 6
-py4
-Gameobject!
-name Floor
-px 8
-py-9
-Gameobject!
-name Floor
-px 11
-py-1
-Gameobject!
-name Floor
-px 19
-py-10
-Gameobject!
-name Wall
-px 22
-py-3
-Gameobject!
-name Floor
-px 0
-py1
-Gameobject!
-name Floor
-px 10
-py-8
-Gameobject!
-name Wall
-px 14
-py-12
-Gameobject!
-name Floor
-px 5
-py-10
-Gameobject!
-name Floor
-px 16
-py0
-Gameobject!
-name Floor
-px 0
-py2
-Gameobject!
-name Floor
-px 3
-py-2
-Gameobject!
-name Floor
-px 18
-py0
-Gameobject!
-name Floor
 px 10
 py5
-Gameobject!
-name Wall
-px 17
-py0
-Gameobject!
-name Floor
-px 3
-py1
-Gameobject!
-name Floor
-px 13
-py5
-Gameobject!
-name Wall
-px 4
-py-1
-Gameobject!
-name Floor
-px 16
-py2
-Gameobject!
-name Wall
-px 4
-py0
-Gameobject!
-name Wall
-px 18
-py-9
-Gameobject!
-name Wall
-px 6
-py-5
-Gameobject!
-name Floor
-px 9
-py-10
-Gameobject!
-name Wall
-px 26
-py-3
-Gameobject!
-name Floor
-px 14
-py-10
-Gameobject!
-name Floor
-px 2
-py6
-Gameobject!
-name Wall
-px 7
-py-12
-Gameobject!
-name Floor
-px 9
-py3
-Gameobject!
-name Wall
-px 4
-py6
-Gameobject!
-name Wall
-px 14
-py-4
-Gameobject!
-name Wall
-px 4
-py-11
-Gameobject!
-name Floor
-px 19
-py4
-Gameobject!
-name Floor
-px 3
-py3
-Gameobject!
-name Wall
-px 10
-py-4
-Gameobject!
-name Wall
-px 2
-py-3
-Gameobject!
-name Floor
-px 18
-py-4
-Gameobject!
-name Wall
-px 17
-py-9
-Gameobject!
-name Floor
-px 20
-py2
-Gameobject!
-name Wall
-px 0
-py3
-Gameobject!
-name Floor
-px 5
-py6
-Gameobject!
-name Wall
-px 17
-py5
-Gameobject!
-name Wall
-px 21
-py3
-Gameobject!
-name Floor
-px 12
-py4
-Gameobject!
-name Floor
-px 11
-py3
-Gameobject!
-name Wall
-px 26
-py-9
-Gameobject!
-name Floor
-px 8
-py-10
-Gameobject!
-name Wall
-px 2
-py-1
-Gameobject!
-name Floor
-px 0
-py5
-Gameobject!
-name Floor
-px 8
-py4
-Gameobject!
-name Floor
-px 9
-py-3
-Gameobject!
-name Floor
-px 19
-py0
-Gameobject!
-name Floor
-px 9
-py1
-Gameobject!
-name Floor
-px 11
-py4
-Gameobject!
-name Floor
-px 0
-py3
-Gameobject!
-name Floor
-px 18
-py2
-Gameobject!
-name Wall
-px 17
-py0
-Gameobject!
-name Floor
-px 1
-py3
-Gameobject!
-name Wall
-px 13
-py-12
-Gameobject!
-name Floor
-px 8
-py4
-Gameobject!
-name Wall
-px 21
-py-9
-Gameobject!
-name Floor
-px 7
-py5
-Gameobject!
-name Floor
-px 2
-py0
-Gameobject!
-name Floor
-px 8
-py1
-Gameobject!
-name Wall
-px 14
-py0
-Gameobject!
-name Wall
-px 16
-py-2
-Gameobject!
-name Floor
-px 9
-py5
-Gameobject!
-name Floor
-px 12
-py2
-Gameobject!
-name Floor
-px 10
-py4
-Gameobject!
-name Wall
-px 10
-py6
-Gameobject!
-name Floor
-px 10
-py-10
-Gameobject!
-name Wall
-px 16
-py-12
-Gameobject!
-name Wall
-px 8
-py-2
-Gameobject!
-name Floor
-px 11
-py-11
-Gameobject!
-name Floor
-px 21
-py-4
-Gameobject!
-name Floor
-px 19
-py5
-Gameobject!
-name Floor
-px 16
-py-9
 Actor!
 10 hp
 name Goblin
-px 5
-py-3
-Gameobject!
-name Wall
-px 17
-py-3
-Gameobject!
-name Floor
-px 15
-py-9
-Gameobject!
-name Wall
-px 17
-py-7
-Gameobject!
-name Wall
-px 12
-py6
-Gameobject!
-name Wall
 px 0
-py6
-Gameobject!
-name Floor
-px 12
-py-11
-Gameobject!
-name Floor
-px 1
-py4
-Gameobject!
-name Floor
-px 0
-py0
-Gameobject!
-name Wall
-px 12
-py-12
-Gameobject!
-name Floor
-px 3
-py-3
-Gameobject!
-name Wall
-px 15
-py6
-Gameobject!
-name Floor
-px 12
-py5
-Gameobject!
-name Floor
-px 16
-py6
-Gameobject!
-name Floor
-px 9
-py-8
-Gameobject!
-name Floor
-px 8
-py0
-Gameobject!
-name Wall
-px 13
-py0
-Gameobject!
-name Floor
-px 9
-py2
-Gameobject!
-name Wall
-px 25
-py-9
-Gameobject!
-name Wall
-px 6
-py0
+py9
 Actor!
-10 hp
-name Goblin
-px 16
-py-4
-Gameobject!
-name Floor
-px 6
-py2
-Gameobject!
-name Wall
-px 11
-py6
-Gameobject!
-name Floor
-px 5
-py1
-Gameobject!
-name Floor
-px 10
-py1
-Gameobject!
-name Floor
-px 14
-py-8
-Gameobject!
-name Floor
-px 6
-py0
-Gameobject!
-name Wall
-px 14
-py1
-Gameobject!
-name Wall
-px 0
-py6
-Gameobject!
-name Floor
-px 21
-py6
-Gameobject!
-name Wall
-px 19
-py-11
-Gameobject!
-name Floor
-px 5
-py2
-Gameobject!
-name Floor
-px 11
-py-2
-Gameobject!
-name Wall
-px 21
-py6
-Gameobject!
-name Wall
-px 16
-py0
-Gameobject!
-name Wall
-px 24
-py-11
-Gameobject!
-name Wall
-px 7
-py-4
-Gameobject!
-name Floor
-px 7
-py1
-Gameobject!
-name Floor
-px 18
-py6
-Gameobject!
-name Wall
-px 4
-py-9
-Gameobject!
-name Floor
-px 2
-py1
-Gameobject!
-name Wall
-px 7
-py6
-Gameobject!
-name Wall
-px 8
-py6
-Gameobject!
-name Wall
-px 21
-py2
-Gameobject!
-name Floor
-px 18
-py-10
-Gameobject!
-name Floor
-px 6
-py-9
-Gameobject!
-name Floor
-px 14
-py-9
-Gameobject!
-name Wall
-px 14
-py5
-Gameobject!
-name Floor
-px 3
-py6
-Chest!
-with item: chalice of doom
-name Chest
-px 25
-py-10
-Gameobject!
-name Floor
-px 15
-py6
-Gameobject!
-name Floor
-px 3
-py5
-Gameobject!
-name Wall
-px 4
-py-7
-Gameobject!
-name Wall
-px 2
-py6
-Gameobject!
-name Wall
-px 25
-py-11
-Gameobject!
-name Wall
-px 7
-py-7
-Gameobject!
-name Wall
-px 17
-py-6
-Gameobject!
-name Wall
-px 23
-py-5
-Gameobject!
-name Floor
-px 4
+2 hp
+name Kungen
+px 32
 py3
-Gameobject!
-name Floor
-px 7
-py-9
-Gameobject!
-name Floor
-px 8
-py2
-Gameobject!
-name Floor
-px 13
-py-8
-Gameobject!
-name Floor
-px 19
-py1
-Gameobject!
-name Floor
-px 15
-py-3
-Gameobject!
-name Floor
-px 14
-py2
-Gameobject!
-name Floor
-px 20
-py5
-Gameobject!
-name Floor
-px 7
-py-10
-Gameobject!
-name Wall
-px 14
-py4
-Gameobject!
-name Floor
-px 7
-py-8
-Chest!
-with item: doorkey
-with item: doorkey
-name Chest
-px 2
-py1
-Gameobject!
-name Wall
-px 0
-py0
-Gameobject!
-name Floor
-px 11
-py0
-Gameobject!
-name Wall
-px 10
-py-5
-Gameobject!
-name Floor
-px 10
-py2
-Gameobject!
-name Floor
-px 6
-py-4
-Gameobject!
-name Wall
-px 11
-py-12
-Gameobject!
-name Wall
-px 24
-py-3
-Gameobject!
-name Wall
-px 8
-py-7
-Gameobject!
-name Wall
-px 22
-py-9
-Gameobject!
-name Wall
-px 0
-py0
-Gameobject!
-name Wall
-px 14
-py0
-Gameobject!
-name Floor
-px 18
-py1
-Gameobject!
-name Floor
-px 11
-py-9
-Gameobject!
-name Wall
-px 0
-py5
-Gameobject!
-name Floor
-px 12
-py1
-Gameobject!
-name Floor
-px 22
-py-10
-Gameobject!
-name Wall
-px 7
-py0
-Gameobject!
-name Wall
-px 13
-py-7
-Gameobject!
-name Floor
-px 3
-py2
-Gameobject!
-name Floor
-px 2
-py5
-Gameobject!
-name Floor
-px 1
-py2
-Gameobject!
-name Wall
-px 17
-py-2
-Gameobject!
-name Wall
-px 21
-py0
-Gameobject!
-name Floor
-px 11
-py-7
-Gameobject!
-name Floor
-px 7
-py-11
-Gameobject!
-name Floor
-px 12
-py1
-Gameobject!
-name Floor
-px 20
-py-10
-Gameobject!
-name Wall
-px 18
-py0
-Gameobject!
-name Wall
-px 2
-py-2
-Gameobject!
-name Floor
-px 16
-py3
-Gameobject!
-name Floor
-px 10
-py3
-Gameobject!
-name Floor
-px 5
-py-4
-Gameobject!
-name Floor
-px 17
-py6
-Gameobject!
-name Wall
-px 12
-py-6
-Gameobject!
-name Floor
-px 10
-py-9
-Gameobject!
-name Wall
-px 0
-py0
-Gameobject!
-name Wall
-px 21
-py1
-Gameobject!
-name Wall
-px 21
-py-3
-Gameobject!
-name Wall
-px 23
-py-9
-Gameobject!
-name Wall
-px 14
-py-3
-Gameobject!
-name Floor
-px 16
-py-6
-Gameobject!
-name Wall
-px 3
-py0
-Gameobject!
-name Wall
-px 6
-py-1
-Gameobject!
-name Floor
-px 10
-py-3
-Gameobject!
-name Floor
-px 10
-py-11
-Gameobject!
-name Floor
-px 15
-py5
-Gameobject!
-name Floor
-px 13
-py-11
-Gameobject!
-name Wall
-px 14
-py-5
-name Door
-px 16
-py-7
-Gameobject!
-name Wall
-px 5
-py0
-Gameobject!
-name Wall
-px 2
-py0
-Gameobject!
-name Floor
-px 9
-py1
-Gameobject!
-name Floor
-px 7
-py2
-Gameobject!
-name Floor
-px 12
-py3
-Gameobject!
-name Wall
-px 12
-py-7
-Gameobject!
-name Wall
-px 21
-py5
-Gameobject!
-name Floor
-px 15
-py-11
-Gameobject!
-name Floor
-px 20
-py1
-Gameobject!
-name Floor
-px 20
-py3
-Gameobject!
-name Floor
-px 5
-py-11
-Gameobject!
-name Wall
-px 14
-py-6
-Gameobject!
-name Wall
-px 18
-py-11
-Gameobject!
-name Floor
-px 11
-py4
-Gameobject!
-name Wall
-px 5
-py-7
-Gameobject!
-name Floor
-px 13
-py3
-Gameobject!
-name Floor
-px 8
-py-11
-Gameobject!
-name Floor
-px 11
-py3
-Gameobject!
-name Wall
-px 9
-py6
-Gameobject!
-name Floor
-px 16
-py-5
-Gameobject!
-name Wall
-px 15
-py-2
-Gameobject!
-name Wall
-px 14
-py-7
-Gameobject!
-name Wall
-px 17
-py3
-Actor!
-10 hp
-name Goblin
-px 16
-py-5
-Gameobject!
-name Floor
-px 5
-py6
-Gameobject!
-name Floor
-px 16
-py-3
-Gameobject!
-name Floor
-px 9
-py5
-Gameobject!
-name Floor
-px 0
-py6
-Gameobject!
-name Floor
-px 16
-py-10
-Gameobject!
-name Wall
-px 7
-py-2
-Gameobject!
-name Wall
-px 17
-py-8
-Gameobject!
-name Wall
-px 14
-py6
-Gameobject!
-name Floor
-px 12
-py6
-Gameobject!
-name Floor
-px 11
-py1
-Gameobject!
-name Floor
-px 6
-py5
-Gameobject!
-name Wall
-px 10
-py-12
-Gameobject!
-name Wall
-px 22
-py-11
-Gameobject!
-name Wall
-px 12
-py-1
-Gameobject!
-name Floor
-px 8
-py-3
-Gameobject!
-name Floor
-px 21
-py6
-Gameobject!
-name Floor
-px 15
-py-8
-Gameobject!
-name Wall
-px 6
-py-7
-Gameobject!
-name Wall
-px 23
-py-3
-Gameobject!
-name Floor
-px 25
-py-4
-Gameobject!
-name Floor
-px 8
-py2
-Gameobject!
-name Wall
-px 21
-py-11
-Gameobject!
-name Floor
-px 20
-py4
-Gameobject!
-name Floor
-px 20
-py1
-Gameobject!
-name Floor
-px 14
-py-11
-Gameobject!
-name Floor
-px 16
-py6
-Gameobject!
-name Floor
-px 16
-py5
-Gameobject!
-name Floor
-px 19
-py3
-Gameobject!
-name Floor
-px 2
-py2
-Gameobject!
-name Wall
-px 19
-py0
-Gameobject!
-name Floor
-px 8
-py1
-Gameobject!
-name Floor
-px 11
-py6
-Gameobject!
-name Floor
-px 15
-py-4
-Gameobject!
-name Floor
-px 12
-py5
-Gameobject!
-name Floor
-px 4
-py0
-Gameobject!
-name Floor
-px 2
-py3
-Actor!
-10 hp
-name Goblin
-px 6
-py3
-Gameobject!
-name Floor
-px 9
-py0
-Gameobject!
-name Floor
-px 3
-py0
-Gameobject!
-name Floor
-px 15
-py1
-Gameobject!
-name Floor
-px 19
-py-4
-Gameobject!
-name Floor
-px 24
-py-4
-Gameobject!
-name Wall
-px 26
-py-5
-Gameobject!
-name Floor
-px 11
-py-3
-Gameobject!
-name Floor
-px 15
-py2
-name Door
-px 14
-py2
-Gameobject!
-name Floor
-px 5
-py-2
-Gameobject!
-name Wall
-px 19
-py-5
-Gameobject!
-name Wall
-px 5
-py-5
-Gameobject!
-name Wall
-px 12
-py0
-Gameobject!
-name Wall
-px 15
-py-12
-Gameobject!
-name Wall
-px 12
-py-2
-Gameobject!
-name Floor
-px 17
-py-4
-Actor!
-10 hp
-name Goblin
-px 16
-py-3
-Gameobject!
-name Floor
-px 13
-py2
-Gameobject!
-name Floor
-px 11
-py-6
-Gameobject!
-name Wall
-px 20
-py-5
-Gameobject!
-name Floor
-px 15
-py-5
-Gameobject!
-name Floor
-px 11
-py5
-Gameobject!
-name Floor
-px 7
-py3
-Gameobject!
-name Floor
-px 15
-py4
-Gameobject!
-name Wall
-px 3
-py-1
-Gameobject!
-name Floor
-px 11
-py0
-Gameobject!
-name Floor
-px 10
-py5
-Gameobject!
-name Floor
-px 20
-py0
-Gameobject!
-name Wall
-px 5
-py-12
-Gameobject!
-name Wall
-px 19
-py6
-Gameobject!
-name Wall
-px 9
-py-4
-Gameobject!
-name Floor
-px 10
-py0
-Gameobject!
-name Floor
-px 6
-py-11
-Chest!
-with item: doorkey
-with item: doorkey
-name Chest
-px 16
-py1
-Gameobject!
-name Wall
-px 17
-py1
-Gameobject!
-name Wall
-px 0
-py1
-Gameobject!
-name Wall
-px 4
-py-12
-Gameobject!
-name Floor
-px 4
-py-4
-Gameobject!
-name Floor
-px 15
-py3
-Gameobject!
-name Floor
-px 24
-py-10
-Gameobject!
-name Floor
-px 6
-py-10
-Gameobject!
-name Floor
-px 0
-py4
-Gameobject!
-name Floor
-px 9
-py2
-Gameobject!
-name Wall
-px 17
-py-11
-Gameobject!
-name Floor
-px 16
-py-7
-Gameobject!
-name Floor
-px 18
-py4
-Gameobject!
-name Floor
-px 11
-py0
-Gameobject!
-name Floor
-px 22
-py-4
-Gameobject!
-name Floor
-px 20
-py0
-Gameobject!
-name Wall
-px 18
-py-5
-Gameobject!
-name Floor
-px 5
-py5
-Gameobject!
-name Wall
-px 25
-py-5
-Gameobject!
-name Floor
-px 4
-py6
-Gameobject!
-name Wall
-px 4
-py-5
-Gameobject!
-name Floor
-px 15
-py-10
-Gameobject!
-name Floor
-px 13
-py4
-Gameobject!
-name Floor
-px 13
-py-10
-Gameobject!
-name Floor
-px 8
-py3
-Gameobject!
-name Floor
-px 8
-py1
-Gameobject!
-name Wall
-px 13
-py6
-Gameobject!
-name Floor
-px 16
-py4
-Gameobject!
-name Wall
-px 10
-py-7
-Gameobject!
-name Floor
-px 16
-py-8
-Gameobject!
-name Wall
-px 25
-py-3
-Gameobject!
-name Floor
-px 14
-py6
-Gameobject!
-name Floor
-px 19
-py2
-Gameobject!
-name Wall
-px 10
-py0
-Gameobject!
-name Floor
-px 9
-py-11
-Gameobject!
-name Wall
-px 8
-py0
-Gameobject!
-name Wall
-px 10
-py-2
-Gameobject!
-name Wall
-px 6
-py-12
-Gameobject!
-name Floor
-px 4
-py5
-Gameobject!
-name Wall
-px 20
-py-9
-Gameobject!
-name Floor
-px 5
-py-9
-Gameobject!
-name Floor
-px 4
-py1
-Gameobject!
-name Floor
-px 12
-py-10
-Gameobject!
-name Wall
-px 27
-py-3
-Gameobject!
-name Wall
-px 9
-py-7
-Gameobject!
-name Floor
-px 15
-py-6
-Gameobject!
-name Floor
-px 16
-py-4
-Gameobject!
-name Floor
-px 6
-py-2
-Gameobject!
-name Floor
-px 16
-py-11
-Gameobject!
-name Wall
-px 9
-py-12
-Gameobject!
-name Floor
-px 13
-py-9
-Gameobject!
-name Floor
-px 5
-py4
-Gameobject!
-name Wall
-px 15
-py0
-Gameobject!
-name Wall
-px 20
-py0
-Gameobject!
-name Floor
-px 1
-py5
-Gameobject!
-name Floor
-px 25
-py-10
-Gameobject!
-name Floor
-px 19
-py6
-Gameobject!
-name Floor
-px 12
-py0
-Gameobject!
-name Floor
-px 2
-py4
-Gameobject!
-name Floor
-px 9
-py0
-Gameobject!
-name Wall
-px 14
-py3
-Gameobject!
-name Floor
-px 20
-py5
-Gameobject!
-name Wall
-px 21
-py0
-Gameobject!
-name Wall
-px 0
-py2
-Gameobject!
-name Wall
-px 3
-py-5
-Gameobject!
-name Wall
-px 8
-py-4
-Gameobject!
-name Floor
-px 1
-py0
-Gameobject!
-name Floor
-px 3
-py4
-Gameobject!
-name Wall
-px 7
-py-5
-Gameobject!
-name Wall
-px 4
-py-10
-Gameobject!
-name Floor
-px 23
-py-4
-Gameobject!
-name Floor
-px 1
-py1
-Actor!
-- and PLayer!
-30 hp
-name Mario
-px 2
-py2
-Gameobject!
-name Floor
-px 20
-py2
-Gameobject!
-name Floor
-px 9
-py4
-Gameobject!
-name Floor
-px 20
-py-4
 done! 

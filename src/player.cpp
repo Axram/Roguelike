@@ -39,6 +39,7 @@ void Player::heal(int amount){
   for (auto i = _inventory.begin(); i != _inventory.end(); ++i){
     if((**i).get_name() == "healing potion"){
       if(_hp < _max_hp){
+        if(_hp + amount > _max_hp) amount = _max_hp-_hp;
         _hp += amount;
         delete(*i);
         _inventory.erase(i);
@@ -62,5 +63,15 @@ bool Player::has_won(){
     }
   }
   return false;
+}
+
+bool Player::damage(int amount){
+  Actor::damage(amount);
+
+  std::string takendmg = " " + _name + " has " + std::to_string(_hp) + "hp left." ;
+  //scroll(_textbox);
+  wprintw(_textbox,"%s",takendmg.c_str());
+  wrefresh(_textbox);
+  return true;
 }
 
